@@ -156,10 +156,7 @@ class mimo_wide_resnet18(nn.Module):
                     )
         # TODO: REDO THIS TO REFELECT THE LEARNING RATE DECAY IN THE PAPER
         scheduler = optim.lr_scheduler.StepLR(optimizer, step_size=60, gamma=0.2)
-        
-        training_losses = []
-        training_accuracy = []
-        
+               
         for epoch in range(epochs):      
             # training mode
             self.train()
@@ -179,6 +176,9 @@ class mimo_wide_resnet18(nn.Module):
             ys = []
             for _ in range(self.ensemble_size):
                 x, y = next(training_iterator)
+                # map to cuda if GPU available
+                x = x.to(next(self.parameters()).device)
+                y = y.to(next(self.parameters()).device)
                 # repeat the batches 'self.batch_repitition' times
                 xs.append(torch.cat(self.batch_repitition * [x]))
                 ys.append(torch.cat(self.batch_repitition * [y]))
@@ -229,6 +229,11 @@ class mimo_wide_resnet18(nn.Module):
                 x_test = torch.cat(self.ensemble_size * [x_test])
                 batch_size = x_test.size(dim=0) // self.ensemble_size
                 x_test = x_test.reshape(batch_size, self.ensemble_size, 3, 32, 32) # TODO: FIX HARDCODINGS
+
+                # map to cuda if GPU available
+                x_test = x_test.to(next(self.parameters()).device)
+                y_test = y_test.to(next(self.parameters()).device)
+
                 outputs = self(x_test)
                 # We want (ensamble, batchsize, class-predictions)
                 outputs = outputs.reshape(self.ensemble_size, batch_size, self.num_classes)
