@@ -3,6 +3,7 @@ import functools
 import torch.nn as nn
 from torch import Tensor
 import torch.optim as optim
+from tqdm import tqdm
 
 
 # TODO: HOW TO ADD kernel_initializer='he_normal' in Pytorch?
@@ -68,6 +69,7 @@ class mimo_wide_resnet18(nn.Module):
                 self, 
                 input_shape: torch.Tensor, # NOTE: Why Tensor?
                 num_classes: int, 
+                batch_repitition: int,
                 ensemble_size: int, 
                 width_multiplier: int = 10
             ) -> None: 
@@ -76,6 +78,7 @@ class mimo_wide_resnet18(nn.Module):
         self.input_shape = list(input_shape)
         self.ensemble_size = ensemble_size
         self.num_classes = num_classes
+        self.batch_repitition = batch_repitition
 
         if ensemble_size != input_shape[0]:
             raise ValueError("The first dimension of input_shape must be ensemble_size")
@@ -108,6 +111,7 @@ class mimo_wide_resnet18(nn.Module):
                         nr_units=self.num_classes,
                         ensemble_size=self.ensemble_size
                     )
+        self.log_softmax = nn.LogSoftmax(dim = 1)
 
 
     def forward(self, input: Tensor) -> Tensor:
@@ -130,77 +134,117 @@ class mimo_wide_resnet18(nn.Module):
         x = self.avg_pool(x)
         x = torch.flatten(x, 1)
         x = self.outlayer(x) 
+        x = self.log_softmax(x) 
         return x
 
-    def fit(self, trainloader, epochs=10, verbose=True):
+    def fit(self, train_dataset, testloader, batch_size, epochs=10, verbose=True):
         """
             Function for training the network
         """
 
-        # TODO: DEFINE TRAINING PARAMETERS HERE
+        # TODO: ADD regularization
 
-        criterion = nn.CrossEntropyLoss()
+        # negative log-likelihood loss
+        criterion = nn.NLLLoss()
         # same paramters as used in the paper
-        optimizer = optim.SGD(self.parameters(), lr=0.1, momentum=0.9, weight_decay=0.0001)
-        scheduler = optim.lr_scheduler.ReduceLROnPlateau(optimizer, 'min')
+        optimizer = optim.SGD(
+                        self.parameters(), 
+                        lr=0.1, 
+                        momentum=0.9,
+                        weight_decay=3e-4, 
+                        nesterov=True
+                    )
+        # TODO: REDO THIS TO REFELECT THE LEARNING RATE DECAY IN THE PAPER
+        scheduler = optim.lr_scheduler.StepLR(optimizer, step_size=60, gamma=0.2)
         
-        # Dataloaders
-        #train_loader = data.train_loader
-        #val_loader = data.val_loader
-
         training_losses = []
         training_accuracy = []
-      
-        for epoch in range(epochs):  
+        
+        for epoch in range(epochs):      
             # training mode
             self.train()
             # Training loss
             training_loss = 0
-            # Accuracy variables
-            correct = 0
-            total = 0
-            for x, y in trainloader:   
 
-                BATCHSIZE = 150
+            # TODO: Is there a better/faster way to sample batches randomly from Dataloader?
+            # This randomly shuffles the dataset at each epoch
+            training_iterator = iter(
+                                    torch.utils.data.DataLoader(
+                                        train_dataset, 
+                                        batch_size=batch_size,
+                                        shuffle=True, 
+                                        num_workers=2
+                                ))
+            xs = []
+            ys = []
+            for _ in range(self.ensemble_size):
+                x, y = next(training_iterator)
+                # repeat the batches 'self.batch_repitition' times
+                xs.append(torch.cat(self.batch_repitition * [x]))
+                ys.append(torch.cat(self.batch_repitition * [y]))
 
-                x = torch.cat(self.ensemble_size*[x]) # TODO: SAMPLE self.ensemble_size DATAPOINTS RANDOMLY
-                x = x.reshape(BATCHSIZE, self.ensemble_size, 3, 32, 32)
+            x = torch.cat(xs)
+            batch_size = x.size(dim=0) // self.ensemble_size
+            x = x.reshape(batch_size, self.ensemble_size, 3, 32, 32) # TODO: FIX HARDCODINGS
 
-                optimizer.zero_grad()
-                # Forward propagation
-                outputs = self(x)
+            optimizer.zero_grad()
+            # Forward propagation
+            outputs = self(x)  # NOTE: Takes long time
+            # We want (ensamble, batchsize, class-predictions)
+            outputs = outputs.reshape(self.ensemble_size, batch_size, self.num_classes)
+            #outputs = torch.mean(outputs, dim=0) # NOTE: USE WHEN EVALUATING
 
-                # We want (ensamble, batchsize, class-predictions)
-                outputs = outputs.reshape(self.ensemble_size, BATCHSIZE, 10)
-                outputs = torch.mean(outputs, dim=0) # NOTE: USE WHEN EVALUATING
-              
-                loss = criterion(outputs, y)
-                # Backward propagation
-                loss.backward()
-                optimizer.step()
-                # Training loss
-                training_loss+= loss.item()
+            # calculate loss as sum of all ensemble losses
+            loss = sum([criterion(outputs[i], ys[i]) for i in range(self.ensemble_size)])
 
-                # Calculate training accuracy
-                _, predicted = torch.max(outputs.data, 1)
-                total += y.size(0)
-                correct += (predicted == y).sum().item()
-    
-            # Training accuracy
-            train_acc =  100 * (correct / total)
-            # Training loss
-            training_loss /= len(trainloader)
+            # Backward propagation
+            loss.backward()
+            optimizer.step()
+            scheduler.step()
             
+            # Training loss
+            training_loss+= loss.item()
+
+            training_loss /= len(training_iterator)
             # Print training loss
             if verbose:
                 print(f'Training Loss: {training_loss}')
-                print(f'Training Accuracy: {train_acc}')
 
-            # Store training scores
-            training_losses.append(training_loss) 
-            training_accuracy.append(train_acc)
+            # Evaluate network
+            self.eval(testloader)         
 
-        return None
+
+    def eval(self, testloader):
+        """ 
+            Evaluate network
+        """
+        
+        correct = 0
+        total = 0
+        # again no gradients needed
+        with torch.no_grad():
+            for x_test, y_test in testloader:
+
+                # repeat input M times
+                x_test = torch.cat(self.ensemble_size * [x_test])
+                batch_size = x_test.size(dim=0) // self.ensemble_size
+                x_test = x_test.reshape(batch_size, self.ensemble_size, 3, 32, 32) # TODO: FIX HARDCODINGS
+                outputs = self(x_test)
+                # We want (ensamble, batchsize, class-predictions)
+                outputs = outputs.reshape(self.ensemble_size, batch_size, self.num_classes)
+                # calculate mean across ensembles
+                outputs = torch.mean(outputs, dim=0) 
+                _, preds = torch.max(outputs, 1)
+
+                # calculate accuracy
+                total += y_test.size(0)
+                correct += (preds == y_test).sum().item()
+
+            print(f"Testing Accuracy: {100 * (correct / total)}")
+
+
+
+
         
 
 class DenseMultihead(torch.nn.Linear):
