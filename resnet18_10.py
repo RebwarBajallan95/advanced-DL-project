@@ -110,7 +110,19 @@ class mimo_wide_resnet18(nn.Module):
                         ensemble_size=self.ensemble_size
                     )
         self.log_softmax = nn.LogSoftmax(dim=2) # NOTE: Which dim?
+        # initialize weights
+        self = self.apply(self.weight_init)
 
+
+    def weight_init(self, layer):
+        """
+            Layer wight initialization
+        """
+        if isinstance(layer, nn.Conv2d):
+            nn.init.kaiming_normal_(layer.weight)
+        if isinstance(layer, DenseMultihead):
+            nn.init.kaiming_normal_(layer.weight)
+            nn.init.zeros_(layer.bias)
 
     def forward(self, input: Tensor) -> Tensor:
         """
