@@ -3,7 +3,6 @@ import functools
 import torch.nn as nn
 from torch import Tensor
 import torch.optim as optim
-from tqdm import tqdm
 
 
 # TODO: HOW TO ADD kernel_initializer='he_normal' in Pytorch?
@@ -86,7 +85,7 @@ class mimo_wide_resnet18(nn.Module):
         self.conv1 = Conv2D(3*ensemble_size, 16, kernel_size=3, stride=1, padding=1)
         # add the residual blocks
         group_blocks = list()
-        group_blocks.append(ResidualBlock(input_dim=16, output_dim=16*width_multiplier, stride=2))
+        group_blocks.append(ResidualBlock(input_dim=16, output_dim=16*width_multiplier, stride=1))
         group_blocks.append(ResidualBlock(input_dim=16*width_multiplier, output_dim=16*width_multiplier, stride=1))
         self.conv_group1 = nn.Sequential(*group_blocks)
 
@@ -111,7 +110,7 @@ class mimo_wide_resnet18(nn.Module):
                         nr_units=self.num_classes,
                         ensemble_size=self.ensemble_size
                     )
-        self.log_softmax = nn.LogSoftmax(dim = 1)
+        self.log_softmax = nn.LogSoftmax(dim=2) # NOTE: Which dim?
 
 
     def forward(self, input: Tensor) -> Tensor:
@@ -156,26 +155,35 @@ class mimo_wide_resnet18(nn.Module):
                     )
         # TODO: REDO THIS TO REFELECT THE LEARNING RATE DECAY IN THE PAPER
         scheduler = optim.lr_scheduler.StepLR(optimizer, step_size=60, gamma=0.2)
-               
+
+        # TODO: Is there a better/faster way to sample batches randomly from Dataloader?
+        # This randomly shuffles the dataset at each epoch
+        trainloader = torch.utils.data.DataLoader(
+                                    train_dataset, 
+                                    batch_size=batch_size,
+                                    shuffle=True, 
+                                    num_workers=2,
+                                    drop_last=True
+                    )
+        training_iterator = iter(trainloader)
+
         for epoch in range(epochs):      
+            print("Epoch: ", epoch)
             # training mode
             self.train()
             # Training loss
             training_loss = 0
 
-            # TODO: Is there a better/faster way to sample batches randomly from Dataloader?
-            # This randomly shuffles the dataset at each epoch
-            training_iterator = iter(
-                                    torch.utils.data.DataLoader(
-                                        train_dataset, 
-                                        batch_size=batch_size,
-                                        shuffle=True, 
-                                        num_workers=2
-                                ))
             xs = []
             ys = []
             for _ in range(self.ensemble_size):
-                x, y = next(training_iterator)
+                # get random sample batch from training set
+                try:
+                  x, y = next(training_iterator)
+                except StopIteration:
+                  training_iterator = iter(trainloader)
+                  x, y = next(training_iterator)
+
                 # map to cuda if GPU available
                 x = x.to(next(self.parameters()).device)
                 y = y.to(next(self.parameters()).device)
@@ -248,9 +256,6 @@ class mimo_wide_resnet18(nn.Module):
             print(f"Testing Accuracy: {100 * (correct / total)}")
 
 
-
-
-        
 
 class DenseMultihead(torch.nn.Linear):
     """ 
