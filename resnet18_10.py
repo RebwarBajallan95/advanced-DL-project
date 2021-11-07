@@ -53,7 +53,7 @@ class ResidualBlock(nn.Module):
         out = self.relu1(out)
         out = self.conv2(out)
         out = self.bn2(out)
-        out = self.shortcut(x)
+        out += self.shortcut(x)
         out = self.relu2(out)
         return out
         
@@ -214,7 +214,11 @@ class mimo_wide_resnet18(nn.Module):
             #outputs = torch.mean(outputs, dim=0) # NOTE: USE WHEN EVALUATING
 
             # calculate loss as sum of all ensemble losses
-            loss = sum([criterion(outputs[i], ys[i]) for i in range(self.ensemble_size)])
+            #loss = sum([criterion(outputs[i], ys[i]) for i in range(self.ensemble_size)])
+
+            loss = 0
+            for i in range(self.ensemble_size):
+                loss += criterion(outputs[i], ys[i])
 
             # Backward propagation
             loss.backward()
