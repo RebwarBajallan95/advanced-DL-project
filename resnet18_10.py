@@ -109,7 +109,7 @@ class mimo_wide_resnet18(nn.Module):
                         nr_units=self.num_classes,
                         ensemble_size=self.ensemble_size
                     )
-        self.log_softmax = nn.LogSoftmax(dim=2) # NOTE: Which dim?
+        self.log_softmax = nn.LogSoftmax(dim=2) 
         # initialize weights
         self = self.apply(self.weight_init)
 
@@ -165,7 +165,7 @@ class mimo_wide_resnet18(nn.Module):
                         nesterov=True
                     )
         # TODO: REDO THIS TO REFELECT THE LEARNING RATE DECAY IN THE PAPER
-        scheduler = optim.lr_scheduler.StepLR(optimizer, step_size=60, gamma=0.2)
+        scheduler = optim.lr_scheduler.StepLR(optimizer, step_size=60, gamma=0.1)
 
         # TODO: Is there a better/faster way to sample batches randomly from Dataloader?
         # This randomly shuffles the dataset at each epoch
@@ -224,13 +224,13 @@ class mimo_wide_resnet18(nn.Module):
             # Training loss
             training_loss+= loss.item()
 
-            training_loss /= len(training_iterator)
             # Print training loss
             if verbose:
                 print(f'Training Loss: {training_loss}')
 
-            # Evaluate network
-            self.eval(testloader)         
+            if (epoch % 25) == 0:
+              # Evaluate network
+              self.eval(testloader)         
 
 
     def eval(self, testloader):
