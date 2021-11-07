@@ -101,8 +101,7 @@ class mimo_wide_resnet18(nn.Module):
     
         self.bn1 = BatchNorm(64*width_multiplier)
         self.relu1 = nn.ReLU(inplace=True)
-        #self.avg_pool = nn.AvgPool2d(kernel_size=8) # NOTE: This didn't work, why?
-        self.avg_pool = nn.AdaptiveAvgPool2d((1, 1))  # NOTE: Does this do the same thing as above?
+        self.avg_pool = nn.AvgPool2d(kernel_size=8)
         # classification layers
         self.fc1 = nn.Linear(64*width_multiplier, num_classes, bias=True)
         self.outlayer = DenseMultihead(
