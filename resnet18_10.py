@@ -239,6 +239,7 @@ class mimo_wide_resnet18(nn.Module):
                 # repeat input M times
                 x_test = torch.cat(self.ensemble_size * [x_test])
                 batch_size = x_test.size(dim=0) // self.ensemble_size
+                x_test = x_test.reshape(batch_size, self.ensemble_size, 3, 32, 32) 
 
                 # map to cuda if GPU available
                 x_test = x_test.to(next(self.parameters()).device)
