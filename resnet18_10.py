@@ -147,7 +147,7 @@ class mimo_wide_resnet18(nn.Module):
         x = self.log_softmax(x) 
         return x
 
-    def fit(self, train_dataset, testloader, batch_size, epochs=10, verbose=True):
+    def fit(self, trainloader, testloader, batch_size, epochs=10, verbose=True):
         """
             Function for training the network
         """
@@ -167,15 +167,6 @@ class mimo_wide_resnet18(nn.Module):
         # TODO: REDO THIS TO REFELECT THE LEARNING RATE DECAY IN THE PAPER
         scheduler = optim.lr_scheduler.StepLR(optimizer, step_size=60, gamma=0.1)
 
-        # TODO: Is there a better/faster way to sample batches randomly from Dataloader?
-        # This randomly shuffles the dataset at each epoch
-        trainloader = torch.utils.data.DataLoader(
-                                    train_dataset, 
-                                    batch_size=batch_size,
-                                    shuffle=True, 
-                                    num_workers=2,
-                                    drop_last=True
-                    )
         training_iterator = iter(trainloader)
 
         for epoch in range(epochs):      
@@ -204,14 +195,11 @@ class mimo_wide_resnet18(nn.Module):
 
             x = torch.cat(xs)
             batch_size = x.size(dim=0) // self.ensemble_size
-            x = x.reshape(batch_size, self.ensemble_size, 3, 32, 32) # TODO: FIX HARDCODINGS
+            x = x.reshape(batch_size, self.ensemble_size, 3, 32, 32) 
 
             optimizer.zero_grad()
             # Forward propagation
-            outputs = self(x)  # NOTE: Takes long time
-            # We want (ensamble, batchsize, class-predictions)
-            outputs = outputs.reshape(self.ensemble_size, batch_size, self.num_classes)
-            #outputs = torch.mean(outputs, dim=0) # NOTE: USE WHEN EVALUATING
+            outputs = self(x)  
 
             # calculate loss as sum of all ensemble losses
             #loss = sum([criterion(outputs[i], ys[i]) for i in range(self.ensemble_size)])
@@ -251,7 +239,6 @@ class mimo_wide_resnet18(nn.Module):
                 # repeat input M times
                 x_test = torch.cat(self.ensemble_size * [x_test])
                 batch_size = x_test.size(dim=0) // self.ensemble_size
-                x_test = x_test.reshape(batch_size, self.ensemble_size, 3, 32, 32) # TODO: FIX HARDCODINGS
 
                 # map to cuda if GPU available
                 x_test = x_test.to(next(self.parameters()).device)
@@ -295,7 +282,7 @@ class DenseMultihead(torch.nn.Linear):
         outputs = super().forward(inputs)
         outputs = torch.reshape(
             outputs,
-            [batch_size, self.ensemble_size, self.out_features // self.ensemble_size])
+            [self.ensemble_size, batch_size, self.out_features // self.ensemble_size])
         return outputs
 
 
