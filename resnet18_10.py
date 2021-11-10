@@ -3,7 +3,8 @@ import functools
 import torch.nn as nn
 from torch import Tensor
 import torch.optim as optim
-
+from tqdm import tqdm
+import uncertainty_metrics as um
 
 # TODO: HOW TO ADD kernel_initializer='he_normal' in Pytorch?
 
@@ -152,8 +153,6 @@ class mimo_wide_resnet18(nn.Module):
             Function for training the network
         """
 
-        # TODO: ADD regularization
-
         # negative log-likelihood loss
         criterion = nn.NLLLoss()
         # same paramters as used in the paper
@@ -167,9 +166,7 @@ class mimo_wide_resnet18(nn.Module):
         # TODO: REDO THIS TO REFELECT THE LEARNING RATE DECAY IN THE PAPER
         scheduler = optim.lr_scheduler.StepLR(optimizer, step_size=60, gamma=0.1)
 
-        training_iterator = iter(trainloader)
-
-        for epoch in range(epochs):      
+        for epoch in range(epochs):
             print("Epoch: ", epoch)
             # training mode
             self.train()
@@ -178,14 +175,8 @@ class mimo_wide_resnet18(nn.Module):
 
             xs = []
             ys = []
-            for _ in range(self.ensemble_size):
-                # get random sample batch from training set
-                try:
-                  x, y = next(training_iterator)
-                except StopIteration:
-                  training_iterator = iter(trainloader)
-                  x, y = next(training_iterator)
-
+            for _, (x, y) in tqdm(enumerate(trainloader)):
+            
                 # map to cuda if GPU available
                 x = x.to(next(self.parameters()).device)
                 y = y.to(next(self.parameters()).device)
@@ -193,43 +184,48 @@ class mimo_wide_resnet18(nn.Module):
                 xs.append(torch.cat(self.batch_repitition * [x]))
                 ys.append(torch.cat(self.batch_repitition * [y]))
 
-            x = torch.cat(xs)
-            batch_size = x.size(dim=0) // self.ensemble_size
-            x = x.reshape(batch_size, self.ensemble_size, 3, 32, 32) 
+                if len(xs) == self.ensemble_size: 
 
-            optimizer.zero_grad()
-            # Forward propagation
-            outputs = self(x)  
+                    x = torch.cat(xs)
+                    batch_size = x.size(dim=0) // self.ensemble_size
+                    x = x.reshape(batch_size, self.ensemble_size, 3, 32, 32) 
 
-            # calculate loss as sum of all ensemble losses
-            #loss = sum([criterion(outputs[i], ys[i]) for i in range(self.ensemble_size)])
+                    optimizer.zero_grad()
+                    # Forward propagation
+                    outputs = self(x)  
 
-            loss = 0
-            for i in range(self.ensemble_size):
-                loss += criterion(outputs[i], ys[i])
+                    loss = 0
+                    for i in range(self.ensemble_size):
+                        loss += criterion(outputs[i], ys[i])
 
-            # Backward propagation
-            loss.backward()
-            optimizer.step()
+                    # Backward propagation
+                    loss.backward()
+                    optimizer.step()
+                    # Training loss
+                    training_loss+= loss.item()
+                    
+                    xs = []
+                    ys = []
+
             scheduler.step()
-            
-            # Training loss
-            training_loss+= loss.item()
 
             # Print training loss
             if verbose:
-                print(f'Training Loss: {training_loss}')
-
-            if (epoch % 25) == 0:
-              # Evaluate network
-              self.eval(testloader)         
+                print(f'Training Loss: {training_loss/len(trainloader)}')
+            # Evaluate network
+            self.eval(testloader)         
 
 
     def eval(self, testloader):
         """ 
             Evaluate network
         """
-        
+
+        # ECE number of bins
+        num_bins = 15
+        # negative log-likelihood loss
+        criterion = nn.NLLLoss()
+
         correct = 0
         total = 0
         # again no gradients needed
@@ -246,10 +242,11 @@ class mimo_wide_resnet18(nn.Module):
                 y_test = y_test.to(next(self.parameters()).device)
 
                 outputs = self(x_test)
-                # We want (ensamble, batchsize, class-predictions)
-                outputs = outputs.reshape(self.ensemble_size, batch_size, self.num_classes)
                 # calculate mean across ensembles
                 outputs = torch.mean(outputs, dim=0) 
+                # testing loss
+                loss = criterion(outputs, y_test)
+                #ece = um.numpy.ece(labels=y_test.cpu(), probs=outputs.cpu(), num_bins=num_bins)
                 _, preds = torch.max(outputs, 1)
 
                 # calculate accuracy
@@ -257,6 +254,8 @@ class mimo_wide_resnet18(nn.Module):
                 correct += (preds == y_test).sum().item()
 
             print(f"Testing Accuracy: {100 * (correct / total)}")
+            print(f"Testing loss: {(loss /len(testloader))}")
+            #print(f"Testing ECE: {ece/len(testloader)}") # TODO
 
 
 
