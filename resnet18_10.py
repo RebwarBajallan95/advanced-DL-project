@@ -148,11 +148,13 @@ class mimo_wide_resnet18(nn.Module):
         x = self.log_softmax(x) 
         return x
 
-    def fit(self, trainloader, testloader, batch_size, epochs=10, verbose=True):
+    def fit(self, trainloader, testloader, batch_size, dataset_size, epochs=10, verbose=True):
         """
             Function for training the network
         """
 
+        # steps per epoch
+        steps_per_epoch = dataset_size // batch_size
         # negative log-likelihood loss
         criterion = nn.NLLLoss()
         # same paramters as used in the paper
@@ -165,6 +167,7 @@ class mimo_wide_resnet18(nn.Module):
                     )
         # TODO: REDO THIS TO REFELECT THE LEARNING RATE DECAY IN THE PAPER
         scheduler = optim.lr_scheduler.StepLR(optimizer, step_size=60, gamma=0.1)
+        training_iterator = iter(trainloader)
 
         for epoch in range(epochs):
             print("Epoch: ", epoch)
@@ -172,46 +175,41 @@ class mimo_wide_resnet18(nn.Module):
             self.train()
             # Training loss
             training_loss = 0
+            for _ in tqdm(range(steps_per_epoch)):
+                xs = []
+                ys = []
+                training_iterator = iter(trainloader)
+                for _ in range(self.ensemble_size):
+                    # get random sample batch from training set
+                    x, y = next(training_iterator)
+                    # map to cuda if GPU available
+                    x = x.to(next(self.parameters()).device)
+                    y = y.to(next(self.parameters()).device)
+                    # repeat the batches 'self.batch_repitition' times
+                    xs.append(torch.cat(self.batch_repitition * [x]))
+                    ys.append(torch.cat(self.batch_repitition * [y]))
 
-            xs = []
-            ys = []
-            for _, (x, y) in tqdm(enumerate(trainloader)):
-            
-                # map to cuda if GPU available
-                x = x.to(next(self.parameters()).device)
-                y = y.to(next(self.parameters()).device)
-                # repeat the batches 'self.batch_repitition' times
-                xs.append(torch.cat(self.batch_repitition * [x]))
-                ys.append(torch.cat(self.batch_repitition * [y]))
+                x = torch.cat(xs)
+                batch_size = x.size(dim=0) // self.ensemble_size
+                x = x.reshape(batch_size, self.ensemble_size, 3, 32, 32) 
+                optimizer.zero_grad()
+                # Forward propagation
+                outputs = self(x)  
 
-                if len(xs) == self.ensemble_size: 
+                loss = 0
+                for i in range(self.ensemble_size):
+                    loss += criterion(outputs[i], ys[i])
 
-                    x = torch.cat(xs)
-                    batch_size = x.size(dim=0) // self.ensemble_size
-                    x = x.reshape(batch_size, self.ensemble_size, 3, 32, 32) 
-
-                    optimizer.zero_grad()
-                    # Forward propagation
-                    outputs = self(x)  
-
-                    loss = 0
-                    for i in range(self.ensemble_size):
-                        loss += criterion(outputs[i], ys[i])
-
-                    # Backward propagation
-                    loss.backward()
-                    optimizer.step()
-                    # Training loss
-                    training_loss+= loss.item()
-                    
-                    xs = []
-                    ys = []
-
+                # Backward propagation
+                loss.backward()
+                optimizer.step()
+                # Training loss
+                training_loss+= loss.item()
+                        
             scheduler.step()
-
             # Print training loss
             if verbose:
-                print(f'Training Loss: {training_loss/len(trainloader)}')
+                print(f'Training Loss: {training_loss}')
             # Evaluate network
             self.eval(testloader)         
 
@@ -254,7 +252,7 @@ class mimo_wide_resnet18(nn.Module):
                 correct += (preds == y_test).sum().item()
 
             print(f"Testing Accuracy: {100 * (correct / total)}")
-            print(f"Testing loss: {(loss /len(testloader))}")
+            print(f"Testing loss: {loss}")
             #print(f"Testing ECE: {ece/len(testloader)}") # TODO
 
 
