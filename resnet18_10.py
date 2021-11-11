@@ -3,10 +3,11 @@ import functools
 import torch.nn as nn
 from torch import Tensor
 import torch.optim as optim
+import torch.nn.functional as F
 from tqdm import tqdm
 import uncertainty_metrics as um
+from collections import defaultdict
 
-# TODO: HOW TO ADD kernel_initializer='he_normal' in Pytorch?
 
 # Pre-initialized functions
 Conv2D = functools.partial(  
@@ -59,7 +60,6 @@ class ResidualBlock(nn.Module):
         return out
         
        
-
 class mimo_wide_resnet18(nn.Module):
     """
         Wide resnet18-k
@@ -104,17 +104,14 @@ class mimo_wide_resnet18(nn.Module):
         self.relu1 = nn.ReLU(inplace=True)
         self.avg_pool = nn.AvgPool2d(kernel_size=8)
         # classification layers
-        self.fc1 = nn.Linear(64*width_multiplier, num_classes, bias=True)
         self.outlayer = DenseMultihead(
                         input_size=64*width_multiplier, 
                         nr_units=self.num_classes,
                         ensemble_size=self.ensemble_size
                     )
-        self.log_softmax = nn.LogSoftmax(dim=2) 
         # initialize weights
         self = self.apply(self.weight_init)
-
-
+                               
     def weight_init(self, layer):
         """
             Layer wight initialization
@@ -129,13 +126,9 @@ class mimo_wide_resnet18(nn.Module):
         """
             Resnet18-k forward pass
         """
-    
         # batchsize needed when reshaping
         batch_size = input.size(dim=0)
-
-        #x = torch.permute(input, dims=(0, 1, 2, 3, 4)) # NOTE: Why permute?
         x = torch.reshape(input, shape=[batch_size, self.input_shape[1] * self.ensemble_size] + self.input_shape[2:])       
-
         x = self.conv1(x)
         x = self.conv_group1(x)
         x = self.conv_group2(x)
@@ -145,16 +138,26 @@ class mimo_wide_resnet18(nn.Module):
         x = self.avg_pool(x)
         x = torch.flatten(x, 1)
         x = self.outlayer(x) 
-        x = self.log_softmax(x) 
         return x
 
-    def fit(self, trainloader, testloader, batch_size, dataset_size, epochs=10, verbose=True):
+    def fit(
+        self, 
+        trainloader, 
+        testloader, 
+        batch_size, 
+        trainset_size, 
+        epochs=10, 
+        save_mode_epochs=25,
+        verbose=True
+        ):
         """
             Function for training the network
         """
-
+        # store loggings
+        running_stats = dict()
         # steps per epoch
-        steps_per_epoch = dataset_size // batch_size
+        steps_per_epoch = trainset_size // batch_size
+        steps_per_epoch=2
         # negative log-likelihood loss
         criterion = nn.NLLLoss()
         # same paramters as used in the paper
@@ -168,8 +171,15 @@ class mimo_wide_resnet18(nn.Module):
         # TODO: REDO THIS TO REFELECT THE LEARNING RATE DECAY IN THE PAPER
         scheduler = optim.lr_scheduler.StepLR(optimizer, step_size=60, gamma=0.1)
         training_iterator = iter(trainloader)
-
         for epoch in range(epochs):
+            # loggings
+            running_stats[epoch] = {
+                    "Training loss": [],
+                    "Training ECE": [],
+                    "Testing loss": [],
+                    "Testing Accuracy": [],
+                    "Testing ECE": [],
+                }
             print("Epoch: ", epoch)
             # training mode
             self.train()
@@ -194,11 +204,12 @@ class mimo_wide_resnet18(nn.Module):
                 x = x.reshape(batch_size, self.ensemble_size, 3, 32, 32) 
                 optimizer.zero_grad()
                 # Forward propagation
-                outputs = self(x)  
-
+                logits = self(x)  
+                log_probs = F.log_softmax(logits, dim=2)
+                
                 loss = 0
                 for i in range(self.ensemble_size):
-                    loss += criterion(outputs[i], ys[i])
+                    loss += criterion(log_probs[i], ys[i])
 
                 # Backward propagation
                 loss.backward()
@@ -210,22 +221,34 @@ class mimo_wide_resnet18(nn.Module):
             # Print training loss
             if verbose:
                 print(f'Training Loss: {training_loss}')
+        
             # Evaluate network
-            self.eval(testloader)         
+            test_acc, test_loss, test_ece = self.eval(testloader)
+
+            running_stats[epoch]["Training loss"].append(training_loss)
+            running_stats[epoch]["Testing Accuracy"].append(test_acc)
+            running_stats[epoch]["Testing loss"].append(test_loss)
+            running_stats[epoch]["Testing ECE"].append(test_ece)
 
 
+            # save model
+            if (epochs % save_mode_epochs == 0) and epochs != 0:
+                torch.save(self, "models/resnet18_10.pt") 
+
+        return running_stats
+
+            
     def eval(self, testloader):
         """ 
             Evaluate network
         """
-
         # ECE number of bins
         num_bins = 15
         # negative log-likelihood loss
         criterion = nn.NLLLoss()
-
         correct = 0
         total = 0
+        ece = 0
         # again no gradients needed
         with torch.no_grad():
             for x_test, y_test in testloader:
@@ -239,23 +262,30 @@ class mimo_wide_resnet18(nn.Module):
                 x_test = x_test.to(next(self.parameters()).device)
                 y_test = y_test.to(next(self.parameters()).device)
 
-                outputs = self(x_test)
+                logits = self(x_test)
                 # calculate mean across ensembles
-                outputs = torch.mean(outputs, dim=0) 
+                logits = torch.mean(logits, dim=0) 
                 # testing loss
-                loss = criterion(outputs, y_test)
-                #ece = um.numpy.ece(labels=y_test.cpu(), probs=outputs.cpu(), num_bins=num_bins)
-                _, preds = torch.max(outputs, 1)
+                loss = criterion(F.log_softmax(logits, dim=1), y_test)
 
+                probs = F.softmax(logits, dim=1)
+                ece = um.numpy.ece(labels=y_test.cpu(), probs=probs.cpu(), num_bins=num_bins)
+                _, preds = torch.max(probs, 1)
+                
                 # calculate accuracy
                 total += y_test.size(0)
                 correct += (preds == y_test).sum().item()
+                ece += ece
 
-            print(f"Testing Accuracy: {100 * (correct / total)}")
+            accuracy = 100 * (correct / total)
+            loss = loss.item()
+            print(f"Testing Accuracy: {accuracy}")
             print(f"Testing loss: {loss}")
-            #print(f"Testing ECE: {ece/len(testloader)}") # TODO
+            print(f"Testing ECE: {ece}")
 
+            return accuracy, loss, ece
 
+            
 
 class DenseMultihead(torch.nn.Linear):
     """ 
