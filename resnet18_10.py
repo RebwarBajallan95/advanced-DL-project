@@ -220,12 +220,12 @@ class mimo_wide_resnet18(nn.Module):
             scheduler.step()
             # Print training loss
             if verbose:
-                print(f'Training Loss: {training_loss//len(trainloader)}')
+                print(f'Training Loss: {training_loss/len(trainloader)}')
         
             # Evaluate network
             test_acc, test_loss, test_ece = self.eval(testloader)
 
-            self.running_stats[epoch]["Training loss"].append(training_loss//len(trainloader))
+            self.running_stats[epoch]["Training loss"].append(training_loss/len(trainloader))
             self.running_stats[epoch]["Testing Accuracy"].append(test_acc)
             self.running_stats[epoch]["Testing loss"].append(test_loss)
             self.running_stats[epoch]["Testing ECE"].append(test_ece)
