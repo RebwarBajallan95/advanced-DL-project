@@ -111,6 +111,8 @@ class mimo_wide_resnet18(nn.Module):
                     )
         # initialize weights
         self = self.apply(self.weight_init)
+        # store loggings
+        self.running_stats = dict()
                                
     def weight_init(self, layer):
         """
@@ -153,11 +155,8 @@ class mimo_wide_resnet18(nn.Module):
         """
             Function for training the network
         """
-        # store loggings
-        running_stats = dict()
         # steps per epoch
         steps_per_epoch = trainset_size // batch_size
-        steps_per_epoch=2
         # negative log-likelihood loss
         criterion = nn.NLLLoss()
         # same paramters as used in the paper
@@ -171,11 +170,12 @@ class mimo_wide_resnet18(nn.Module):
         # TODO: REDO THIS TO REFELECT THE LEARNING RATE DECAY IN THE PAPER
         scheduler = optim.lr_scheduler.StepLR(optimizer, step_size=60, gamma=0.1)
         training_iterator = iter(trainloader)
-        for epoch in range(epochs):
+        for _ in range(epochs):
+
+            epoch = list(self.running_stats.keys())[-1] + 1 if len(self.running_stats) > 0 else 0
             # loggings
-            running_stats[epoch] = {
+            self.running_stats[epoch] = {
                     "Training loss": [],
-                    "Training ECE": [],
                     "Testing loss": [],
                     "Testing Accuracy": [],
                     "Testing ECE": [],
@@ -225,17 +225,14 @@ class mimo_wide_resnet18(nn.Module):
             # Evaluate network
             test_acc, test_loss, test_ece = self.eval(testloader)
 
-            running_stats[epoch]["Training loss"].append(training_loss)
-            running_stats[epoch]["Testing Accuracy"].append(test_acc)
-            running_stats[epoch]["Testing loss"].append(test_loss)
-            running_stats[epoch]["Testing ECE"].append(test_ece)
-
+            self.running_stats[epoch]["Training loss"].append(training_loss)
+            self.running_stats[epoch]["Testing Accuracy"].append(test_acc)
+            self.running_stats[epoch]["Testing loss"].append(test_loss)
+            self.running_stats[epoch]["Testing ECE"].append(test_ece)
 
             # save model
             if (epochs % save_mode_epochs == 0) and epochs != 0:
                 torch.save(self, "models/resnet18_10.pt") 
-
-        return running_stats
 
             
     def eval(self, testloader):
