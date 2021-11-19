@@ -179,10 +179,9 @@ class mimo_wide_resnet18(nn.Module):
             epoch = list(self.running_stats.keys())[-1] + 1 if len(self.running_stats) > 0 else 0
             # loggings
             self.running_stats[epoch] = {
-                    "Training loss": [],
-                    "Testing loss": [],
-                    "Testing Accuracy": [],
-                    "Testing ECE": [],
+                    "Training loss": None,
+                    "Testing loss": None,
+                    "Testing Accuracy": None,
                 }
             print("Epoch: ", epoch)
             # training mode
@@ -229,10 +228,9 @@ class mimo_wide_resnet18(nn.Module):
             # Evaluate network
             test_acc, test_loss, test_ece = self.eval(testloader)
 
-            self.running_stats[epoch]["Training loss"].append(training_loss/len(trainloader))
-            self.running_stats[epoch]["Testing Accuracy"].append(test_acc)
-            self.running_stats[epoch]["Testing loss"].append(test_loss)
-            self.running_stats[epoch]["Testing ECE"].append(test_ece)
+            self.running_stats[epoch]["Training loss"] = training_loss/len(trainloader)
+            self.running_stats[epoch]["Testing Accuracy"] = test_acc
+            self.running_stats[epoch]["Testing loss"] = test_loss
 
             # save model
             if (epochs % save_mode_epochs == 0) and epochs != 0:
@@ -270,19 +268,19 @@ class mimo_wide_resnet18(nn.Module):
                 loss = criterion(F.log_softmax(logits, dim=1), y_test)
 
                 probs = F.softmax(logits, dim=1)
-                ece = um.numpy.ece(labels=y_test.cpu(), probs=probs.cpu(), num_bins=num_bins)
+                #ece = um.numpy.ece(labels=y_test.cpu(), probs=probs.cpu(), num_bins=num_bins)
                 _, preds = torch.max(probs, 1)
                 
                 # calculate accuracy
                 total += y_test.size(0)
                 correct += (preds == y_test).sum().item()
-                ece += ece
+                #ece += ece
 
             accuracy = 100 * (correct / total)
             loss = loss.item()
             print(f"Testing Accuracy: {accuracy}")
             print(f"Testing loss: {loss}")
-            print(f"Testing ECE: {ece}")
+            #print(f"Testing ECE: {ece}")
 
             return accuracy, loss, ece
 
