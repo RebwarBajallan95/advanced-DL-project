@@ -32,7 +32,7 @@ class ResidualBlock(nn.Module):
                 stride: int = 1
         ) -> None:
         super().__init__()
-        self.bn1 = BatchNorm(output_dim)
+        self.bn1 = BatchNorm(input_dim)
         self.relu1 = nn.ReLU()
         self.conv1 = Conv2D(input_dim, output_dim, kernel_size=3, stride=stride, padding=1)
         self.bn2 = BatchNorm(output_dim)
@@ -50,13 +50,13 @@ class ResidualBlock(nn.Module):
         """
             Reisudual block forward pass
         """
-        out = self.conv1(x)
-        out = self.bn1(out)
+        out = self.bn1(x)
         out = self.relu1(out)
-        out = self.conv2(out)
+        out = self.conv1(out)
         out = self.bn2(out)
-        out += self.shortcut(x)
         out = self.relu2(out)
+        out = self.conv2(out)
+        out += self.shortcut(x)
         return out
         
        
@@ -111,9 +111,11 @@ class mimo_wide_resnet18(nn.Module):
                     )
         # initialize weights
         self = self.apply(self.weight_init)
+        
         # store loggings
         self.running_stats = dict()
                                
+    # NOTE: Check if this is correct
     def weight_init(self, layer):
         """
             Layer wight initialization
@@ -157,6 +159,7 @@ class mimo_wide_resnet18(nn.Module):
         """
         # steps per epoch
         steps_per_epoch = trainset_size // batch_size
+        steps_per_epoch=1
         # negative log-likelihood loss
         criterion = nn.NLLLoss()
         # same paramters as used in the paper
@@ -167,8 +170,9 @@ class mimo_wide_resnet18(nn.Module):
                         weight_decay=3e-4, 
                         nesterov=True
                     )
-        # TODO: REDO THIS TO REFELECT THE LEARNING RATE DECAY IN THE PAPER
-        scheduler = optim.lr_scheduler.StepLR(optimizer, step_size=60, gamma=0.1)
+        # epochs at which to decay learning rate
+        epochs_for_decay = [80, 160, 180]
+        scheduler = optim.lr_scheduler.StepLR(optimizer, step_size=1, gamma=0.1) # TODO: Is decay rate 0.1 (paper) or 0.2 (code)??
         training_iterator = iter(trainloader)
         for _ in range(epochs):
 
@@ -217,7 +221,7 @@ class mimo_wide_resnet18(nn.Module):
                 # Training loss
                 training_loss+= loss.item()
                         
-            scheduler.step()
+            if epoch in epochs_for_decay: scheduler.step()
             # Print training loss
             if verbose:
                 print(f'Training Loss: {training_loss/len(trainloader)}')
