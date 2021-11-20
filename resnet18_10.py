@@ -182,6 +182,7 @@ class mimo_wide_resnet18(nn.Module):
                     "Training loss": None,
                     "Testing loss": None,
                     "Testing Accuracy": None,
+                    "Testing ECE": None
                 }
             print("Epoch: ", epoch)
             # training mode
@@ -231,6 +232,7 @@ class mimo_wide_resnet18(nn.Module):
             self.running_stats[epoch]["Training loss"] = training_loss/len(trainloader)
             self.running_stats[epoch]["Testing Accuracy"] = test_acc
             self.running_stats[epoch]["Testing loss"] = test_loss
+            self.running_stats[epoch]["Testing ECE"] = test_ece
 
             # save model
             if (epochs % save_mode_epochs == 0) and epochs != 0:
