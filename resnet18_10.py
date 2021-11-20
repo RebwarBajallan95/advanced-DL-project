@@ -247,7 +247,8 @@ class mimo_wide_resnet18(nn.Module):
         criterion = nn.NLLLoss()
         correct = 0
         total = 0
-        ece = 0
+        running_ece = 0
+        running_loss = 0
         # again no gradients needed
         with torch.no_grad():
             for x_test, y_test in testloader:
@@ -268,21 +269,21 @@ class mimo_wide_resnet18(nn.Module):
                 loss = criterion(F.log_softmax(logits, dim=1), y_test)
 
                 probs = F.softmax(logits, dim=1)
-                #ece = um.numpy.ece(labels=y_test.cpu(), probs=probs.cpu(), num_bins=num_bins)
+                ece = um.numpy.ece(labels=y_test.cpu(), probs=probs.cpu(), num_bins=num_bins)
                 _, preds = torch.max(probs, 1)
                 
                 # calculate accuracy
                 total += y_test.size(0)
                 correct += (preds == y_test).sum().item()
-                #ece += ece
+                running_ece += ece
+                running_loss += loss.item()
 
             accuracy = 100 * (correct / total)
-            loss = loss.item()
             print(f"Testing Accuracy: {accuracy}")
-            print(f"Testing loss: {loss}")
-            #print(f"Testing ECE: {ece}")
+            print(f"Testing loss: {running_loss / len(testloader)}")
+            print(f"Testing ECE: {running_ece / len(testloader)}")
 
-            return accuracy, loss, ece
+            return accuracy, loss, running_ece
 
             
 
