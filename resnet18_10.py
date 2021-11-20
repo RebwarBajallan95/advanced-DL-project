@@ -159,7 +159,6 @@ class mimo_wide_resnet18(nn.Module):
         """
         # steps per epoch
         steps_per_epoch = trainset_size // batch_size
-        steps_per_epoch=1
         # negative log-likelihood loss
         criterion = nn.NLLLoss()
         # same paramters as used in the paper
