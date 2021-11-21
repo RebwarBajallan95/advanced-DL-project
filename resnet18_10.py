@@ -294,8 +294,8 @@ class mimo_wide_resnet18(nn.Module):
                 running_loss += loss.item()
 
             accuracy = 100 * (correct / testset_size)
-            member_accuracies = [100 * acc/testset_size for acc in member_accuracies]
-            member_accuracies = [loss/test_iterations for loss in member_losses]
+            member_accuracies = [100 * (acc/testset_size) for acc in member_accuracies]
+            member_losses = [loss/test_iterations for loss in member_losses]
             running_loss /= test_iterations
             running_ece /= test_iterations
             print(f"Testing Accuracy: {accuracy}")
