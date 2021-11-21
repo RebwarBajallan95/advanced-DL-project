@@ -216,14 +216,14 @@ class mimo_wide_resnet18(nn.Module):
             if epoch in epochs_for_decay: scheduler.step()
             # Print training loss
             if verbose:
-                print(f'Training Loss: {training_loss}')
+                print(f'Training Loss: {training_loss/steps_per_epoch}')
         
             # Evaluate network
             test_acc, test_loss, test_ece, member_accuracies, member_losses = self.eval(testloader)
 
             # loggings
             self.running_stats[epoch] = {}
-            self.running_stats[epoch]["Training loss"] = training_loss
+            self.running_stats[epoch]["Training loss"] = training_loss/steps_per_epoch
             self.running_stats[epoch]["Testing Accuracy"] = test_acc
             self.running_stats[epoch]["Testing loss"] = test_loss
             self.running_stats[epoch]["Testing ECE"] = test_ece
@@ -239,6 +239,7 @@ class mimo_wide_resnet18(nn.Module):
         """ 
             Evaluate network
         """
+        test_iterations = len(testloader)
         testset_size = 0
         # ECE number of bins
         num_bins = 15
@@ -294,6 +295,9 @@ class mimo_wide_resnet18(nn.Module):
 
             accuracy = 100 * (correct / testset_size)
             member_accuracies = [100 * acc/testset_size for acc in member_accuracies]
+            member_accuracies = [loss/test_iterations for loss in member_losses]
+            running_loss /= test_iterations
+            running_ece /= test_iterations
             print(f"Testing Accuracy: {accuracy}")
             print(f"Testing loss: {running_loss}")
             print(f"Testing ECE: {running_ece}")
