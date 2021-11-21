@@ -147,8 +147,7 @@ class mimo_wide_resnet18(nn.Module):
 
     def fit(
         self, 
-        X_train,
-        y_train, 
+        trainloader,
         testloader, 
         batch_size, 
         trainset_size,
@@ -173,16 +172,10 @@ class mimo_wide_resnet18(nn.Module):
                     )
         # epochs at which to decay learning rate
         epochs_for_decay = [80, 160, 180]
-        scheduler = optim.lr_scheduler.StepLR(optimizer, step_size=1, gamma=0.2) # TODO: Is decay rate 0.1 (paper) or 0.2 (code)??
+        scheduler = optim.lr_scheduler.StepLR(optimizer, step_size=1, gamma=0.1) # TODO: Is decay rate 0.1 (paper) or 0.2 (code)??
+        training_iterator = iter(trainloader)
         for _ in range(epochs):
             epoch = list(self.running_stats.keys())[-1] + 1 if len(self.running_stats) > 0 else 0
-            # loggings
-            self.running_stats[epoch] = {
-                    "Training loss": None,
-                    "Testing loss": None,
-                    "Testing Accuracy": None,
-                    "Testing ECE": None
-                }
             print("Epoch: ", epoch)
             # training mode
             self.train()
@@ -191,14 +184,13 @@ class mimo_wide_resnet18(nn.Module):
             for _ in tqdm(range(steps_per_epoch)):
                 xs = []
                 ys = []
+                training_iterator = iter(trainloader)
                 for _ in range(self.ensemble_size):
                     # get random sample batch from training set
-                    random_indxs = np.random.randint(trainset_size, size=batch_size)
-                    x = X_train[random_indxs]
-                    y = y_train[random_indxs]
+                    x, y = next(training_iterator)
                     # map to cuda if GPU available
-                    #x = x.to(next(self.parameters()).device)
-                    #y = y.to(next(self.parameters()).device)
+                    x = x.to(next(self.parameters()).device)
+                    y = y.to(next(self.parameters()).device)
                     # repeat the batches 'self.batch_repitition' times
                     xs.append(torch.cat(self.batch_repitition * [x]))
                     ys.append(torch.cat(self.batch_repitition * [y]))
@@ -224,12 +216,14 @@ class mimo_wide_resnet18(nn.Module):
             if epoch in epochs_for_decay: scheduler.step()
             # Print training loss
             if verbose:
-                print(f'Training Loss: {training_loss/trainset_size}')
+                print(f'Training Loss: {training_loss}')
         
             # Evaluate network
             test_acc, test_loss, test_ece, member_accuracies, member_losses = self.eval(testloader)
 
-            self.running_stats[epoch]["Training loss"] = training_loss/trainset_size
+            # loggings
+            self.running_stats[epoch] = {}
+            self.running_stats[epoch]["Training loss"] = training_loss
             self.running_stats[epoch]["Testing Accuracy"] = test_acc
             self.running_stats[epoch]["Testing loss"] = test_loss
             self.running_stats[epoch]["Testing ECE"] = test_ece
@@ -300,9 +294,6 @@ class mimo_wide_resnet18(nn.Module):
 
             accuracy = 100 * (correct / testset_size)
             member_accuracies = [100 * acc/testset_size for acc in member_accuracies]
-            member_losses = [loss/testset_size for loss in member_losses]
-            running_loss /= testset_size
-            running_ece /= testset_size 
             print(f"Testing Accuracy: {accuracy}")
             print(f"Testing loss: {running_loss}")
             print(f"Testing ECE: {running_ece}")
