@@ -5,6 +5,7 @@ from torch import Tensor
 import torch.optim as optim
 import torch.nn.functional as F
 from tqdm import tqdm
+import numpy as np
 import uncertainty_metrics as um
 from collections import defaultdict
 
@@ -146,10 +147,11 @@ class mimo_wide_resnet18(nn.Module):
 
     def fit(
         self, 
-        trainloader, 
+        X_train,
+        y_train, 
         testloader, 
         batch_size, 
-        trainset_size, 
+        trainset_size,
         epochs=10, 
         save_mode_epochs=25,
         verbose=True
@@ -171,10 +173,8 @@ class mimo_wide_resnet18(nn.Module):
                     )
         # epochs at which to decay learning rate
         epochs_for_decay = [80, 160, 180]
-        scheduler = optim.lr_scheduler.StepLR(optimizer, step_size=1, gamma=0.1) # TODO: Is decay rate 0.1 (paper) or 0.2 (code)??
-        training_iterator = iter(trainloader)
+        scheduler = optim.lr_scheduler.StepLR(optimizer, step_size=1, gamma=0.2) # TODO: Is decay rate 0.1 (paper) or 0.2 (code)??
         for _ in range(epochs):
-
             epoch = list(self.running_stats.keys())[-1] + 1 if len(self.running_stats) > 0 else 0
             # loggings
             self.running_stats[epoch] = {
@@ -191,20 +191,21 @@ class mimo_wide_resnet18(nn.Module):
             for _ in tqdm(range(steps_per_epoch)):
                 xs = []
                 ys = []
-                training_iterator = iter(trainloader)
                 for _ in range(self.ensemble_size):
                     # get random sample batch from training set
-                    x, y = next(training_iterator)
+                    random_indxs = np.random.randint(trainset_size, size=batch_size)
+                    x = X_train[random_indxs]
+                    y = y_train[random_indxs]
                     # map to cuda if GPU available
-                    x = x.to(next(self.parameters()).device)
-                    y = y.to(next(self.parameters()).device)
+                    #x = x.to(next(self.parameters()).device)
+                    #y = y.to(next(self.parameters()).device)
                     # repeat the batches 'self.batch_repitition' times
                     xs.append(torch.cat(self.batch_repitition * [x]))
                     ys.append(torch.cat(self.batch_repitition * [y]))
 
                 x = torch.cat(xs)
-                batch_size = x.size(dim=0) // self.ensemble_size
-                x = x.reshape(batch_size, self.ensemble_size, 3, 32, 32) 
+                new_batch_size = x.size(dim=0) // self.ensemble_size
+                x = x.reshape(new_batch_size, self.ensemble_size, 3, 32, 32) 
                 optimizer.zero_grad()
                 # Forward propagation
                 logits = self(x)  
@@ -223,15 +224,17 @@ class mimo_wide_resnet18(nn.Module):
             if epoch in epochs_for_decay: scheduler.step()
             # Print training loss
             if verbose:
-                print(f'Training Loss: {training_loss/len(trainloader)}')
+                print(f'Training Loss: {training_loss/trainset_size}')
         
             # Evaluate network
-            test_acc, test_loss, test_ece = self.eval(testloader)
+            test_acc, test_loss, test_ece, member_accuracies, member_losses = self.eval(testloader)
 
-            self.running_stats[epoch]["Training loss"] = training_loss/len(trainloader)
+            self.running_stats[epoch]["Training loss"] = training_loss/trainset_size
             self.running_stats[epoch]["Testing Accuracy"] = test_acc
             self.running_stats[epoch]["Testing loss"] = test_loss
             self.running_stats[epoch]["Testing ECE"] = test_ece
+            self.running_stats[epoch]["Testing Accuracies"] = member_accuracies
+            self.running_stats[epoch]["Testing losses"] = member_losses
 
             # save model
             if (epochs % save_mode_epochs == 0) and epochs != 0:
@@ -242,6 +245,7 @@ class mimo_wide_resnet18(nn.Module):
         """ 
             Evaluate network
         """
+        testset_size = 0
         # ECE number of bins
         num_bins = 15
         # negative log-likelihood loss
@@ -250,6 +254,8 @@ class mimo_wide_resnet18(nn.Module):
         total = 0
         running_ece = 0
         running_loss = 0
+        member_accuracies = [0 for i in range(self.ensemble_size)]
+        member_losses = [0 for i in range(self.ensemble_size)]
         # again no gradients needed
         with torch.no_grad():
             for x_test, y_test in testloader:
@@ -264,27 +270,49 @@ class mimo_wide_resnet18(nn.Module):
                 y_test = y_test.to(next(self.parameters()).device)
 
                 logits = self(x_test)
-                # calculate mean across ensembles
-                logits = torch.mean(logits, dim=0) 
-                # testing loss
-                loss = criterion(F.log_softmax(logits, dim=1), y_test)
+                probs = F.softmax(logits, dim=2)
+                log_probs = F.log_softmax(logits, dim=2)
 
-                probs = F.softmax(logits, dim=1)
-                ece = um.numpy.ece(labels=y_test.cpu(), probs=probs.cpu(), num_bins=num_bins)
-                _, preds = torch.max(probs, 1)
+                # calculate accuracy given each ensemble member
+                for i in range(self.ensemble_size):
+                    member_probs = probs[i]
+                    _, member_preds = torch.max(member_probs, 1)
+                    member_correct = (member_preds == y_test).sum().item()
+                    member_accuracies[i] += member_correct
+                    member_loss = criterion(log_probs[i], y_test).item()
+                    member_losses[i] += member_loss
+
+                # calculate mean across ensembles
+                log_probs_mean = torch.mean(log_probs, dim=0) 
+                probs_mean = torch.mean(probs, dim=0)
+                
+                # testing loss
+                loss = criterion(log_probs_mean, y_test)
+
+                ece = um.numpy.ece(labels=y_test.cpu(), probs=probs_mean.cpu(), num_bins=num_bins)
+                _, preds = torch.max(probs_mean, 1)
                 
                 # calculate accuracy
-                total += y_test.size(0)
+                testset_size += y_test.size(dim=0)
                 correct += (preds == y_test).sum().item()
                 running_ece += ece
                 running_loss += loss.item()
 
-            accuracy = 100 * (correct / total)
+            accuracy = 100 * (correct / testset_size)
+            member_accuracies = [100 * acc/testset_size for acc in member_accuracies]
+            member_losses = [loss/testset_size for loss in member_losses]
+            running_loss /= testset_size
+            running_ece /= testset_size 
             print(f"Testing Accuracy: {accuracy}")
-            print(f"Testing loss: {running_loss / len(testloader)}")
-            print(f"Testing ECE: {running_ece / len(testloader)}")
+            print(f"Testing loss: {running_loss}")
+            print(f"Testing ECE: {running_ece}")
+            #print("#" * 10)
+            #for i in range(self.ensemble_size):
+            #    print(f"Accuracy member{i}: ", member_accuracies[i])
+            #    print(f"Loss member{i}: ", member_losses[i])
 
-            return accuracy, loss, running_ece
+        
+            return accuracy, running_loss, running_ece, member_accuracies, member_losses
 
             
 
@@ -313,7 +341,3 @@ class DenseMultihead(torch.nn.Linear):
             outputs,
             [self.ensemble_size, batch_size, self.out_features // self.ensemble_size])
         return outputs
-
-
-
-    
