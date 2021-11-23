@@ -152,7 +152,7 @@ class wide_resnet18(nn.Module):
                         self.parameters(), 
                         lr=0.1, 
                         momentum=0.9,
-                        weight_decay=3e-4, 
+                        weight_decay=2e-4, 
                         nesterov=True
                     )
         # epochs at which to decay learning rate
@@ -166,7 +166,7 @@ class wide_resnet18(nn.Module):
             # Training loss
             training_loss = 0
             # training step
-            for _, (x, y) in tqdm(enumerate(trainloader)):
+            for x, y in trainloader:
                 
                 # map to cuda if GPU available
                 x = x.to(next(self.parameters()).device)

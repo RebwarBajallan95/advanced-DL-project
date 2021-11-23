@@ -165,7 +165,7 @@ class mimo_wide_resnet18(nn.Module):
         # same paramters as used in the paper
         optimizer = optim.SGD(
                         self.parameters(), 
-                        lr=0.1, 
+                        lr=0.001, 
                         momentum=0.9,
                         weight_decay=3e-4, 
                         nesterov=True
@@ -175,6 +175,7 @@ class mimo_wide_resnet18(nn.Module):
         scheduler = optim.lr_scheduler.StepLR(optimizer, step_size=1, gamma=0.1) # TODO: Is decay rate 0.1 (paper) or 0.2 (code)??
         training_iterator = iter(trainloader)
         for _ in range(epochs):
+            print("Learning rate: ", scheduler.get_last_lr())
             epoch = list(self.running_stats.keys())[-1] + 1 if len(self.running_stats) > 0 else 0
             print("Epoch: ", epoch)
             # training mode
@@ -231,8 +232,7 @@ class mimo_wide_resnet18(nn.Module):
             self.running_stats[epoch]["Testing losses"] = member_losses
 
             # save model
-            if (epochs % save_mode_epochs == 0) and epochs != 0:
-                torch.save(self, "models/resnet18_10.pt") 
+            torch.save(self, "models/resnet18_10_iter4.pt") 
 
             
     def eval(self, testloader):
