@@ -180,7 +180,6 @@ class wide_resnet18(nn.Module):
                 loss = criterion(log_probs, y)
                 # Backward propagation
                 loss.backward()
-                nn.utils.clip_grad_norm_(self.parameters(), max_norm=1) # clip gradients
                 optimizer.step()
                 # Training loss
                 training_loss+= loss.item()
