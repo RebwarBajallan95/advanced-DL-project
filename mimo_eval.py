@@ -99,7 +99,7 @@ def eval(model, testloader):
                     pairwise_disagreement[key] = sum(pairwise_disagreement[key]) / testset_size
                     pairwise_kl_diversity[key] = sum(pairwise_kl_diversity[key]) / testset_size
    
-            return accuracy, running_loss, running_ece, member_accuracies, member_losses, member_logits, diversity, pairwise_disagreement, pairwise_kl_diversity 
+            return accuracy, running_loss, running_ece, member_accuracies, member_losses, member_logits, pairwise_disagreement, pairwise_kl_diversity 
 
 
 
