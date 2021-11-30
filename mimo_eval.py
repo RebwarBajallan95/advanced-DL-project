@@ -2,9 +2,9 @@ import torch
 import torch.nn as nn
 import torch.nn.functional as F
 import uncertainty_metrics as um
-from robustness_metrics.metrics import AveragePairwiseDiversity
+import numpy as np
+import itertools
 
-diversity = AveragePairwiseDiversity()
 
 
 def eval(model, testloader):
@@ -24,6 +24,17 @@ def eval(model, testloader):
         member_accuracies = [0 for i in range(model.ensemble_size)]
         member_losses = [0 for i in range(model.ensemble_size)]
         member_logits = []
+        # diversity metrics
+        pairwise_disagreement = {
+                            "max": [],
+                            "min": [],
+                            "mean": []
+                        }
+        pairwise_kl_diversity = {
+                            "max": [],
+                            "min": [],
+                            "mean": []
+                        }
         # again no gradients needed
         with torch.no_grad():
             for x_test, y_test in testloader:
@@ -44,7 +55,12 @@ def eval(model, testloader):
                 probs = F.softmax(logits, dim=2)
                 log_probs = F.log_softmax(logits, dim=2)
 
-                diversity.add_batch(probs.cpu())
+                batch_disagreements, batch_kl_diversity = batch_diversity(probs)
+                
+                for key in ["max", "min", "mean"]:
+                    pairwise_disagreement[key].append(batch_disagreements[f"disagreement-{key}"])
+                    pairwise_kl_diversity[key].append(batch_kl_diversity[f"kl_diversity-{key}"])
+                
                 # calculate accuracy given each ensemble member
                 for i in range(model.ensemble_size):
                     member_probs = probs[i]
@@ -78,5 +94,56 @@ def eval(model, testloader):
             print(f"Testing Accuracy: {accuracy}")
             print(f"Testing loss: {running_loss}")
             print(f"Testing ECE: {running_ece}")
+
+            for key in ["max", "min", "mean"]:
+                    pairwise_disagreement[key] = sum(pairwise_disagreement[key]) / testset_size
+                    pairwise_kl_diversity[key] = sum(pairwise_kl_diversity[key]) / testset_size
    
-            return accuracy, running_loss, running_ece, member_accuracies, member_losses, member_logits, diversity
+            return accuracy, running_loss, running_ece, member_accuracies, member_losses, member_logits, diversity, pairwise_disagreement, pairwise_kl_diversity 
+
+
+
+def batch_diversity(probs):
+    """"
+        probs: shape -> (ensemble_size, batch_size, number_classes)
+    """
+
+    ensemble_size = probs.size(dim=0)
+    batch_disagreements = []
+    batch_kl_diversity = []
+    for subnet_pair in list(itertools.combinations(range(ensemble_size), 2)):
+        probs1 = probs[subnet_pair[0]]
+        probs2 = probs[subnet_pair[1]]
+        batch_disagreements.append(
+            disagreement(probs1, probs2).sum().item()
+        )
+        batch_kl_diversity.append(
+            kl_diveristy(probs1, probs2).sum().item()
+        )
+    batch_disagreements = np.array(batch_disagreements)
+    batch_kl_diversity = np.array(batch_kl_diversity)
+
+    return {
+            "disagreement-min": np.min(batch_disagreements), 
+            "disagreement-max": np.max(batch_disagreements), 
+            "disagreement-mean": np.mean(batch_disagreements)
+            }, {
+            "kl_diversity-min": np.min(batch_kl_diversity), 
+            "kl_diversity-max": np.max(batch_kl_diversity), 
+            "kl_diversity-mean": np.mean(batch_kl_diversity)
+            }
+        
+
+def kl_diveristy(p, q):
+    """
+    """
+    return torch.sum(p * torch.log(p / q), dim=-1)
+
+def disagreement(probs1, probs2):
+    """ 
+    calculate disagreement given class probabilties
+    return: amount of disagrements in predictions
+    """
+    _, preds1 = torch.max(probs1, 1)
+    _, preds2 = torch.max(probs2, 1)
+    return (preds1 != preds2)
