@@ -8,6 +8,7 @@ from tqdm import tqdm
 import numpy as np
 import uncertainty_metrics as um
 from collections import defaultdict
+from copy import deepcopy
 
 
 # Pre-initialized functions
@@ -43,39 +44,17 @@ class mimo_smallcnn(nn.Module):
         if ensemble_size != input_shape[0]:
             raise ValueError("The first dimension of input_shape must be ensemble_size")
         
-        """ 
-
-
-        x = keras.layers.Conv2D(16, (3,3), padding='same')(inputs)
-        x = keras.activations.relu(x)
-        x = keras.layers.MaxPooling2D(2, strides=2)(x)
-
-        x = keras.layers.Conv2D(32,(3,3), padding='same')(x)
-        x = keras.activations.relu(x)
-        x = keras.layers.MaxPooling2D(2, strides=2)(x)
-
-        x = keras.layers.Conv2D(32,(3,3), padding='same')(x)
-        x = keras.activations.relu(x)
-        x = keras.layers.MaxPooling2D(2, strides=2)(x)
-
-        x = keras.layers.GlobalAveragePooling2D()(x)
-        x = keras.layers.Dense(32, activation='relu')(x)
-        x = keras.layers.Dropout(0.1)(x)
-        """
-
-        self.relu = nn.ReLU(inplace=True)
+        self.relu = nn.ReLU(inplace=False)
         self.max_pool = torch.nn.MaxPool2d(kernel_size=2, stride=2)
+        self.drop_out = nn.Dropout(p=0.1, inplace=False)
 
-        self.conv1 = Conv2D(3*ensemble_size, 16, kernel_size=3, stride=1, padding=1)
-        self.conv2 = Conv2D(16, 32, kernel_size=3)
-        self.conv3 = Conv2D(32, 32, kernel_size=3)
-        self.conv4 = Conv2D(32, 32, kernel_size=3)
+        self.conv1 = Conv2D(3*ensemble_size, 16, kernel_size=3, padding="same")
+        self.conv2 = Conv2D(16, 32, kernel_size=3, padding="same")
+        self.conv3 = Conv2D(32, 32, kernel_size=3, padding="same")
+        self.conv4 = Conv2D(32, 32, kernel_size=3, padding="same")
 
         self.avg_pool = nn.AdaptiveAvgPool2d(1)
-
         #self.avg_pool = nn.AvgPool2d(kernel_size=8)
-        self.relu4 = nn.ReLU(inplace=True)
-        self.drop_out = nn.Dropout(p=0.1, inplace=True)
 
         # classification layers
         self.fc1 = nn.Linear(32, num_classes, bias=True)
@@ -110,16 +89,23 @@ class mimo_smallcnn(nn.Module):
         # batchsize needed when reshaping
         batch_size = input.size(dim=0)
         x = torch.reshape(input, shape=[batch_size, self.input_shape[1] * self.ensemble_size] + self.input_shape[2:])       
+        
         x = self.conv1(x)
         x = self.relu(x)
         x = self.max_pool(x)
+
         x = self.conv2(x)
         x = self.relu(x)
         x = self.max_pool(x)
+
         x = self.conv3(x)
         x = self.relu(x)
         x = self.max_pool(x)
+
         x = self.avg_pool(x)
+        x = self.relu(x)
+        x = self.drop_out(x)
+
         x = torch.flatten(x, 1)
         x = self.outlayer(x) 
         return x
@@ -154,6 +140,11 @@ class mimo_smallcnn(nn.Module):
         scheduler = optim.lr_scheduler.StepLR(optimizer, step_size=1, gamma=0.1) # TODO: Is decay rate 0.1 (paper) or 0.2 (code)??
         training_iterator = iter(trainloader)
         for _ in range(epochs):
+            
+            output_layer_start = torch.reshape(self.outlayer.weight, 
+                    (self.ensemble_size, self.num_classes, -1)
+                ).cpu().detach().numpy()
+
             print("Learning rate: ", scheduler.get_last_lr())
             epoch = list(self.running_stats.keys())[-1] + 1 if len(self.running_stats) > 0 else 0
             print("Epoch: ", epoch)
@@ -161,7 +152,7 @@ class mimo_smallcnn(nn.Module):
             self.train()
             # Training loss
             training_loss = 0
-            for _ in tqdm(range(steps_per_epoch)):
+            for _ in (range(steps_per_epoch)):
                 xs = []
                 ys = []
                 training_iterator = iter(trainloader)
@@ -192,25 +183,44 @@ class mimo_smallcnn(nn.Module):
                 optimizer.step()
                 # Training loss
                 training_loss+= loss.item()
-                        
-            if epoch in epochs_for_decay: scheduler.step()
+
+            scheduler.step()
+            
+            output_layer_end = torch.reshape(self.outlayer.weight, 
+                    (self.ensemble_size, self.num_classes, -1)
+                ).cpu().detach().numpy()
+                
+            weight_change = linearly_interpolate(
+                                            output_layer1=output_layer_start, 
+                                            output_layer2=output_layer_end,
+                                            nr_ensembles=self.ensemble_size
+                                        )
+      
+            weight_delta = {}
+            for ens in range(self.ensemble_size):
+                weight_delta[ens] = {}
+                weight_delta[ens]["w1"] = weight_change[ens][0][0]
+                weight_delta[ens]["w2"] = weight_change[ens][0][1]
+
             # Print training loss
             if verbose:
                 print(f'Training Loss: {training_loss/steps_per_epoch}')
         
             # Evaluate network
-            test_acc, test_loss, member_accuracies, member_losses = self.eval(testloader)
+            test_acc, test_loss, member_accuracies, member_losses, probs = self.eval(testloader)
 
             # loggings
             self.running_stats[epoch] = {}
             self.running_stats[epoch]["Training loss"] = training_loss/steps_per_epoch
+            self.running_stats[epoch]["Training weight delta"] = weight_delta
             self.running_stats[epoch]["Testing Accuracy"] = test_acc
             self.running_stats[epoch]["Testing loss"] = test_loss
             self.running_stats[epoch]["Testing Accuracies"] = member_accuracies
             self.running_stats[epoch]["Testing losses"] = member_losses
+            self.running_stats[epoch]["Testing class-predictions"] = probs
 
             # save model
-            torch.save(self, "models/resnet18_10_iter4.pt") 
+            torch.save(self, "models/smallcnn.pt") 
 
             
     def eval(self, testloader):
@@ -225,6 +235,8 @@ class mimo_smallcnn(nn.Module):
         running_loss = 0
         member_accuracies = [0 for i in range(self.ensemble_size)]
         member_losses = [0 for i in range(self.ensemble_size)]
+        # store probabilities for each test sample
+        all_probs = []
         # again no gradients needed
         with torch.no_grad():
             for x_test, y_test in testloader:
@@ -240,6 +252,7 @@ class mimo_smallcnn(nn.Module):
 
                 logits = self(x_test)
                 probs = F.softmax(logits, dim=2)
+                all_probs.append(probs)
                 log_probs = F.log_softmax(logits, dim=2)
 
                 # calculate accuracy given each ensemble member
@@ -271,9 +284,7 @@ class mimo_smallcnn(nn.Module):
             print(f"Testing Accuracy: {accuracy}")
             print(f"Testing loss: {running_loss}")
             
-
-        
-            return accuracy, running_loss, member_accuracies, member_losses
+            return accuracy, running_loss, member_accuracies, member_losses, all_probs
 
             
 
@@ -302,3 +313,19 @@ class DenseMultihead(torch.nn.Linear):
             outputs,
             [self.ensemble_size, batch_size, self.out_features // self.ensemble_size])
         return outputs
+
+def linearly_interpolate(
+                output_layer1: np.ndarray, 
+                output_layer2: np.ndarray, 
+                nr_ensembles: int
+            ):
+    """
+    """
+    delta_dir_ens = {}
+    for ens in range(nr_ensembles):
+        params1 = [w for w in output_layer1[ens]]
+        params2 = [w for w in output_layer2[ens]]
+        # calculate the direction of which the weights move
+        delta_dir_ens[ens] = [(w2 - w1) for w2, w1 in zip(params1, params2)]
+        
+    return delta_dir_ens
