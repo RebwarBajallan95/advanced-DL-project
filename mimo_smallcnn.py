@@ -66,7 +66,7 @@ class mimo_smallcnn(nn.Module):
                         ensemble_size=self.ensemble_size
                     )
         # initialize weights
-        #self = self.apply(self.weight_init)
+        self = self.apply(self.weight_init)
         
         # store loggings
         self.running_stats = dict()
@@ -130,14 +130,14 @@ class mimo_smallcnn(nn.Module):
         # same paramters as used in the paper
         optimizer = optim.SGD(
                         self.parameters(), 
-                        lr=0.001, 
+                        lr=1.6*1e-3, 
                         momentum=0.9,
                         weight_decay=3e-4, 
                         nesterov=True
                     )
         # epochs at which to decay learning rate
-        epochs_for_decay = [80, 160, 180]
-        scheduler = optim.lr_scheduler.StepLR(optimizer, step_size=1, gamma=0.1) # TODO: Is decay rate 0.1 (paper) or 0.2 (code)??
+        epochs_for_decay = [30, 50, 80]
+        scheduler = optim.lr_scheduler.StepLR(optimizer, step_size=10, gamma=0.5) # TODO: Is decay rate 0.1 (paper) or 0.2 (code)??
         training_iterator = iter(trainloader)
         for _ in range(epochs):
             
@@ -183,9 +183,14 @@ class mimo_smallcnn(nn.Module):
                 optimizer.step()
                 # Training loss
                 training_loss+= loss.item()
-
+                # save output layer weights
+                outlayer_weights = torch.reshape(
+                            self.outlayer.weight, 
+                            (self.ensemble_size, self.num_classes, -1)
+                        )
+                      
             scheduler.step()
-            
+
             output_layer_end = torch.reshape(self.outlayer.weight, 
                     (self.ensemble_size, self.num_classes, -1)
                 ).cpu().detach().numpy()
@@ -313,6 +318,7 @@ class DenseMultihead(torch.nn.Linear):
             outputs,
             [self.ensemble_size, batch_size, self.out_features // self.ensemble_size])
         return outputs
+
 
 def linearly_interpolate(
                 output_layer1: np.ndarray, 
