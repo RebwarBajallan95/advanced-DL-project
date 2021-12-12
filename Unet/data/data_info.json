@@ -1,0 +1,3504 @@
+{
+  "data_info": [{
+    "image_name": "data/images/training/img_001.jpg",
+    "mask_name": "data/masks/training/mask_img_001.jpg",
+    "top_left": [150, 7],
+    "top_right": [905, 138],
+    "bottom_right": [985, 1614],
+    "bottom_left": [240, 1523]
+  }, {
+    "image_name": "data/images/training/img_002.jpg",
+    "mask_name": "data/masks/training/mask_img_002.jpg",
+    "top_left": [306, 7],
+    "top_right": [829, 7],
+    "bottom_right": [869, 1625],
+    "bottom_left": [265, 1625]
+  }, {
+    "image_name": "data/images/training/img_003.jpg",
+    "mask_name": "data/masks/training/mask_img_003.jpg",
+    "top_left": [339, 9],
+    "top_right": [858, 7],
+    "bottom_right": [984, 1625],
+    "bottom_left": [295, 1625]
+  }, {
+    "image_name": "data/images/training/img_004.jpg",
+    "mask_name": "data/masks/training/mask_img_004.jpg",
+    "top_left": [426, 263],
+    "top_right": [753, 245],
+    "bottom_right": [805, 1382],
+    "bottom_left": [432, 1378]
+  }, {
+    "image_name": "data/images/training/img_005.jpg",
+    "mask_name": "data/masks/training/mask_img_005.jpg",
+    "top_left": [425, 408],
+    "top_right": [754, 408],
+    "bottom_right": [779, 1357],
+    "bottom_left": [421, 1360]
+  }, {
+    "image_name": "data/images/training/img_006.jpg",
+    "mask_name": "data/masks/training/mask_img_006.jpg",
+    "top_left": [335, 5],
+    "top_right": [841, 7],
+    "bottom_right": [919, 1596],
+    "bottom_left": [294, 1610]
+  }, {
+    "image_name": "data/images/training/img_007.jpg",
+    "mask_name": "data/masks/training/mask_img_007.jpg",
+    "top_left": [504, 608],
+    "top_right": [735, 613],
+    "bottom_right": [717, 1421],
+    "bottom_left": [430, 1398]
+  }, {
+    "image_name": "data/images/training/img_008.jpg",
+    "mask_name": "data/masks/training/mask_img_008.jpg",
+    "top_left": [246, 7],
+    "top_right": [930, 11],
+    "bottom_right": [886, 1628],
+    "bottom_left": [279, 1618]
+  }, {
+    "image_name": "data/images/training/img_009.jpg",
+    "mask_name": "data/masks/training/mask_img_009.jpg",
+    "top_left": [566, 658],
+    "top_right": [927, 714],
+    "bottom_right": [834, 1257],
+    "bottom_left": [417, 1161]
+  }, {
+    "image_name": "data/images/training/img_010.jpg",
+    "mask_name": "data/masks/training/mask_img_010.jpg",
+    "top_left": [362, 234],
+    "top_right": [701, 250],
+    "bottom_right": [689, 1320],
+    "bottom_left": [301, 1320]
+  }, {
+    "image_name": "data/images/training/img_011.jpg",
+    "mask_name": "data/masks/training/mask_img_011.jpg",
+    "top_left": [169, 9],
+    "top_right": [959, 9],
+    "bottom_right": [943, 1470],
+    "bottom_left": [203, 1519]
+  }, {
+    "image_name": "data/images/training/img_012.jpg",
+    "mask_name": "data/masks/training/mask_img_012.jpg",
+    "top_left": [316, 18],
+    "top_right": [798, 49],
+    "bottom_right": [906, 1620],
+    "bottom_left": [268, 1621]
+  }, {
+    "image_name": "data/images/training/img_013.jpg",
+    "mask_name": "data/masks/training/mask_img_013.jpg",
+    "top_left": [170, 167],
+    "top_right": [1014, 143],
+    "bottom_right": [1052, 1516],
+    "bottom_left": [132, 1565]
+  }, {
+    "image_name": "data/images/training/img_014.jpg",
+    "mask_name": "data/masks/training/mask_img_014.jpg",
+    "top_left": [370, 10],
+    "top_right": [776, 3],
+    "bottom_right": [829, 1624],
+    "bottom_left": [406, 1627]
+  }, {
+    "image_name": "data/images/training/img_015.jpg",
+    "mask_name": "data/masks/training/mask_img_015.jpg",
+    "top_left": [374, 29],
+    "top_right": [841, 11],
+    "bottom_right": [872, 1570],
+    "bottom_left": [329, 1627]
+  }, {
+    "image_name": "data/images/training/img_016.jpg",
+    "mask_name": "data/masks/training/mask_img_016.jpg",
+    "top_left": [329, 9],
+    "top_right": [857, 11],
+    "bottom_right": [954, 1623],
+    "bottom_left": [328, 1622]
+  }, {
+    "image_name": "data/images/training/img_017.jpg",
+    "mask_name": "data/masks/training/mask_img_017.jpg",
+    "top_left": [160, 8],
+    "top_right": [1030, 14],
+    "bottom_right": [1073, 1541],
+    "bottom_left": [156, 1576]
+  }, {
+    "image_name": "data/images/training/img_018.jpg",
+    "mask_name": "data/masks/training/mask_img_018.jpg",
+    "top_left": [319, 7],
+    "top_right": [655, 4],
+    "bottom_right": [756, 1576],
+    "bottom_left": [373, 1626]
+  }, {
+    "image_name": "data/images/training/img_019.jpg",
+    "mask_name": "data/masks/training/mask_img_019.jpg",
+    "top_left": [374, 542],
+    "top_right": [910, 546],
+    "bottom_right": [903, 1315],
+    "bottom_left": [314, 1306]
+  }, {
+    "image_name": "data/images/training/img_020.jpg",
+    "mask_name": "data/masks/training/mask_img_020.jpg",
+    "top_left": [234, 67],
+    "top_right": [948, 65],
+    "bottom_right": [1061, 1623],
+    "bottom_left": [44, 1623]
+  }, {
+    "image_name": "data/images/training/img_021.jpg",
+    "mask_name": "data/masks/training/mask_img_021.jpg",
+    "top_left": [472, 433],
+    "top_right": [765, 441],
+    "bottom_right": [787, 1431],
+    "bottom_left": [453, 1433]
+  }, {
+    "image_name": "data/images/training/img_022.jpg",
+    "mask_name": "data/masks/training/mask_img_022.jpg",
+    "top_left": [325, 16],
+    "top_right": [899, 15],
+    "bottom_right": [947, 1608],
+    "bottom_left": [294, 1627]
+  }, {
+    "image_name": "data/images/training/img_023.jpg",
+    "mask_name": "data/masks/training/mask_img_023.jpg",
+    "top_left": [395, 629],
+    "top_right": [667, 651],
+    "bottom_right": [620, 1465],
+    "bottom_left": [310, 1442]
+  }, {
+    "image_name": "data/images/training/img_024.jpg",
+    "mask_name": "data/masks/training/mask_img_024.jpg",
+    "top_left": [312, 321],
+    "top_right": [716, 301],
+    "bottom_right": [705, 1423],
+    "bottom_left": [312, 1423]
+  }, {
+    "image_name": "data/images/training/img_025.jpg",
+    "mask_name": "data/masks/training/mask_img_025.jpg",
+    "top_left": [285, 45],
+    "top_right": [979, 51],
+    "bottom_right": [1025, 1612],
+    "bottom_left": [216, 1581]
+  }, {
+    "image_name": "data/images/training/img_026.jpg",
+    "mask_name": "data/masks/training/mask_img_026.jpg",
+    "top_left": [297, 5],
+    "top_right": [898, 11],
+    "bottom_right": [881, 1567],
+    "bottom_left": [354, 1563]
+  }, {
+    "image_name": "data/images/training/img_027.jpg",
+    "mask_name": "data/masks/training/mask_img_027.jpg",
+    "top_left": [281, 31],
+    "top_right": [907, 18],
+    "bottom_right": [996, 1628],
+    "bottom_left": [176, 1623]
+  }, {
+    "image_name": "data/images/training/img_028.jpg",
+    "mask_name": "data/masks/training/mask_img_028.jpg",
+    "top_left": [363, 25],
+    "top_right": [827, 40],
+    "bottom_right": [872, 1588],
+    "bottom_left": [299, 1583]
+  }, {
+    "image_name": "data/images/training/img_029.jpg",
+    "mask_name": "data/masks/training/mask_img_029.jpg",
+    "top_left": [267, 9],
+    "top_right": [976, 16],
+    "bottom_right": [976, 1625],
+    "bottom_left": [305, 1625]
+  }, {
+    "image_name": "data/images/training/img_030.jpg",
+    "mask_name": "data/masks/training/mask_img_030.jpg",
+    "top_left": [343, 33],
+    "top_right": [736, 27],
+    "bottom_right": [765, 1627],
+    "bottom_left": [346, 1623]
+  }, {
+    "image_name": "data/images/training/img_031.jpg",
+    "mask_name": "data/masks/training/mask_img_031.jpg",
+    "top_left": [219, 187],
+    "top_right": [912, 160],
+    "bottom_right": [1043, 1583],
+    "bottom_left": [230, 1563]
+  }, {
+    "image_name": "data/images/training/img_032.jpg",
+    "mask_name": "data/masks/training/mask_img_032.jpg",
+    "top_left": [277, 11],
+    "top_right": [827, 11],
+    "bottom_right": [908, 1625],
+    "bottom_left": [223, 1625]
+  }, {
+    "image_name": "data/images/training/img_033.jpg",
+    "mask_name": "data/masks/training/mask_img_033.jpg",
+    "top_left": [399, 519],
+    "top_right": [713, 504],
+    "bottom_right": [747, 1407],
+    "bottom_left": [403, 1411]
+  }, {
+    "image_name": "data/images/training/img_034.jpg",
+    "mask_name": "data/masks/training/mask_img_034.jpg",
+    "top_left": [473, 397],
+    "top_right": [801, 372],
+    "bottom_right": [807, 1295],
+    "bottom_left": [479, 1291]
+  }, {
+    "image_name": "data/images/training/img_035.jpg",
+    "mask_name": "data/masks/training/mask_img_035.jpg",
+    "top_left": [345, 25],
+    "top_right": [714, 20],
+    "bottom_right": [767, 1625],
+    "bottom_left": [297, 1630]
+  }, {
+    "image_name": "data/images/training/img_036.jpg",
+    "mask_name": "data/masks/training/mask_img_036.jpg",
+    "top_left": [138, 7],
+    "top_right": [912, 5],
+    "bottom_right": [1012, 1625],
+    "bottom_left": [125, 1530]
+  }, {
+    "image_name": "data/images/training/img_037.jpg",
+    "mask_name": "data/masks/training/mask_img_037.jpg",
+    "top_left": [283, 134],
+    "top_right": [725, 118],
+    "bottom_right": [756, 1443],
+    "bottom_left": [299, 1452]
+  }, {
+    "image_name": "data/images/training/img_038.jpg",
+    "mask_name": "data/masks/training/mask_img_038.jpg",
+    "top_left": [156, 9],
+    "top_right": [1026, 13],
+    "bottom_right": [976, 1590],
+    "bottom_left": [201, 1607]
+  }, {
+    "image_name": "data/images/training/img_039.jpg",
+    "mask_name": "data/masks/training/mask_img_039.jpg",
+    "top_left": [319, 287],
+    "top_right": [914, 270],
+    "bottom_right": [932, 1184],
+    "bottom_left": [263, 1195]
+  }, {
+    "image_name": "data/images/training/img_040.jpg",
+    "mask_name": "data/masks/training/mask_img_040.jpg",
+    "top_left": [123, 60],
+    "top_right": [524, 76],
+    "bottom_right": [515, 1291],
+    "bottom_left": [103, 1284]
+  }, {
+    "image_name": "data/images/training/img_041.jpg",
+    "mask_name": "data/masks/training/mask_img_041.jpg",
+    "top_left": [143, 7],
+    "top_right": [950, 13],
+    "bottom_right": [1121, 1627],
+    "bottom_left": [69, 1621]
+  }, {
+    "image_name": "data/images/training/img_042.jpg",
+    "mask_name": "data/masks/training/mask_img_042.jpg",
+    "top_left": [337, 34],
+    "top_right": [742, 25],
+    "bottom_right": [816, 1628],
+    "bottom_left": [343, 1625]
+  }, {
+    "image_name": "data/images/training/img_043.jpg",
+    "mask_name": "data/masks/training/mask_img_043.jpg",
+    "top_left": [103, 7],
+    "top_right": [956, 11],
+    "bottom_right": [1032, 1627],
+    "bottom_left": [56, 1623]
+  }, {
+    "image_name": "data/images/training/img_044.jpg",
+    "mask_name": "data/masks/training/mask_img_044.jpg",
+    "top_left": [145, 11],
+    "top_right": [932, 13],
+    "bottom_right": [1057, 1627],
+    "bottom_left": [85, 1627]
+  }, {
+    "image_name": "data/images/training/img_045.jpg",
+    "mask_name": "data/masks/training/mask_img_045.jpg",
+    "top_left": [267, 11],
+    "top_right": [918, 11],
+    "bottom_right": [941, 1590],
+    "bottom_left": [281, 1599]
+  }, {
+    "image_name": "data/images/training/img_046.jpg",
+    "mask_name": "data/masks/training/mask_img_046.jpg",
+    "top_left": [156, 11],
+    "top_right": [1015, 9],
+    "bottom_right": [1092, 1623],
+    "bottom_left": [51, 1628]
+  }, {
+    "image_name": "data/images/training/img_047.jpg",
+    "mask_name": "data/masks/training/mask_img_047.jpg",
+    "top_left": [459, 502],
+    "top_right": [827, 497],
+    "bottom_right": [856, 1052],
+    "bottom_left": [423, 1075]
+  }, {
+    "image_name": "data/images/training/img_048.jpg",
+    "mask_name": "data/masks/training/mask_img_048.jpg",
+    "top_left": [121, 5],
+    "top_right": [1086, 9],
+    "bottom_right": [1079, 1599],
+    "bottom_left": [131, 1617]
+  }, {
+    "image_name": "data/images/training/img_049.jpg",
+    "mask_name": "data/masks/training/mask_img_049.jpg",
+    "top_left": [424, 190],
+    "top_right": [709, 210],
+    "bottom_right": [617, 1440],
+    "bottom_left": [281, 1394]
+  }, {
+    "image_name": "data/images/training/img_050.jpg",
+    "mask_name": "data/masks/training/mask_img_050.jpg",
+    "top_left": [261, 78],
+    "top_right": [865, 74],
+    "bottom_right": [952, 1592],
+    "bottom_left": [241, 1592]
+  }, {
+    "image_name": "data/images/training/img_051.jpg",
+    "mask_name": "data/masks/training/mask_img_051.jpg",
+    "top_left": [267, 65],
+    "top_right": [934, 36],
+    "bottom_right": [1137, 1554],
+    "bottom_left": [176, 1578]
+  }, {
+    "image_name": "data/images/training/img_052.jpg",
+    "mask_name": "data/masks/training/mask_img_052.jpg",
+    "top_left": [361, 13],
+    "top_right": [910, 54],
+    "bottom_right": [1008, 1621],
+    "bottom_left": [303, 1625]
+  }, {
+    "image_name": "data/images/training/img_053.jpg",
+    "mask_name": "data/masks/training/mask_img_053.jpg",
+    "top_left": [381, 277],
+    "top_right": [758, 241],
+    "bottom_right": [754, 1358],
+    "bottom_left": [355, 1340]
+  }, {
+    "image_name": "data/images/training/img_054.jpg",
+    "mask_name": "data/masks/training/mask_img_054.jpg",
+    "top_left": [348, 13],
+    "top_right": [832, 5],
+    "bottom_right": [829, 1578],
+    "bottom_left": [364, 1625]
+  }, {
+    "image_name": "data/images/training/img_055.jpg",
+    "mask_name": "data/masks/training/mask_img_055.jpg",
+    "top_left": [468, 346],
+    "top_right": [812, 343],
+    "bottom_right": [825, 1342],
+    "bottom_left": [441, 1333]
+  }, {
+    "image_name": "data/images/training/img_056.jpg",
+    "mask_name": "data/masks/training/mask_img_056.jpg",
+    "top_left": [172, 69],
+    "top_right": [879, 45],
+    "bottom_right": [914, 1630],
+    "bottom_left": [116, 1625]
+  }, {
+    "image_name": "data/images/training/img_057.jpg",
+    "mask_name": "data/masks/training/mask_img_057.jpg",
+    "top_left": [189, 67],
+    "top_right": [948, 42],
+    "bottom_right": [983, 1625],
+    "bottom_left": [169, 1623]
+  }, {
+    "image_name": "data/images/training/img_058.jpg",
+    "mask_name": "data/masks/training/mask_img_058.jpg",
+    "top_left": [218, 15],
+    "top_right": [865, 15],
+    "bottom_right": [907, 1578],
+    "bottom_left": [232, 1579]
+  }, {
+    "image_name": "data/images/training/img_059.jpg",
+    "mask_name": "data/masks/training/mask_img_059.jpg",
+    "top_left": [383, 7],
+    "top_right": [832, 20],
+    "bottom_right": [878, 1621],
+    "bottom_left": [392, 1576]
+  }, {
+    "image_name": "data/images/training/img_060.jpg",
+    "mask_name": "data/masks/training/mask_img_060.jpg",
+    "top_left": [69, 27],
+    "top_right": [1130, 25],
+    "bottom_right": [1090, 1625],
+    "bottom_left": [118, 1623]
+  }, {
+    "image_name": "data/images/training/img_061.jpg",
+    "mask_name": "data/masks/training/mask_img_061.jpg",
+    "top_left": [288, 11],
+    "top_right": [867, 2],
+    "bottom_right": [856, 1627],
+    "bottom_left": [277, 1628]
+  }, {
+    "image_name": "data/images/training/img_062.jpg",
+    "mask_name": "data/masks/training/mask_img_062.jpg",
+    "top_left": [263, 15],
+    "top_right": [921, 34],
+    "bottom_right": [997, 1599],
+    "bottom_left": [287, 1612]
+  }, {
+    "image_name": "data/images/training/img_063.jpg",
+    "mask_name": "data/masks/training/mask_img_063.jpg",
+    "top_left": [368, 15],
+    "top_right": [743, 7],
+    "bottom_right": [869, 1628],
+    "bottom_left": [321, 1627]
+  }, {
+    "image_name": "data/images/training/img_064.jpg",
+    "mask_name": "data/masks/training/mask_img_064.jpg",
+    "top_left": [234, 9],
+    "top_right": [930, 31],
+    "bottom_right": [967, 1625],
+    "bottom_left": [230, 1628]
+  }, {
+    "image_name": "data/images/training/img_065.jpg",
+    "mask_name": "data/masks/training/mask_img_065.jpg",
+    "top_left": [326, 7],
+    "top_right": [850, 15],
+    "bottom_right": [921, 1619],
+    "bottom_left": [301, 1628]
+  }, {
+    "image_name": "data/images/training/img_066.jpg",
+    "mask_name": "data/masks/training/mask_img_066.jpg",
+    "top_left": [352, 221],
+    "top_right": [702, 225],
+    "bottom_right": [754, 1463],
+    "bottom_left": [343, 1465]
+  }, {
+    "image_name": "data/images/training/img_067.jpg",
+    "mask_name": "data/masks/training/mask_img_067.jpg",
+    "top_left": [455, 357],
+    "top_right": [772, 350],
+    "bottom_right": [776, 1447],
+    "bottom_left": [412, 1443]
+  }, {
+    "image_name": "data/images/training/img_068.jpg",
+    "mask_name": "data/masks/training/mask_img_068.jpg",
+    "top_left": [335, 7],
+    "top_right": [823, 13],
+    "bottom_right": [919, 1627],
+    "bottom_left": [368, 1621]
+  }, {
+    "image_name": "data/images/training/img_069.jpg",
+    "mask_name": "data/masks/training/mask_img_069.jpg",
+    "top_left": [266, 3],
+    "top_right": [908, 11],
+    "bottom_right": [950, 1501],
+    "bottom_left": [274, 1507]
+  }, {
+    "image_name": "data/images/training/img_070.jpg",
+    "mask_name": "data/masks/training/mask_img_070.jpg",
+    "top_left": [364, 9],
+    "top_right": [845, 9],
+    "bottom_right": [903, 1612],
+    "bottom_left": [388, 1603]
+  }, {
+    "image_name": "data/images/training/img_071.jpg",
+    "mask_name": "data/masks/training/mask_img_071.jpg",
+    "top_left": [453, 582],
+    "top_right": [727, 580],
+    "bottom_right": [727, 1005],
+    "bottom_left": [412, 1012]
+  }, {
+    "image_name": "data/images/training/img_072.jpg",
+    "mask_name": "data/masks/training/mask_img_072.jpg",
+    "top_left": [506, 335],
+    "top_right": [767, 316],
+    "bottom_right": [765, 1472],
+    "bottom_left": [464, 1458]
+  }, {
+    "image_name": "data/images/training/img_073.jpg",
+    "mask_name": "data/masks/training/mask_img_073.jpg",
+    "top_left": [82, 45],
+    "top_right": [974, 29],
+    "bottom_right": [1132, 1625],
+    "bottom_left": [58, 1623]
+  }, {
+    "image_name": "data/images/training/img_074.jpg",
+    "mask_name": "data/masks/training/mask_img_074.jpg",
+    "top_left": [341, 5],
+    "top_right": [896, 9],
+    "bottom_right": [918, 1625],
+    "bottom_left": [317, 1627]
+  }, {
+    "image_name": "data/images/training/img_075.jpg",
+    "mask_name": "data/masks/training/mask_img_075.jpg",
+    "top_left": [502, 276],
+    "top_right": [751, 314],
+    "bottom_right": [762, 1507],
+    "bottom_left": [461, 1512]
+  }, {
+    "image_name": "data/images/training/img_076.jpg",
+    "mask_name": "data/masks/training/mask_img_076.jpg",
+    "top_left": [279, 47],
+    "top_right": [934, 9],
+    "bottom_right": [990, 1625],
+    "bottom_left": [214, 1621]
+  }, {
+    "image_name": "data/images/training/img_077.jpg",
+    "mask_name": "data/masks/training/mask_img_077.jpg",
+    "top_left": [156, 5],
+    "top_right": [1034, 7],
+    "bottom_right": [1043, 1628],
+    "bottom_left": [176, 1623]
+  }, {
+    "image_name": "data/images/training/img_078.jpg",
+    "mask_name": "data/masks/training/mask_img_078.jpg",
+    "top_left": [160, 5],
+    "top_right": [947, 13],
+    "bottom_right": [1026, 1516],
+    "bottom_left": [192, 1525]
+  }, {
+    "image_name": "data/images/training/img_079.jpg",
+    "mask_name": "data/masks/training/mask_img_079.jpg",
+    "top_left": [207, 65],
+    "top_right": [876, 147],
+    "bottom_right": [899, 1590],
+    "bottom_left": [199, 1576]
+  }, {
+    "image_name": "data/images/training/img_080.jpg",
+    "mask_name": "data/masks/training/mask_img_080.jpg",
+    "top_left": [252, 11],
+    "top_right": [896, 9],
+    "bottom_right": [1019, 1621],
+    "bottom_left": [183, 1625]
+  }, {
+    "image_name": "data/images/training/img_081.jpg",
+    "mask_name": "data/masks/training/mask_img_081.jpg",
+    "top_left": [281, 91],
+    "top_right": [974, 102],
+    "bottom_right": [1086, 1320],
+    "bottom_left": [151, 1333]
+  }, {
+    "image_name": "data/images/training/img_082.jpg",
+    "mask_name": "data/masks/training/mask_img_082.jpg",
+    "top_left": [118, 5],
+    "top_right": [1115, 9],
+    "bottom_right": [1126, 1623],
+    "bottom_left": [91, 1627]
+  }, {
+    "image_name": "data/images/training/img_083.jpg",
+    "mask_name": "data/masks/training/mask_img_083.jpg",
+    "top_left": [257, 25],
+    "top_right": [983, 13],
+    "bottom_right": [1003, 1625],
+    "bottom_left": [257, 1623]
+  }, {
+    "image_name": "data/images/training/img_084.jpg",
+    "mask_name": "data/masks/training/mask_img_084.jpg",
+    "top_left": [227, 11],
+    "top_right": [936, 4],
+    "bottom_right": [985, 1623],
+    "bottom_left": [218, 1594]
+  }, {
+    "image_name": "data/images/training/img_085.jpg",
+    "mask_name": "data/masks/training/mask_img_085.jpg",
+    "top_left": [276, 265],
+    "top_right": [695, 335],
+    "bottom_right": [709, 1311],
+    "bottom_left": [254, 1326]
+  }, {
+    "image_name": "data/images/training/img_086.jpg",
+    "mask_name": "data/masks/training/mask_img_086.jpg",
+    "top_left": [9, 10],
+    "top_right": [1209, 9],
+    "bottom_right": [1137, 1561],
+    "bottom_left": [60, 1561]
+  }, {
+    "image_name": "data/images/training/img_087.jpg",
+    "mask_name": "data/masks/training/mask_img_087.jpg",
+    "top_left": [535, 74],
+    "top_right": [865, 33],
+    "bottom_right": [885, 1501],
+    "bottom_left": [511, 1491]
+  }, {
+    "image_name": "data/images/training/img_088.jpg",
+    "mask_name": "data/masks/training/mask_img_088.jpg",
+    "top_left": [352, 486],
+    "top_right": [883, 471],
+    "bottom_right": [918, 1280],
+    "bottom_left": [321, 1280]
+  }, {
+    "image_name": "data/images/training/img_089.jpg",
+    "mask_name": "data/masks/training/mask_img_089.jpg",
+    "top_left": [98, 13],
+    "top_right": [1046, 11],
+    "bottom_right": [1054, 1619],
+    "bottom_left": [132, 1621]
+  }, {
+    "image_name": "data/images/training/img_090.jpg",
+    "mask_name": "data/masks/training/mask_img_090.jpg",
+    "top_left": [239, 7],
+    "top_right": [1048, 5],
+    "bottom_right": [1041, 1565],
+    "bottom_left": [192, 1491]
+  }, {
+    "image_name": "data/images/training/img_091.jpg",
+    "mask_name": "data/masks/training/mask_img_091.jpg",
+    "top_left": [276, 11],
+    "top_right": [912, 7],
+    "bottom_right": [896, 1598],
+    "bottom_left": [257, 1590]
+  }, {
+    "image_name": "data/images/training/img_092.jpg",
+    "mask_name": "data/masks/training/mask_img_092.jpg",
+    "top_left": [499, 357],
+    "top_right": [809, 341],
+    "bottom_right": [820, 1188],
+    "bottom_left": [486, 1193]
+  }, {
+    "image_name": "data/images/training/img_093.jpg",
+    "mask_name": "data/masks/training/mask_img_093.jpg",
+    "top_left": [439, 363],
+    "top_right": [729, 363],
+    "bottom_right": [754, 1358],
+    "bottom_left": [423, 1367]
+  }, {
+    "image_name": "data/images/training/img_094.jpg",
+    "mask_name": "data/masks/training/mask_img_094.jpg",
+    "top_left": [296, 58],
+    "top_right": [883, 16],
+    "bottom_right": [921, 1565],
+    "bottom_left": [236, 1570]
+  }, {
+    "image_name": "data/images/training/img_095.jpg",
+    "mask_name": "data/masks/training/mask_img_095.jpg",
+    "top_left": [316, 9],
+    "top_right": [872, 49],
+    "bottom_right": [921, 1607],
+    "bottom_left": [288, 1617]
+  }, {
+    "image_name": "data/images/training/img_096.jpg",
+    "mask_name": "data/masks/training/mask_img_096.jpg",
+    "top_left": [395, 7],
+    "top_right": [789, 9],
+    "bottom_right": [825, 1625],
+    "bottom_left": [390, 1627]
+  }, {
+    "image_name": "data/images/training/img_097.jpg",
+    "mask_name": "data/masks/training/mask_img_097.jpg",
+    "top_left": [201, 91],
+    "top_right": [919, 91],
+    "bottom_right": [968, 1598],
+    "bottom_left": [190, 1592]
+  }, {
+    "image_name": "data/images/training/img_098.jpg",
+    "mask_name": "data/masks/training/mask_img_098.jpg",
+    "top_left": [370, 5],
+    "top_right": [800, 7],
+    "bottom_right": [751, 1563],
+    "bottom_left": [384, 1570]
+  }, {
+    "image_name": "data/images/training/img_099.jpg",
+    "mask_name": "data/masks/training/mask_img_099.jpg",
+    "top_left": [129, 4],
+    "top_right": [1044, 42],
+    "bottom_right": [1121, 1581],
+    "bottom_left": [194, 1534]
+  }, {
+    "image_name": "data/images/training/img_100.jpg",
+    "mask_name": "data/masks/training/mask_img_100.jpg",
+    "top_left": [259, 7],
+    "top_right": [856, 5],
+    "bottom_right": [947, 1617],
+    "bottom_left": [277, 1625]
+  }, {
+    "image_name": "data/images/training/img_101.jpg",
+    "mask_name": "data/masks/training/mask_img_101.jpg",
+    "top_left": [194, 11],
+    "top_right": [1075, 7],
+    "bottom_right": [1079, 1623],
+    "bottom_left": [152, 1625]
+  }, {
+    "image_name": "data/images/training/img_102.jpg",
+    "mask_name": "data/masks/training/mask_img_102.jpg",
+    "top_left": [131, 69],
+    "top_right": [954, 44],
+    "bottom_right": [1054, 1483],
+    "bottom_left": [120, 1496]
+  }, {
+    "image_name": "data/images/training/img_103.jpg",
+    "mask_name": "data/masks/training/mask_img_103.jpg",
+    "top_left": [94, 7],
+    "top_right": [1055, 9],
+    "bottom_right": [1035, 1617],
+    "bottom_left": [103, 1610]
+  }, {
+    "image_name": "data/images/training/img_104.jpg",
+    "mask_name": "data/masks/training/mask_img_104.jpg",
+    "top_left": [335, 13],
+    "top_right": [845, 25],
+    "bottom_right": [912, 1607],
+    "bottom_left": [290, 1588]
+  }, {
+    "image_name": "data/images/training/img_105.jpg",
+    "mask_name": "data/masks/training/mask_img_105.jpg",
+    "top_left": [218, 116],
+    "top_right": [968, 53],
+    "bottom_right": [1090, 1549],
+    "bottom_left": [121, 1550]
+  }, {
+    "image_name": "data/images/training/img_106.jpg",
+    "mask_name": "data/masks/training/mask_img_106.jpg",
+    "top_left": [450, 47],
+    "top_right": [704, 69],
+    "bottom_right": [722, 1596],
+    "bottom_left": [439, 1601]
+  }, {
+    "image_name": "data/images/training/img_107.jpg",
+    "mask_name": "data/masks/training/mask_img_107.jpg",
+    "top_left": [312, 5],
+    "top_right": [878, 40],
+    "bottom_right": [932, 1628],
+    "bottom_left": [310, 1627]
+  }, {
+    "image_name": "data/images/training/img_108.jpg",
+    "mask_name": "data/masks/training/mask_img_108.jpg",
+    "top_left": [363, 7],
+    "top_right": [890, 7],
+    "bottom_right": [863, 1590],
+    "bottom_left": [350, 1625]
+  }, {
+    "image_name": "data/images/training/img_109.jpg",
+    "mask_name": "data/masks/training/mask_img_109.jpg",
+    "top_left": [187, 27],
+    "top_right": [841, 25],
+    "bottom_right": [887, 1583],
+    "bottom_left": [189, 1605]
+  }, {
+    "image_name": "data/images/training/img_110.jpg",
+    "mask_name": "data/masks/training/mask_img_110.jpg",
+    "top_left": [310, 243],
+    "top_right": [647, 210],
+    "bottom_right": [709, 1407],
+    "bottom_left": [308, 1418]
+  }, {
+    "image_name": "data/images/training/img_111.jpg",
+    "mask_name": "data/masks/training/mask_img_111.jpg",
+    "top_left": [223, 9],
+    "top_right": [959, 5],
+    "bottom_right": [939, 1614],
+    "bottom_left": [198, 1623]
+  }, {
+    "image_name": "data/images/training/img_112.jpg",
+    "mask_name": "data/masks/training/mask_img_112.jpg",
+    "top_left": [245, 13],
+    "top_right": [863, 5],
+    "bottom_right": [928, 1610],
+    "bottom_left": [210, 1628]
+  }, {
+    "image_name": "data/images/training/img_113.jpg",
+    "mask_name": "data/masks/training/mask_img_113.jpg",
+    "top_left": [413, 236],
+    "top_right": [767, 212],
+    "bottom_right": [852, 1442],
+    "bottom_left": [450, 1443]
+  }, {
+    "image_name": "data/images/training/img_114.jpg",
+    "mask_name": "data/masks/training/mask_img_114.jpg",
+    "top_left": [334, 9],
+    "top_right": [845, 5],
+    "bottom_right": [892, 1625],
+    "bottom_left": [283, 1625]
+  }, {
+    "image_name": "data/images/training/img_115.jpg",
+    "mask_name": "data/masks/training/mask_img_115.jpg",
+    "top_left": [479, 230],
+    "top_right": [849, 239],
+    "bottom_right": [811, 1268],
+    "bottom_left": [426, 1249]
+  }, {
+    "image_name": "data/images/training/img_116.jpg",
+    "mask_name": "data/masks/training/mask_img_116.jpg",
+    "top_left": [136, 13],
+    "top_right": [1044, 7],
+    "bottom_right": [1113, 1608],
+    "bottom_left": [198, 1617]
+  }, {
+    "image_name": "data/images/training/img_117.jpg",
+    "mask_name": "data/masks/training/mask_img_117.jpg",
+    "top_left": [103, 277],
+    "top_right": [1025, 170],
+    "bottom_right": [1061, 1623],
+    "bottom_left": [185, 1627]
+  }, {
+    "image_name": "data/images/training/img_118.jpg",
+    "mask_name": "data/masks/training/mask_img_118.jpg",
+    "top_left": [399, 374],
+    "top_right": [743, 432],
+    "bottom_right": [789, 1249],
+    "bottom_left": [325, 1213]
+  }, {
+    "image_name": "data/images/training/img_119.jpg",
+    "mask_name": "data/masks/training/mask_img_119.jpg",
+    "top_left": [413, 194],
+    "top_right": [733, 196],
+    "bottom_right": [740, 1498],
+    "bottom_left": [404, 1498]
+  }, {
+    "image_name": "data/images/training/img_120.jpg",
+    "mask_name": "data/masks/training/mask_img_120.jpg",
+    "top_left": [305, 7],
+    "top_right": [899, 7],
+    "bottom_right": [910, 1623],
+    "bottom_left": [294, 1616]
+  }, {
+    "image_name": "data/images/training/img_121.jpg",
+    "mask_name": "data/masks/training/mask_img_121.jpg",
+    "top_left": [493, 354],
+    "top_right": [818, 332],
+    "bottom_right": [908, 1367],
+    "bottom_left": [517, 1398]
+  }, {
+    "image_name": "data/images/training/img_122.jpg",
+    "mask_name": "data/masks/training/mask_img_122.jpg",
+    "top_left": [102, 11],
+    "top_right": [1025, 7],
+    "bottom_right": [990, 1616],
+    "bottom_left": [192, 1612]
+  }, {
+    "image_name": "data/images/training/img_123.jpg",
+    "mask_name": "data/masks/training/mask_img_123.jpg",
+    "top_left": [395, 15],
+    "top_right": [932, 7],
+    "bottom_right": [939, 1625],
+    "bottom_left": [381, 1625]
+  }, {
+    "image_name": "data/images/training/img_124.jpg",
+    "mask_name": "data/masks/training/mask_img_124.jpg",
+    "top_left": [425, 482],
+    "top_right": [758, 445],
+    "bottom_right": [816, 1217],
+    "bottom_left": [446, 1233]
+  }, {
+    "image_name": "data/images/training/img_125.jpg",
+    "mask_name": "data/masks/training/mask_img_125.jpg",
+    "top_left": [343, 388],
+    "top_right": [754, 500],
+    "bottom_right": [823, 1364],
+    "bottom_left": [397, 1355]
+  }, {
+    "image_name": "data/images/training/img_126.jpg",
+    "mask_name": "data/masks/training/mask_img_126.jpg",
+    "top_left": [270, 7],
+    "top_right": [825, 11],
+    "bottom_right": [892, 1599],
+    "bottom_left": [216, 1603]
+  }, {
+    "image_name": "data/images/training/img_127.jpg",
+    "mask_name": "data/masks/training/mask_img_127.jpg",
+    "top_left": [112, 181],
+    "top_right": [1072, 176],
+    "bottom_right": [1130, 1474],
+    "bottom_left": [63, 1485]
+  }, {
+    "image_name": "data/images/training/img_128.jpg",
+    "mask_name": "data/masks/training/mask_img_128.jpg",
+    "top_left": [209, 9],
+    "top_right": [867, 5],
+    "bottom_right": [923, 1619],
+    "bottom_left": [219, 1561]
+  }, {
+    "image_name": "data/images/training/img_129.jpg",
+    "mask_name": "data/masks/training/mask_img_129.jpg",
+    "top_left": [499, 528],
+    "top_right": [814, 490],
+    "bottom_right": [916, 1405],
+    "bottom_left": [564, 1434]
+  }, {
+    "image_name": "data/images/training/img_130.jpg",
+    "mask_name": "data/masks/training/mask_img_130.jpg",
+    "top_left": [292, 11],
+    "top_right": [854, 9],
+    "bottom_right": [856, 1617],
+    "bottom_left": [281, 1623]
+  }, {
+    "image_name": "data/images/training/img_131.jpg",
+    "mask_name": "data/masks/training/mask_img_131.jpg",
+    "top_left": [241, 16],
+    "top_right": [947, 91],
+    "bottom_right": [1014, 1616],
+    "bottom_left": [189, 1625]
+  }, {
+    "image_name": "data/images/training/img_132.jpg",
+    "mask_name": "data/masks/training/mask_img_132.jpg",
+    "top_left": [390, 337],
+    "top_right": [684, 310],
+    "bottom_right": [767, 1347],
+    "bottom_left": [433, 1362]
+  }, {
+    "image_name": "data/images/training/img_133.jpg",
+    "mask_name": "data/masks/training/mask_img_133.jpg",
+    "top_left": [274, 174],
+    "top_right": [947, 98],
+    "bottom_right": [977, 1540],
+    "bottom_left": [239, 1527]
+  }, {
+    "image_name": "data/images/training/img_134.jpg",
+    "mask_name": "data/masks/training/mask_img_134.jpg",
+    "top_left": [234, 7],
+    "top_right": [885, 4],
+    "bottom_right": [1002, 1553],
+    "bottom_left": [176, 1572]
+  }, {
+    "image_name": "data/images/training/img_135.jpg",
+    "mask_name": "data/masks/training/mask_img_135.jpg",
+    "top_left": [381, 103],
+    "top_right": [689, 94],
+    "bottom_right": [756, 1559],
+    "bottom_left": [403, 1567]
+  }, {
+    "image_name": "data/images/training/img_136.jpg",
+    "mask_name": "data/masks/training/mask_img_136.jpg",
+    "top_left": [372, 11],
+    "top_right": [836, 9],
+    "bottom_right": [889, 1619],
+    "bottom_left": [326, 1619]
+  }, {
+    "image_name": "data/images/training/img_137.jpg",
+    "mask_name": "data/masks/training/mask_img_137.jpg",
+    "top_left": [73, 13],
+    "top_right": [928, 7],
+    "bottom_right": [885, 1590],
+    "bottom_left": [194, 1614]
+  }, {
+    "image_name": "data/images/training/img_138.jpg",
+    "mask_name": "data/masks/training/mask_img_138.jpg",
+    "top_left": [285, 7],
+    "top_right": [867, 11],
+    "bottom_right": [923, 1623],
+    "bottom_left": [243, 1617]
+  }, {
+    "image_name": "data/images/training/img_139.jpg",
+    "mask_name": "data/masks/training/mask_img_139.jpg",
+    "top_left": [466, 15],
+    "top_right": [792, 7],
+    "bottom_right": [805, 1623],
+    "bottom_left": [410, 1627]
+  }, {
+    "image_name": "data/images/training/img_140.jpg",
+    "mask_name": "data/masks/training/mask_img_140.jpg",
+    "top_left": [250, 9],
+    "top_right": [879, 7],
+    "bottom_right": [903, 1621],
+    "bottom_left": [230, 1623]
+  }, {
+    "image_name": "data/images/training/img_141.jpg",
+    "mask_name": "data/masks/training/mask_img_141.jpg",
+    "top_left": [219, 83],
+    "top_right": [898, 47],
+    "bottom_right": [967, 1612],
+    "bottom_left": [174, 1592]
+  }, {
+    "image_name": "data/images/training/img_142.jpg",
+    "mask_name": "data/masks/training/mask_img_142.jpg",
+    "top_left": [141, 5],
+    "top_right": [865, 7],
+    "bottom_right": [881, 1623],
+    "bottom_left": [140, 1623]
+  }, {
+    "image_name": "data/images/training/img_143.jpg",
+    "mask_name": "data/masks/training/mask_img_143.jpg",
+    "top_left": [147, 4],
+    "top_right": [1084, 9],
+    "bottom_right": [1054, 1627],
+    "bottom_left": [107, 1623]
+  }, {
+    "image_name": "data/images/training/img_144.jpg",
+    "mask_name": "data/masks/training/mask_img_144.jpg",
+    "top_left": [65, 18],
+    "top_right": [1081, 5],
+    "bottom_right": [1093, 1617],
+    "bottom_left": [140, 1621]
+  }, {
+    "image_name": "data/images/training/img_145.jpg",
+    "mask_name": "data/masks/training/mask_img_145.jpg",
+    "top_left": [140, 42],
+    "top_right": [999, 54],
+    "bottom_right": [1101, 1623],
+    "bottom_left": [20, 1627]
+  }, {
+    "image_name": "data/images/training/img_146.jpg",
+    "mask_name": "data/masks/training/mask_img_146.jpg",
+    "top_left": [259, 25],
+    "top_right": [858, 65],
+    "bottom_right": [923, 1621],
+    "bottom_left": [238, 1619]
+  }, {
+    "image_name": "data/images/training/img_147.jpg",
+    "mask_name": "data/masks/training/mask_img_147.jpg",
+    "top_left": [134, 5],
+    "top_right": [1044, 4],
+    "bottom_right": [1108, 1623],
+    "bottom_left": [63, 1617]
+  }, {
+    "image_name": "data/images/training/img_148.jpg",
+    "mask_name": "data/masks/training/mask_img_148.jpg",
+    "top_left": [301, 11],
+    "top_right": [834, 24],
+    "bottom_right": [976, 1623],
+    "bottom_left": [259, 1623]
+  }, {
+    "image_name": "data/images/training/img_149.jpg",
+    "mask_name": "data/masks/training/mask_img_149.jpg",
+    "top_left": [395, 7],
+    "top_right": [754, 5],
+    "bottom_right": [812, 1621],
+    "bottom_left": [364, 1625]
+  }, {
+    "image_name": "data/images/training/img_150.jpg",
+    "mask_name": "data/masks/training/mask_img_150.jpg",
+    "top_left": [174, 11],
+    "top_right": [965, 11],
+    "bottom_right": [972, 1614],
+    "bottom_left": [156, 1625]
+  }, {
+    "image_name": "data/images/training/img_151.jpg",
+    "mask_name": "data/masks/training/mask_img_151.jpg",
+    "top_left": [220, 8],
+    "top_right": [868, 11],
+    "bottom_right": [964, 1624],
+    "bottom_left": [137, 1628]
+  }, {
+    "image_name": "data/images/training/img_152.jpg",
+    "mask_name": "data/masks/training/mask_img_152.jpg",
+    "top_left": [359, 10],
+    "top_right": [815, 8],
+    "bottom_right": [899, 1628],
+    "bottom_left": [364, 1625]
+  }, {
+    "image_name": "data/images/training/img_153.jpg",
+    "mask_name": "data/masks/training/mask_img_153.jpg",
+    "top_left": [212, 5],
+    "top_right": [1017, 83],
+    "bottom_right": [1093, 1621],
+    "bottom_left": [128, 1620]
+  }, {
+    "image_name": "data/images/training/img_154.jpg",
+    "mask_name": "data/masks/training/mask_img_154.jpg",
+    "top_left": [257, 8],
+    "top_right": [951, 8],
+    "bottom_right": [951, 1624],
+    "bottom_left": [250, 1624]
+  }, {
+    "image_name": "data/images/training/img_155.jpg",
+    "mask_name": "data/masks/training/mask_img_155.jpg",
+    "top_left": [207, 4],
+    "top_right": [982, 5],
+    "bottom_right": [1044, 1624],
+    "bottom_left": [200, 1625]
+  }, {
+    "image_name": "data/images/training/img_156.jpg",
+    "mask_name": "data/masks/training/mask_img_156.jpg",
+    "top_left": [245, 61],
+    "top_right": [949, 83],
+    "bottom_right": [1021, 1582],
+    "bottom_left": [248, 1603]
+  }, {
+    "image_name": "data/images/training/img_157.jpg",
+    "mask_name": "data/masks/training/mask_img_157.jpg",
+    "top_left": [375, 7],
+    "top_right": [796, 3],
+    "bottom_right": [839, 1612],
+    "bottom_left": [364, 1614]
+  }, {
+    "image_name": "data/images/training/img_158.jpg",
+    "mask_name": "data/masks/training/mask_img_158.jpg",
+    "top_left": [262, 11],
+    "top_right": [881, 27],
+    "bottom_right": [940, 1616],
+    "bottom_left": [279, 1627]
+  }, {
+    "image_name": "data/images/training/img_159.jpg",
+    "mask_name": "data/masks/training/mask_img_159.jpg",
+    "top_left": [246, 8],
+    "top_right": [815, 4],
+    "bottom_right": [910, 1628],
+    "bottom_left": [243, 1624]
+  }, {
+    "image_name": "data/images/training/img_160.jpg",
+    "mask_name": "data/masks/training/mask_img_160.jpg",
+    "top_left": [194, 5],
+    "top_right": [948, 1],
+    "bottom_right": [1015, 1580],
+    "bottom_left": [290, 1625]
+  }, {
+    "image_name": "data/images/training/img_161.jpg",
+    "mask_name": "data/masks/training/mask_img_161.jpg",
+    "top_left": [197, 7],
+    "top_right": [1020, 11],
+    "bottom_right": [1070, 1625],
+    "bottom_left": [201, 1624]
+  }, {
+    "image_name": "data/images/training/img_162.jpg",
+    "mask_name": "data/masks/training/mask_img_162.jpg",
+    "top_left": [284, 26],
+    "top_right": [771, 60],
+    "bottom_right": [945, 1627],
+    "bottom_left": [328, 1628]
+  }, {
+    "image_name": "data/images/training/img_163.jpg",
+    "mask_name": "data/masks/training/mask_img_163.jpg",
+    "top_left": [358, 7],
+    "top_right": [683, 4],
+    "bottom_right": [773, 1620],
+    "bottom_left": [407, 1629]
+  }, {
+    "image_name": "data/images/training/img_164.jpg",
+    "mask_name": "data/masks/training/mask_img_164.jpg",
+    "top_left": [159, 10],
+    "top_right": [883, 8],
+    "bottom_right": [968, 1537],
+    "bottom_left": [146, 1620]
+  }, {
+    "image_name": "data/images/training/img_165.jpg",
+    "mask_name": "data/masks/training/mask_img_165.jpg",
+    "top_left": [211, 3],
+    "top_right": [1006, 4],
+    "bottom_right": [1005, 1582],
+    "bottom_left": [207, 1559]
+  }, {
+    "image_name": "data/images/training/img_166.jpg",
+    "mask_name": "data/masks/training/mask_img_166.jpg",
+    "top_left": [201, 305],
+    "top_right": [941, 276],
+    "bottom_right": [1053, 1560],
+    "bottom_left": [224, 1606]
+  }, {
+    "image_name": "data/images/training/img_167.jpg",
+    "mask_name": "data/masks/training/mask_img_167.jpg",
+    "top_left": [388, 11],
+    "top_right": [752, 3],
+    "bottom_right": [819, 1624],
+    "bottom_left": [377, 1627]
+  }, {
+    "image_name": "data/images/training/img_168.jpg",
+    "mask_name": "data/masks/training/mask_img_168.jpg",
+    "top_left": [163, 5],
+    "top_right": [962, 8],
+    "bottom_right": [997, 1625],
+    "bottom_left": [126, 1629]
+  }, {
+    "image_name": "data/images/training/img_169.jpg",
+    "mask_name": "data/masks/training/mask_img_169.jpg",
+    "top_left": [411, 11],
+    "top_right": [793, 37],
+    "bottom_right": [845, 1627],
+    "bottom_left": [370, 1625]
+  }, {
+    "image_name": "data/images/training/img_170.jpg",
+    "mask_name": "data/masks/training/mask_img_170.jpg",
+    "top_left": [253, 33],
+    "top_right": [885, 14],
+    "bottom_right": [971, 1621],
+    "bottom_left": [282, 1605]
+  }, {
+    "image_name": "data/images/training/img_171.jpg",
+    "mask_name": "data/masks/training/mask_img_171.jpg",
+    "top_left": [350, 4],
+    "top_right": [861, 7],
+    "bottom_right": [899, 1620],
+    "bottom_left": [290, 1624]
+  }, {
+    "image_name": "data/images/training/img_172.jpg",
+    "mask_name": "data/masks/training/mask_img_172.jpg",
+    "top_left": [314, 71],
+    "top_right": [960, 109],
+    "bottom_right": [1009, 1478],
+    "bottom_left": [277, 1465]
+  }, {
+    "image_name": "data/images/training/img_173.jpg",
+    "mask_name": "data/masks/training/mask_img_173.jpg",
+    "top_left": [184, 3],
+    "top_right": [1035, 3],
+    "bottom_right": [1068, 1625],
+    "bottom_left": [182, 1624]
+  }, {
+    "image_name": "data/images/training/img_174.jpg",
+    "mask_name": "data/masks/training/mask_img_174.jpg",
+    "top_left": [197, 343],
+    "top_right": [802, 341],
+    "bottom_right": [983, 1480],
+    "bottom_left": [205, 1472]
+  }, {
+    "image_name": "data/images/training/img_175.jpg",
+    "mask_name": "data/masks/training/mask_img_175.jpg",
+    "top_left": [189, 5],
+    "top_right": [937, 4],
+    "bottom_right": [1004, 1624],
+    "bottom_left": [154, 1620]
+  }, {
+    "image_name": "data/images/training/img_176.jpg",
+    "mask_name": "data/masks/training/mask_img_176.jpg",
+    "top_left": [321, 121],
+    "top_right": [902, 132],
+    "bottom_right": [903, 1603],
+    "bottom_left": [307, 1601]
+  }, {
+    "image_name": "data/images/training/img_177.jpg",
+    "mask_name": "data/masks/training/mask_img_177.jpg",
+    "top_left": [188, 8],
+    "top_right": [970, 5],
+    "bottom_right": [953, 1515],
+    "bottom_left": [215, 1594]
+  }, {
+    "image_name": "data/images/training/img_178.jpg",
+    "mask_name": "data/masks/training/mask_img_178.jpg",
+    "top_left": [237, 8],
+    "top_right": [894, 5],
+    "bottom_right": [996, 1548],
+    "bottom_left": [272, 1625]
+  }, {
+    "image_name": "data/images/training/img_179.jpg",
+    "mask_name": "data/masks/training/mask_img_179.jpg",
+    "top_left": [167, 5],
+    "top_right": [919, 7],
+    "bottom_right": [974, 1519],
+    "bottom_left": [171, 1508]
+  }, {
+    "image_name": "data/images/training/img_180.jpg",
+    "mask_name": "data/masks/training/mask_img_180.jpg",
+    "top_left": [384, 68],
+    "top_right": [763, 73],
+    "bottom_right": [749, 1567],
+    "bottom_left": [364, 1595]
+  }, {
+    "image_name": "data/images/training/img_181.jpg",
+    "mask_name": "data/masks/training/mask_img_181.jpg",
+    "top_left": [329, 10],
+    "top_right": [913, 7],
+    "bottom_right": [941, 1599],
+    "bottom_left": [360, 1618]
+  }, {
+    "image_name": "data/images/training/img_182.jpg",
+    "mask_name": "data/masks/training/mask_img_182.jpg",
+    "top_left": [288, 15],
+    "top_right": [839, 3],
+    "bottom_right": [870, 1622],
+    "bottom_left": [309, 1624]
+  }, {
+    "image_name": "data/images/training/img_183.jpg",
+    "mask_name": "data/masks/training/mask_img_183.jpg",
+    "top_left": [133, 5],
+    "top_right": [1121, 10],
+    "bottom_right": [1161, 1621],
+    "bottom_left": [91, 1622]
+  }, {
+    "image_name": "data/images/training/img_184.jpg",
+    "mask_name": "data/masks/training/mask_img_184.jpg",
+    "top_left": [314, 105],
+    "top_right": [821, 86],
+    "bottom_right": [846, 1571],
+    "bottom_left": [292, 1560]
+  }, {
+    "image_name": "data/images/training/img_185.jpg",
+    "mask_name": "data/masks/training/mask_img_185.jpg",
+    "top_left": [277, 4],
+    "top_right": [908, 4],
+    "bottom_right": [919, 1624],
+    "bottom_left": [298, 1625]
+  }, {
+    "image_name": "data/images/training/img_186.jpg",
+    "mask_name": "data/masks/training/mask_img_186.jpg",
+    "top_left": [316, 33],
+    "top_right": [887, 35],
+    "bottom_right": [902, 1537],
+    "bottom_left": [314, 1593]
+  }, {
+    "image_name": "data/images/training/img_187.jpg",
+    "mask_name": "data/masks/training/mask_img_187.jpg",
+    "top_left": [322, 10],
+    "top_right": [869, 4],
+    "bottom_right": [894, 1627],
+    "bottom_left": [200, 1624]
+  }, {
+    "image_name": "data/images/training/img_188.jpg",
+    "mask_name": "data/masks/training/mask_img_188.jpg",
+    "top_left": [358, 52],
+    "top_right": [892, 64],
+    "bottom_right": [994, 1559],
+    "bottom_left": [341, 1578]
+  }, {
+    "image_name": "data/images/training/img_189.jpg",
+    "mask_name": "data/masks/training/mask_img_189.jpg",
+    "top_left": [162, 3],
+    "top_right": [932, 7],
+    "bottom_right": [937, 1580],
+    "bottom_left": [112, 1622]
+  }, {
+    "image_name": "data/images/training/img_190.jpg",
+    "mask_name": "data/masks/training/mask_img_190.jpg",
+    "top_left": [268, 193],
+    "top_right": [976, 219],
+    "bottom_right": [1009, 1599],
+    "bottom_left": [228, 1610]
+  }, {
+    "image_name": "data/images/training/img_191.jpg",
+    "mask_name": "data/masks/training/mask_img_191.jpg",
+    "top_left": [296, 19],
+    "top_right": [862, 11],
+    "bottom_right": [942, 1624],
+    "bottom_left": [216, 1624]
+  }, {
+    "image_name": "data/images/training/img_192.jpg",
+    "mask_name": "data/masks/training/mask_img_192.jpg",
+    "top_left": [290, 10],
+    "top_right": [851, 11],
+    "bottom_right": [934, 1624],
+    "bottom_left": [257, 1621]
+  }, {
+    "image_name": "data/images/training/img_193.jpg",
+    "mask_name": "data/masks/training/mask_img_193.jpg",
+    "top_left": [273, 5],
+    "top_right": [730, 7],
+    "bottom_right": [785, 1624],
+    "bottom_left": [264, 1622]
+  }, {
+    "image_name": "data/images/training/img_194.jpg",
+    "mask_name": "data/masks/training/mask_img_194.jpg",
+    "top_left": [154, 4],
+    "top_right": [1017, 7],
+    "bottom_right": [1115, 1627],
+    "bottom_left": [103, 1627]
+  }, {
+    "image_name": "data/images/training/img_195.jpg",
+    "mask_name": "data/masks/training/mask_img_195.jpg",
+    "top_left": [167, 5],
+    "top_right": [967, 7],
+    "bottom_right": [1123, 1624],
+    "bottom_left": [146, 1624]
+  }, {
+    "image_name": "data/images/training/img_196.jpg",
+    "mask_name": "data/masks/training/mask_img_196.jpg",
+    "top_left": [238, 13],
+    "top_right": [974, 27],
+    "bottom_right": [979, 1594],
+    "bottom_left": [170, 1601]
+  }, {
+    "image_name": "data/images/training/img_197.jpg",
+    "mask_name": "data/masks/training/mask_img_197.jpg",
+    "top_left": [284, 5],
+    "top_right": [892, 7],
+    "bottom_right": [947, 1594],
+    "bottom_left": [226, 1587]
+  }, {
+    "image_name": "data/images/training/img_198.jpg",
+    "mask_name": "data/masks/training/mask_img_198.jpg",
+    "top_left": [276, 64],
+    "top_right": [864, 71],
+    "bottom_right": [918, 1625],
+    "bottom_left": [256, 1624]
+  }, {
+    "image_name": "data/images/training/img_199.jpg",
+    "mask_name": "data/masks/training/mask_img_199.jpg",
+    "top_left": [177, 16],
+    "top_right": [908, 14],
+    "bottom_right": [913, 1625],
+    "bottom_left": [200, 1622]
+  }, {
+    "image_name": "data/images/training/img_200.jpg",
+    "mask_name": "data/masks/training/mask_img_200.jpg",
+    "top_left": [301, 1],
+    "top_right": [808, 3],
+    "bottom_right": [838, 1591],
+    "bottom_left": [320, 1621]
+  }, {
+    "image_name": "data/images/training/img_201.jpg",
+    "mask_name": "data/masks/training/mask_img_201.jpg",
+    "top_left": [214, 10],
+    "top_right": [868, 5],
+    "bottom_right": [903, 1515],
+    "bottom_left": [188, 1537]
+  }, {
+    "image_name": "data/images/training/img_202.jpg",
+    "mask_name": "data/masks/training/mask_img_202.jpg",
+    "top_left": [222, 5],
+    "top_right": [974, 4],
+    "bottom_right": [1081, 1568],
+    "bottom_left": [212, 1588]
+  }, {
+    "image_name": "data/images/training/img_203.jpg",
+    "mask_name": "data/masks/training/mask_img_203.jpg",
+    "top_left": [307, 46],
+    "top_right": [1059, 44],
+    "bottom_right": [1088, 1529],
+    "bottom_left": [277, 1489]
+  }, {
+    "image_name": "data/images/training/img_204.jpg",
+    "mask_name": "data/masks/training/mask_img_204.jpg",
+    "top_left": [363, 8],
+    "top_right": [908, 4],
+    "bottom_right": [880, 1628],
+    "bottom_left": [305, 1627]
+  }, {
+    "image_name": "data/images/training/img_205.jpg",
+    "mask_name": "data/masks/training/mask_img_205.jpg",
+    "top_left": [231, 29],
+    "top_right": [985, 7],
+    "bottom_right": [1051, 1364],
+    "bottom_left": [200, 1380]
+  }, {
+    "image_name": "data/images/training/img_206.jpg",
+    "mask_name": "data/masks/training/mask_img_206.jpg",
+    "top_left": [234, 146],
+    "top_right": [934, 197],
+    "bottom_right": [928, 1440],
+    "bottom_left": [200, 1439]
+  }, {
+    "image_name": "data/images/training/img_207.jpg",
+    "mask_name": "data/masks/training/mask_img_207.jpg",
+    "top_left": [114, 5],
+    "top_right": [1127, 7],
+    "bottom_right": [1153, 1620],
+    "bottom_left": [91, 1624]
+  }, {
+    "image_name": "data/images/training/img_208.jpg",
+    "mask_name": "data/masks/training/mask_img_208.jpg",
+    "top_left": [173, 7],
+    "top_right": [951, 7],
+    "bottom_right": [1013, 1620],
+    "bottom_left": [154, 1622]
+  }, {
+    "image_name": "data/images/training/img_209.jpg",
+    "mask_name": "data/masks/training/mask_img_209.jpg",
+    "top_left": [171, 67],
+    "top_right": [1050, 54],
+    "bottom_right": [1090, 1536],
+    "bottom_left": [173, 1617]
+  }, {
+    "image_name": "data/images/training/img_210.jpg",
+    "mask_name": "data/masks/training/mask_img_210.jpg",
+    "top_left": [137, 110],
+    "top_right": [1046, 103],
+    "bottom_right": [1030, 1511],
+    "bottom_left": [228, 1530]
+  }, {
+    "image_name": "data/images/training/img_211.jpg",
+    "mask_name": "data/masks/training/mask_img_211.jpg",
+    "top_left": [182, 3],
+    "top_right": [925, 3],
+    "bottom_right": [914, 1614],
+    "bottom_left": [235, 1608]
+  }, {
+    "image_name": "data/images/training/img_212.jpg",
+    "mask_name": "data/masks/training/mask_img_212.jpg",
+    "top_left": [158, 5],
+    "top_right": [1064, 5],
+    "bottom_right": [1189, 1622],
+    "bottom_left": [83, 1625]
+  }, {
+    "image_name": "data/images/training/img_213.jpg",
+    "mask_name": "data/masks/training/mask_img_213.jpg",
+    "top_left": [182, 5],
+    "top_right": [934, 4],
+    "bottom_right": [959, 1616],
+    "bottom_left": [216, 1612]
+  }, {
+    "image_name": "data/images/training/img_214.jpg",
+    "mask_name": "data/masks/training/mask_img_214.jpg",
+    "top_left": [173, 165],
+    "top_right": [1005, 162],
+    "bottom_right": [1100, 1563],
+    "bottom_left": [166, 1586]
+  }, {
+    "image_name": "data/images/training/img_215.jpg",
+    "mask_name": "data/masks/training/mask_img_215.jpg",
+    "top_left": [454, 4],
+    "top_right": [722, 8],
+    "bottom_right": [755, 1622],
+    "bottom_left": [479, 1622]
+  }, {
+    "image_name": "data/images/training/img_216.jpg",
+    "mask_name": "data/masks/training/mask_img_216.jpg",
+    "top_left": [337, 4],
+    "top_right": [838, 4],
+    "bottom_right": [885, 1588],
+    "bottom_left": [339, 1620]
+  }, {
+    "image_name": "data/images/training/img_217.jpg",
+    "mask_name": "data/masks/training/mask_img_217.jpg",
+    "top_left": [212, 14],
+    "top_right": [937, 5],
+    "bottom_right": [1046, 1603],
+    "bottom_left": [209, 1632]
+  }, {
+    "image_name": "data/images/training/img_218.jpg",
+    "mask_name": "data/masks/training/mask_img_218.jpg",
+    "top_left": [188, 65],
+    "top_right": [948, 44],
+    "bottom_right": [986, 1624],
+    "bottom_left": [175, 1627]
+  }, {
+    "image_name": "data/images/training/img_219.jpg",
+    "mask_name": "data/masks/training/mask_img_219.jpg",
+    "top_left": [246, 7],
+    "top_right": [895, 10],
+    "bottom_right": [964, 1624],
+    "bottom_left": [204, 1625]
+  }, {
+    "image_name": "data/images/training/img_220.jpg",
+    "mask_name": "data/masks/training/mask_img_220.jpg",
+    "top_left": [125, 24],
+    "top_right": [967, 7],
+    "bottom_right": [998, 1563],
+    "bottom_left": [154, 1565]
+  }, {
+    "image_name": "data/images/training/img_221.jpg",
+    "mask_name": "data/masks/training/mask_img_221.jpg",
+    "top_left": [253, 16],
+    "top_right": [917, 11],
+    "bottom_right": [1019, 1625],
+    "bottom_left": [220, 1625]
+  }, {
+    "image_name": "data/images/training/img_222.jpg",
+    "mask_name": "data/masks/training/mask_img_222.jpg",
+    "top_left": [284, 46],
+    "top_right": [864, 23],
+    "bottom_right": [910, 1609],
+    "bottom_left": [318, 1564]
+  }, {
+    "image_name": "data/images/training/img_223.jpg",
+    "mask_name": "data/masks/training/mask_img_223.jpg",
+    "top_left": [367, 11],
+    "top_right": [843, 10],
+    "bottom_right": [949, 1537],
+    "bottom_left": [304, 1623]
+  }, {
+    "image_name": "data/images/training/img_224.jpg",
+    "mask_name": "data/masks/training/mask_img_224.jpg",
+    "top_left": [292, 5],
+    "top_right": [928, 5],
+    "bottom_right": [963, 1627],
+    "bottom_left": [241, 1624]
+  }, {
+    "image_name": "data/images/training/img_225.jpg",
+    "mask_name": "data/masks/training/mask_img_225.jpg",
+    "top_left": [39, 8],
+    "top_right": [1044, 5],
+    "bottom_right": [1078, 1624],
+    "bottom_left": [31, 1628]
+  }, {
+    "image_name": "data/images/training/img_226.jpg",
+    "mask_name": "data/masks/training/mask_img_226.jpg",
+    "top_left": [228, 76],
+    "top_right": [951, 86],
+    "bottom_right": [1021, 1579],
+    "bottom_left": [234, 1598]
+  }, {
+    "image_name": "data/images/training/img_227.jpg",
+    "mask_name": "data/masks/training/mask_img_227.jpg",
+    "top_left": [128, 20],
+    "top_right": [1035, 11],
+    "bottom_right": [1092, 1618],
+    "bottom_left": [116, 1621]
+  }, {
+    "image_name": "data/images/training/img_228.jpg",
+    "mask_name": "data/masks/training/mask_img_228.jpg",
+    "top_left": [290, 15],
+    "top_right": [777, 1],
+    "bottom_right": [854, 1614],
+    "bottom_left": [282, 1620]
+  }, {
+    "image_name": "data/images/training/img_229.jpg",
+    "mask_name": "data/masks/training/mask_img_229.jpg",
+    "top_left": [257, 7],
+    "top_right": [913, 4],
+    "bottom_right": [919, 1583],
+    "bottom_left": [271, 1595]
+  }, {
+    "image_name": "data/images/training/img_230.jpg",
+    "mask_name": "data/masks/training/mask_img_230.jpg",
+    "top_left": [354, 7],
+    "top_right": [766, 3],
+    "bottom_right": [888, 1617],
+    "bottom_left": [320, 1627]
+  }, {
+    "image_name": "data/images/training/img_231.jpg",
+    "mask_name": "data/masks/training/mask_img_231.jpg",
+    "top_left": [330, 15],
+    "top_right": [876, 4],
+    "bottom_right": [1000, 1627],
+    "bottom_left": [291, 1627]
+  }, {
+    "image_name": "data/images/training/img_232.jpg",
+    "mask_name": "data/masks/training/mask_img_232.jpg",
+    "top_left": [276, 11],
+    "top_right": [915, 4],
+    "bottom_right": [1053, 1622],
+    "bottom_left": [196, 1622]
+  }, {
+    "image_name": "data/images/training/img_233.jpg",
+    "mask_name": "data/masks/training/mask_img_233.jpg",
+    "top_left": [237, 11],
+    "top_right": [991, 1],
+    "bottom_right": [1020, 1624],
+    "bottom_left": [190, 1627]
+  }, {
+    "image_name": "data/images/training/img_234.jpg",
+    "mask_name": "data/masks/training/mask_img_234.jpg",
+    "top_left": [231, 71],
+    "top_right": [847, 64],
+    "bottom_right": [913, 1470],
+    "bottom_left": [260, 1516]
+  }, {
+    "image_name": "data/images/training/img_235.jpg",
+    "mask_name": "data/masks/training/mask_img_235.jpg",
+    "top_left": [261, 98],
+    "top_right": [881, 88],
+    "bottom_right": [1126, 1624],
+    "bottom_left": [197, 1625]
+  }, {
+    "image_name": "data/images/training/img_236.jpg",
+    "mask_name": "data/masks/training/mask_img_236.jpg",
+    "top_left": [242, 24],
+    "top_right": [840, 45],
+    "bottom_right": [902, 1561],
+    "bottom_left": [211, 1582]
+  }, {
+    "image_name": "data/images/training/img_237.jpg",
+    "mask_name": "data/masks/training/mask_img_237.jpg",
+    "top_left": [362, 5],
+    "top_right": [794, 4],
+    "bottom_right": [869, 1628],
+    "bottom_left": [341, 1627]
+  }, {
+    "image_name": "data/images/training/img_238.jpg",
+    "mask_name": "data/masks/training/mask_img_238.jpg",
+    "top_left": [282, 27],
+    "top_right": [907, 7],
+    "bottom_right": [997, 1627],
+    "bottom_left": [175, 1627]
+  }, {
+    "image_name": "data/images/training/img_239.jpg",
+    "mask_name": "data/masks/training/mask_img_239.jpg",
+    "top_left": [364, 7],
+    "top_right": [806, 3],
+    "bottom_right": [959, 1627],
+    "bottom_left": [359, 1612]
+  }, {
+    "image_name": "data/images/training/img_240.jpg",
+    "mask_name": "data/masks/training/mask_img_240.jpg",
+    "top_left": [101, 7],
+    "top_right": [1058, 4],
+    "bottom_right": [1074, 1624],
+    "bottom_left": [106, 1622]
+  }, {
+    "image_name": "data/images/training/img_241.jpg",
+    "mask_name": "data/masks/training/mask_img_241.jpg",
+    "top_left": [199, 80],
+    "top_right": [990, 49],
+    "bottom_right": [1012, 1548],
+    "bottom_left": [200, 1567]
+  }, {
+    "image_name": "data/images/training/img_242.jpg",
+    "mask_name": "data/masks/training/mask_img_242.jpg",
+    "top_left": [340, 5],
+    "top_right": [876, 5],
+    "bottom_right": [840, 1624],
+    "bottom_left": [280, 1597]
+  }, {
+    "image_name": "data/images/training/img_243.jpg",
+    "mask_name": "data/masks/training/mask_img_243.jpg",
+    "top_left": [242, 120],
+    "top_right": [898, 95],
+    "bottom_right": [919, 1545],
+    "bottom_left": [233, 1568]
+  }, {
+    "image_name": "data/images/training/img_244.jpg",
+    "mask_name": "data/masks/training/mask_img_244.jpg",
+    "top_left": [355, 44],
+    "top_right": [734, 34],
+    "bottom_right": [786, 1620],
+    "bottom_left": [350, 1605]
+  }, {
+    "image_name": "data/images/training/img_245.jpg",
+    "mask_name": "data/masks/training/mask_img_245.jpg",
+    "top_left": [200, 18],
+    "top_right": [938, 11],
+    "bottom_right": [979, 1598],
+    "bottom_left": [175, 1609]
+  }, {
+    "image_name": "data/images/training/img_246.jpg",
+    "mask_name": "data/masks/training/mask_img_246.jpg",
+    "top_left": [212, 5],
+    "top_right": [782, 8],
+    "bottom_right": [855, 1616],
+    "bottom_left": [175, 1608]
+  }, {
+    "image_name": "data/images/training/img_247.jpg",
+    "mask_name": "data/masks/training/mask_img_247.jpg",
+    "top_left": [302, 19],
+    "top_right": [948, 46],
+    "bottom_right": [983, 1561],
+    "bottom_left": [267, 1567]
+  }, {
+    "image_name": "data/images/training/img_248.jpg",
+    "mask_name": "data/masks/training/mask_img_248.jpg",
+    "top_left": [321, 4],
+    "top_right": [940, 3],
+    "bottom_right": [978, 1624],
+    "bottom_left": [261, 1625]
+  }, {
+    "image_name": "data/images/training/img_249.jpg",
+    "mask_name": "data/masks/training/mask_img_249.jpg",
+    "top_left": [194, 102],
+    "top_right": [989, 114],
+    "bottom_right": [985, 1535],
+    "bottom_left": [200, 1537]
+  }, {
+    "image_name": "data/images/training/img_250.jpg",
+    "mask_name": "data/masks/training/mask_img_250.jpg",
+    "top_left": [253, 20],
+    "top_right": [851, 12],
+    "bottom_right": [908, 1620],
+    "bottom_left": [246, 1578]
+  }, {
+    "image_name": "data/images/training/img_251.jpg",
+    "mask_name": "data/masks/training/mask_img_251.jpg",
+    "top_left": [186, 3],
+    "top_right": [888, 5],
+    "bottom_right": [915, 1554],
+    "bottom_left": [248, 1549]
+  }, {
+    "image_name": "data/images/training/img_252.jpg",
+    "mask_name": "data/masks/training/mask_img_252.jpg",
+    "top_left": [180, 7],
+    "top_right": [1040, 5],
+    "bottom_right": [1163, 1625],
+    "bottom_left": [11, 1631]
+  }, {
+    "image_name": "data/images/training/img_253.jpg",
+    "mask_name": "data/masks/training/mask_img_253.jpg",
+    "top_left": [307, 10],
+    "top_right": [932, 3],
+    "bottom_right": [1061, 1625],
+    "bottom_left": [275, 1627]
+  }, {
+    "image_name": "data/images/training/img_254.jpg",
+    "mask_name": "data/masks/training/mask_img_254.jpg",
+    "top_left": [371, 1],
+    "top_right": [831, 5],
+    "bottom_right": [802, 1571],
+    "bottom_left": [364, 1561]
+  }, {
+    "image_name": "data/images/training/img_255.jpg",
+    "mask_name": "data/masks/training/mask_img_255.jpg",
+    "top_left": [405, 5],
+    "top_right": [834, 3],
+    "bottom_right": [854, 1624],
+    "bottom_left": [359, 1624]
+  }, {
+    "image_name": "data/images/training/img_256.jpg",
+    "mask_name": "data/masks/training/mask_img_256.jpg",
+    "top_left": [337, 44],
+    "top_right": [834, 65],
+    "bottom_right": [919, 1564],
+    "bottom_left": [325, 1578]
+  }, {
+    "image_name": "data/images/training/img_257.jpg",
+    "mask_name": "data/masks/training/mask_img_257.jpg",
+    "top_left": [264, 52],
+    "top_right": [891, 63],
+    "bottom_right": [865, 1560],
+    "bottom_left": [196, 1541]
+  }, {
+    "image_name": "data/images/training/img_258.jpg",
+    "mask_name": "data/masks/training/mask_img_258.jpg",
+    "top_left": [201, 5],
+    "top_right": [949, 1],
+    "bottom_right": [1017, 1590],
+    "bottom_left": [215, 1622]
+  }, {
+    "image_name": "data/images/training/img_259.jpg",
+    "mask_name": "data/masks/training/mask_img_259.jpg",
+    "top_left": [246, 3],
+    "top_right": [872, 4],
+    "bottom_right": [879, 1624],
+    "bottom_left": [239, 1625]
+  }, {
+    "image_name": "data/images/training/img_260.jpg",
+    "mask_name": "data/masks/training/mask_img_260.jpg",
+    "top_left": [214, 57],
+    "top_right": [962, 60],
+    "bottom_right": [1032, 1511],
+    "bottom_left": [287, 1491]
+  }, {
+    "image_name": "data/images/training/img_261.jpg",
+    "mask_name": "data/masks/training/mask_img_261.jpg",
+    "top_left": [292, 144],
+    "top_right": [926, 135],
+    "bottom_right": [1077, 1560],
+    "bottom_left": [209, 1564]
+  }, {
+    "image_name": "data/images/training/img_262.jpg",
+    "mask_name": "data/masks/training/mask_img_262.jpg",
+    "top_left": [254, 69],
+    "top_right": [884, 57],
+    "bottom_right": [964, 1593],
+    "bottom_left": [238, 1608]
+  }, {
+    "image_name": "data/images/training/img_263.jpg",
+    "mask_name": "data/masks/training/mask_img_263.jpg",
+    "top_left": [479, 524],
+    "top_right": [748, 513],
+    "bottom_right": [801, 1406],
+    "bottom_left": [469, 1418]
+  }, {
+    "image_name": "data/images/training/img_264.jpg",
+    "mask_name": "data/masks/training/mask_img_264.jpg",
+    "top_left": [466, 31],
+    "top_right": [851, 29],
+    "bottom_right": [879, 1625],
+    "bottom_left": [441, 1622]
+  }, {
+    "image_name": "data/images/training/img_265.jpg",
+    "mask_name": "data/masks/training/mask_img_265.jpg",
+    "top_left": [178, 8],
+    "top_right": [919, 5],
+    "bottom_right": [1015, 1622],
+    "bottom_left": [117, 1624]
+  }, {
+    "image_name": "data/images/training/img_266.jpg",
+    "mask_name": "data/masks/training/mask_img_266.jpg",
+    "top_left": [291, 3],
+    "top_right": [869, 27],
+    "bottom_right": [976, 1602],
+    "bottom_left": [295, 1625]
+  }, {
+    "image_name": "data/images/training/img_267.jpg",
+    "mask_name": "data/masks/training/mask_img_267.jpg",
+    "top_left": [231, 8],
+    "top_right": [1061, 1],
+    "bottom_right": [1204, 1622],
+    "bottom_left": [124, 1624]
+  }, {
+    "image_name": "data/images/training/img_268.jpg",
+    "mask_name": "data/masks/training/mask_img_268.jpg",
+    "top_left": [146, 7],
+    "top_right": [1099, 3],
+    "bottom_right": [1107, 1617],
+    "bottom_left": [148, 1617]
+  }, {
+    "image_name": "data/images/training/img_269.jpg",
+    "mask_name": "data/masks/training/mask_img_269.jpg",
+    "top_left": [186, 26],
+    "top_right": [1028, 54],
+    "bottom_right": [1087, 1582],
+    "bottom_left": [204, 1591]
+  }, {
+    "image_name": "data/images/training/img_270.jpg",
+    "mask_name": "data/masks/training/mask_img_270.jpg",
+    "top_left": [246, 7],
+    "top_right": [926, 4],
+    "bottom_right": [983, 1625],
+    "bottom_left": [246, 1622]
+  }, {
+    "image_name": "data/images/training/img_271.jpg",
+    "mask_name": "data/masks/training/mask_img_271.jpg",
+    "top_left": [155, 73],
+    "top_right": [884, 30],
+    "bottom_right": [959, 1586],
+    "bottom_left": [188, 1601]
+  }, {
+    "image_name": "data/images/training/img_272.jpg",
+    "mask_name": "data/masks/training/mask_img_272.jpg",
+    "top_left": [265, 7],
+    "top_right": [1002, 7],
+    "bottom_right": [1059, 1620],
+    "bottom_left": [201, 1625]
+  }, {
+    "image_name": "data/images/training/img_273.jpg",
+    "mask_name": "data/masks/training/mask_img_273.jpg",
+    "top_left": [282, 58],
+    "top_right": [790, 52],
+    "bottom_right": [911, 1546],
+    "bottom_left": [294, 1571]
+  }, {
+    "image_name": "data/images/training/img_274.jpg",
+    "mask_name": "data/masks/training/mask_img_274.jpg",
+    "top_left": [362, 75],
+    "top_right": [896, 69],
+    "bottom_right": [956, 1622],
+    "bottom_left": [294, 1625]
+  }, {
+    "image_name": "data/images/training/img_275.jpg",
+    "mask_name": "data/masks/training/mask_img_275.jpg",
+    "top_left": [233, 10],
+    "top_right": [957, 3],
+    "bottom_right": [942, 1625],
+    "bottom_left": [233, 1624]
+  }, {
+    "image_name": "data/images/training/img_276.jpg",
+    "mask_name": "data/masks/training/mask_img_276.jpg",
+    "top_left": [294, 0],
+    "top_right": [821, 4],
+    "bottom_right": [846, 1622],
+    "bottom_left": [329, 1627]
+  }, {
+    "image_name": "data/images/training/img_277.jpg",
+    "mask_name": "data/masks/training/mask_img_277.jpg",
+    "top_left": [272, 10],
+    "top_right": [936, 5],
+    "bottom_right": [964, 1613],
+    "bottom_left": [258, 1624]
+  }, {
+    "image_name": "data/images/training/img_278.jpg",
+    "mask_name": "data/masks/training/mask_img_278.jpg",
+    "top_left": [314, 11],
+    "top_right": [838, 4],
+    "bottom_right": [845, 1620],
+    "bottom_left": [321, 1627]
+  }, {
+    "image_name": "data/images/training/img_279.jpg",
+    "mask_name": "data/masks/training/mask_img_279.jpg",
+    "top_left": [171, 7],
+    "top_right": [925, 4],
+    "bottom_right": [1053, 1625],
+    "bottom_left": [177, 1627]
+  }, {
+    "image_name": "data/images/training/img_280.jpg",
+    "mask_name": "data/masks/training/mask_img_280.jpg",
+    "top_left": [186, 124],
+    "top_right": [949, 116],
+    "bottom_right": [997, 1627],
+    "bottom_left": [129, 1625]
+  }, {
+    "image_name": "data/images/training/img_281.jpg",
+    "mask_name": "data/masks/training/mask_img_281.jpg",
+    "top_left": [393, 8],
+    "top_right": [836, 8],
+    "bottom_right": [910, 1629],
+    "bottom_left": [377, 1629]
+  }, {
+    "image_name": "data/images/training/img_282.jpg",
+    "mask_name": "data/masks/training/mask_img_282.jpg",
+    "top_left": [220, 171],
+    "top_right": [880, 162],
+    "bottom_right": [913, 1315],
+    "bottom_left": [200, 1291]
+  }, {
+    "image_name": "data/images/training/img_283.jpg",
+    "mask_name": "data/masks/training/mask_img_283.jpg",
+    "top_left": [261, 8],
+    "top_right": [832, 3],
+    "bottom_right": [944, 1595],
+    "bottom_left": [267, 1614]
+  }, {
+    "image_name": "data/images/training/img_284.jpg",
+    "mask_name": "data/masks/training/mask_img_284.jpg",
+    "top_left": [356, 69],
+    "top_right": [778, 54],
+    "bottom_right": [821, 1624],
+    "bottom_left": [335, 1624]
+  }, {
+    "image_name": "data/images/training/img_285.jpg",
+    "mask_name": "data/masks/training/mask_img_285.jpg",
+    "top_left": [267, 29],
+    "top_right": [1035, 71],
+    "bottom_right": [1032, 1584],
+    "bottom_left": [199, 1578]
+  }, {
+    "image_name": "data/images/training/img_286.jpg",
+    "mask_name": "data/masks/training/mask_img_286.jpg",
+    "top_left": [238, 84],
+    "top_right": [820, 73],
+    "bottom_right": [937, 1621],
+    "bottom_left": [201, 1625]
+  }, {
+    "image_name": "data/images/training/img_287.jpg",
+    "mask_name": "data/masks/training/mask_img_287.jpg",
+    "top_left": [292, 4],
+    "top_right": [830, 7],
+    "bottom_right": [834, 1620],
+    "bottom_left": [298, 1628]
+  }, {
+    "image_name": "data/images/training/img_288.jpg",
+    "mask_name": "data/masks/training/mask_img_288.jpg",
+    "top_left": [263, 9],
+    "top_right": [967, 15],
+    "bottom_right": [961, 1625],
+    "bottom_left": [285, 1630]
+  }, {
+    "image_name": "data/images/training/img_289.jpg",
+    "mask_name": "data/masks/training/mask_img_289.jpg",
+    "top_left": [358, 5],
+    "top_right": [823, 3],
+    "bottom_right": [842, 1586],
+    "bottom_left": [392, 1591]
+  }, {
+    "image_name": "data/images/training/img_290.jpg",
+    "mask_name": "data/masks/training/mask_img_290.jpg",
+    "top_left": [137, 68],
+    "top_right": [991, 65],
+    "bottom_right": [1036, 1622],
+    "bottom_left": [171, 1621]
+  }, {
+    "image_name": "data/images/training/img_291.jpg",
+    "mask_name": "data/masks/training/mask_img_291.jpg",
+    "top_left": [347, 11],
+    "top_right": [888, 5],
+    "bottom_right": [930, 1620],
+    "bottom_left": [269, 1624]
+  }, {
+    "image_name": "data/images/training/img_292.jpg",
+    "mask_name": "data/masks/training/mask_img_292.jpg",
+    "top_left": [316, 78],
+    "top_right": [902, 67],
+    "bottom_right": [936, 1625],
+    "bottom_left": [307, 1627]
+  }, {
+    "image_name": "data/images/training/img_293.jpg",
+    "mask_name": "data/masks/training/mask_img_293.jpg",
+    "top_left": [262, 8],
+    "top_right": [926, 7],
+    "bottom_right": [1027, 1622],
+    "bottom_left": [188, 1621]
+  }, {
+    "image_name": "data/images/training/img_294.jpg",
+    "mask_name": "data/masks/training/mask_img_294.jpg",
+    "top_left": [328, 61],
+    "top_right": [805, 50],
+    "bottom_right": [845, 1554],
+    "bottom_left": [355, 1541]
+  }, {
+    "image_name": "data/images/training/img_295.jpg",
+    "mask_name": "data/masks/training/mask_img_295.jpg",
+    "top_left": [173, 10],
+    "top_right": [1012, 3],
+    "bottom_right": [1111, 1621],
+    "bottom_left": [139, 1627]
+  }, {
+    "image_name": "data/images/training/img_296.jpg",
+    "mask_name": "data/masks/training/mask_img_296.jpg",
+    "top_left": [375, 8],
+    "top_right": [804, 4],
+    "bottom_right": [947, 1625],
+    "bottom_left": [375, 1617]
+  }, {
+    "image_name": "data/images/training/img_297.jpg",
+    "mask_name": "data/masks/training/mask_img_297.jpg",
+    "top_left": [303, 8],
+    "top_right": [840, 4],
+    "bottom_right": [926, 1620],
+    "bottom_left": [256, 1605]
+  }, {
+    "image_name": "data/images/training/img_298.jpg",
+    "mask_name": "data/masks/training/mask_img_298.jpg",
+    "top_left": [246, 29],
+    "top_right": [823, 50],
+    "bottom_right": [911, 1575],
+    "bottom_left": [267, 1625]
+  }, {
+    "image_name": "data/images/training/img_299.jpg",
+    "mask_name": "data/masks/training/mask_img_299.jpg",
+    "top_left": [237, 11],
+    "top_right": [880, 14],
+    "bottom_right": [956, 1574],
+    "bottom_left": [241, 1531]
+  }, {
+    "image_name": "data/images/training/img_300.jpg",
+    "mask_name": "data/masks/training/mask_img_300.jpg",
+    "top_left": [264, 7],
+    "top_right": [892, 10],
+    "bottom_right": [929, 1622],
+    "bottom_left": [242, 1627]
+  }, {
+    "image_name": "data/images/training/img_301.jpg",
+    "mask_name": "data/masks/training/mask_img_301.jpg",
+    "top_left": [154, 16],
+    "top_right": [1051, 5],
+    "bottom_right": [1151, 1624],
+    "bottom_left": [82, 1622]
+  }, {
+    "image_name": "data/images/training/img_302.jpg",
+    "mask_name": "data/masks/training/mask_img_302.jpg",
+    "top_left": [182, 60],
+    "top_right": [892, 76],
+    "bottom_right": [962, 1469],
+    "bottom_left": [223, 1501]
+  }, {
+    "image_name": "data/images/training/img_303.jpg",
+    "mask_name": "data/masks/training/mask_img_303.jpg",
+    "top_left": [313, 5],
+    "top_right": [918, 19],
+    "bottom_right": [926, 1568],
+    "bottom_left": [254, 1594]
+  }, {
+    "image_name": "data/images/training/img_304.jpg",
+    "mask_name": "data/masks/training/mask_img_304.jpg",
+    "top_left": [152, 11],
+    "top_right": [1038, 5],
+    "bottom_right": [1100, 1571],
+    "bottom_left": [148, 1583]
+  }, {
+    "image_name": "data/images/training/img_305.jpg",
+    "mask_name": "data/masks/training/mask_img_305.jpg",
+    "top_left": [341, 8],
+    "top_right": [823, 3],
+    "bottom_right": [826, 1617],
+    "bottom_left": [351, 1621]
+  }, {
+    "image_name": "data/images/training/img_306.jpg",
+    "mask_name": "data/masks/training/mask_img_306.jpg",
+    "top_left": [262, 19],
+    "top_right": [910, 23],
+    "bottom_right": [1013, 1433],
+    "bottom_left": [194, 1431]
+  }, {
+    "image_name": "data/images/training/img_307.jpg",
+    "mask_name": "data/masks/training/mask_img_307.jpg",
+    "top_left": [220, 7],
+    "top_right": [840, 7],
+    "bottom_right": [915, 1621],
+    "bottom_left": [203, 1627]
+  }, {
+    "image_name": "data/images/training/img_308.jpg",
+    "mask_name": "data/masks/training/mask_img_308.jpg",
+    "top_left": [226, 8],
+    "top_right": [887, 5],
+    "bottom_right": [850, 1624],
+    "bottom_left": [260, 1624]
+  }, {
+    "image_name": "data/images/training/img_309.jpg",
+    "mask_name": "data/masks/training/mask_img_309.jpg",
+    "top_left": [163, 267],
+    "top_right": [881, 220],
+    "bottom_right": [1023, 1516],
+    "bottom_left": [58, 1511]
+  }, {
+    "image_name": "data/images/training/img_310.jpg",
+    "mask_name": "data/masks/training/mask_img_310.jpg",
+    "top_left": [207, 7],
+    "top_right": [981, 7],
+    "bottom_right": [1133, 1627],
+    "bottom_left": [75, 1625]
+  }, {
+    "image_name": "data/images/training/img_311.jpg",
+    "mask_name": "data/masks/training/mask_img_311.jpg",
+    "top_left": [218, 107],
+    "top_right": [952, 102],
+    "bottom_right": [1049, 1628],
+    "bottom_left": [185, 1628]
+  }, {
+    "image_name": "data/images/training/img_312.jpg",
+    "mask_name": "data/masks/training/mask_img_312.jpg",
+    "top_left": [180, 10],
+    "top_right": [821, 8],
+    "bottom_right": [888, 1582],
+    "bottom_left": [196, 1610]
+  }, {
+    "image_name": "data/images/training/img_313.jpg",
+    "mask_name": "data/masks/training/mask_img_313.jpg",
+    "top_left": [132, 10],
+    "top_right": [1085, 19],
+    "bottom_right": [1115, 1614],
+    "bottom_left": [97, 1624]
+  }, {
+    "image_name": "data/images/training/img_314.jpg",
+    "mask_name": "data/masks/training/mask_img_314.jpg",
+    "top_left": [279, 7],
+    "top_right": [835, 5],
+    "bottom_right": [947, 1625],
+    "bottom_left": [248, 1602]
+  }, {
+    "image_name": "data/images/training/img_315.jpg",
+    "mask_name": "data/masks/training/mask_img_315.jpg",
+    "top_left": [249, 50],
+    "top_right": [864, 42],
+    "bottom_right": [930, 1553],
+    "bottom_left": [245, 1575]
+  }, {
+    "image_name": "data/images/training/img_316.jpg",
+    "mask_name": "data/masks/training/mask_img_316.jpg",
+    "top_left": [192, 65],
+    "top_right": [919, 11],
+    "bottom_right": [964, 1614],
+    "bottom_left": [135, 1557]
+  }, {
+    "image_name": "data/images/training/img_317.jpg",
+    "mask_name": "data/masks/training/mask_img_317.jpg",
+    "top_left": [281, 6],
+    "top_right": [862, 6],
+    "bottom_right": [958, 1600],
+    "bottom_left": [275, 1630]
+  }, {
+    "image_name": "data/images/training/img_318.jpg",
+    "mask_name": "data/masks/training/mask_img_318.jpg",
+    "top_left": [272, 5],
+    "top_right": [813, 5],
+    "bottom_right": [826, 1618],
+    "bottom_left": [290, 1609]
+  }, {
+    "image_name": "data/images/training/img_319.jpg",
+    "mask_name": "data/masks/training/mask_img_319.jpg",
+    "top_left": [335, 12],
+    "top_right": [766, 7],
+    "bottom_right": [778, 1624],
+    "bottom_left": [335, 1625]
+  }, {
+    "image_name": "data/images/training/img_320.jpg",
+    "mask_name": "data/masks/training/mask_img_320.jpg",
+    "top_left": [102, 146],
+    "top_right": [1072, 112],
+    "bottom_right": [1038, 1628],
+    "bottom_left": [128, 1618]
+  }, {
+    "image_name": "data/images/training/img_321.jpg",
+    "mask_name": "data/masks/training/mask_img_321.jpg",
+    "top_left": [141, 80],
+    "top_right": [887, 124],
+    "bottom_right": [1009, 1429],
+    "bottom_left": [188, 1454]
+  }, {
+    "image_name": "data/images/training/img_322.jpg",
+    "mask_name": "data/masks/training/mask_img_322.jpg",
+    "top_left": [222, 8],
+    "top_right": [957, 4],
+    "bottom_right": [1106, 1620],
+    "bottom_left": [201, 1622]
+  }, {
+    "image_name": "data/images/training/img_323.jpg",
+    "mask_name": "data/masks/training/mask_img_323.jpg",
+    "top_left": [280, 7],
+    "top_right": [725, 5],
+    "bottom_right": [805, 1594],
+    "bottom_left": [310, 1580]
+  }, {
+    "image_name": "data/images/training/img_324.jpg",
+    "mask_name": "data/masks/training/mask_img_324.jpg",
+    "top_left": [199, 159],
+    "top_right": [949, 204],
+    "bottom_right": [986, 1534],
+    "bottom_left": [171, 1557]
+  }, {
+    "image_name": "data/images/training/img_325.jpg",
+    "mask_name": "data/masks/training/mask_img_325.jpg",
+    "top_left": [268, 7],
+    "top_right": [913, 4],
+    "bottom_right": [907, 1622],
+    "bottom_left": [275, 1627]
+  }, {
+    "image_name": "data/images/training/img_326.jpg",
+    "mask_name": "data/masks/training/mask_img_326.jpg",
+    "top_left": [468, 23],
+    "top_right": [734, 14],
+    "bottom_right": [748, 1629],
+    "bottom_left": [443, 1625]
+  }, {
+    "image_name": "data/images/training/img_327.jpg",
+    "mask_name": "data/masks/training/mask_img_327.jpg",
+    "top_left": [303, 14],
+    "top_right": [836, 5],
+    "bottom_right": [858, 1622],
+    "bottom_left": [302, 1627]
+  }, {
+    "image_name": "data/images/training/img_328.jpg",
+    "mask_name": "data/masks/training/mask_img_328.jpg",
+    "top_left": [390, 12],
+    "top_right": [771, 10],
+    "bottom_right": [824, 1622],
+    "bottom_left": [377, 1624]
+  }, {
+    "image_name": "data/images/training/img_329.jpg",
+    "mask_name": "data/masks/training/mask_img_329.jpg",
+    "top_left": [175, 87],
+    "top_right": [930, 78],
+    "bottom_right": [990, 1624],
+    "bottom_left": [166, 1613]
+  }, {
+    "image_name": "data/images/training/img_330.jpg",
+    "mask_name": "data/masks/training/mask_img_330.jpg",
+    "top_left": [337, 15],
+    "top_right": [800, 82],
+    "bottom_right": [910, 1624],
+    "bottom_left": [320, 1624]
+  }, {
+    "image_name": "data/images/training/img_331.jpg",
+    "mask_name": "data/masks/training/mask_img_331.jpg",
+    "top_left": [223, 18],
+    "top_right": [830, 7],
+    "bottom_right": [902, 1572],
+    "bottom_left": [196, 1591]
+  }, {
+    "image_name": "data/images/training/img_332.jpg",
+    "mask_name": "data/masks/training/mask_img_332.jpg",
+    "top_left": [344, 5],
+    "top_right": [884, 4],
+    "bottom_right": [883, 1618],
+    "bottom_left": [337, 1616]
+  }, {
+    "image_name": "data/images/training/img_333.jpg",
+    "mask_name": "data/masks/training/mask_img_333.jpg",
+    "top_left": [197, 8],
+    "top_right": [845, 8],
+    "bottom_right": [934, 1531],
+    "bottom_left": [220, 1540]
+  }, {
+    "image_name": "data/images/training/img_334.jpg",
+    "mask_name": "data/masks/training/mask_img_334.jpg",
+    "top_left": [258, 19],
+    "top_right": [929, 7],
+    "bottom_right": [1032, 1622],
+    "bottom_left": [216, 1625]
+  }, {
+    "image_name": "data/images/training/img_335.jpg",
+    "mask_name": "data/masks/training/mask_img_335.jpg",
+    "top_left": [305, 125],
+    "top_right": [869, 125],
+    "bottom_right": [936, 1595],
+    "bottom_left": [287, 1561]
+  }, {
+    "image_name": "data/images/training/img_336.jpg",
+    "mask_name": "data/masks/training/mask_img_336.jpg",
+    "top_left": [254, 30],
+    "top_right": [860, 57],
+    "bottom_right": [885, 1621],
+    "bottom_left": [243, 1625]
+  }, {
+    "image_name": "data/images/training/img_337.jpg",
+    "mask_name": "data/masks/training/mask_img_337.jpg",
+    "top_left": [216, 39],
+    "top_right": [975, 19],
+    "bottom_right": [1044, 1622],
+    "bottom_left": [219, 1624]
+  }, {
+    "image_name": "data/images/training/img_338.jpg",
+    "mask_name": "data/masks/training/mask_img_338.jpg",
+    "top_left": [318, 12],
+    "top_right": [869, 7],
+    "bottom_right": [923, 1595],
+    "bottom_left": [264, 1609]
+  }, {
+    "image_name": "data/images/training/img_339.jpg",
+    "mask_name": "data/masks/training/mask_img_339.jpg",
+    "top_left": [382, 8],
+    "top_right": [975, 8],
+    "bottom_right": [962, 1622],
+    "bottom_left": [405, 1625]
+  }, {
+    "image_name": "data/images/training/img_340.jpg",
+    "mask_name": "data/masks/training/mask_img_340.jpg",
+    "top_left": [314, 121],
+    "top_right": [900, 126],
+    "bottom_right": [993, 1567],
+    "bottom_left": [211, 1567]
+  }, {
+    "image_name": "data/images/training/img_341.jpg",
+    "mask_name": "data/masks/training/mask_img_341.jpg",
+    "top_left": [116, 14],
+    "top_right": [981, 7],
+    "bottom_right": [993, 1622],
+    "bottom_left": [146, 1631]
+  }, {
+    "image_name": "data/images/training/img_342.jpg",
+    "mask_name": "data/masks/training/mask_img_342.jpg",
+    "top_left": [411, 5],
+    "top_right": [774, 3],
+    "bottom_right": [820, 1627],
+    "bottom_left": [403, 1625]
+  }, {
+    "image_name": "data/images/training/img_343.jpg",
+    "mask_name": "data/masks/training/mask_img_343.jpg",
+    "top_left": [358, 11],
+    "top_right": [839, 7],
+    "bottom_right": [895, 1625],
+    "bottom_left": [367, 1628]
+  }, {
+    "image_name": "data/images/training/img_344.jpg",
+    "mask_name": "data/masks/training/mask_img_344.jpg",
+    "top_left": [250, 10],
+    "top_right": [895, 5],
+    "bottom_right": [917, 1625],
+    "bottom_left": [245, 1624]
+  }, {
+    "image_name": "data/images/training/img_345.jpg",
+    "mask_name": "data/masks/training/mask_img_345.jpg",
+    "top_left": [201, 14],
+    "top_right": [903, 5],
+    "bottom_right": [951, 1617],
+    "bottom_left": [131, 1568]
+  }, {
+    "image_name": "data/images/training/img_346.jpg",
+    "mask_name": "data/masks/training/mask_img_346.jpg",
+    "top_left": [283, 4],
+    "top_right": [883, 5],
+    "bottom_right": [959, 1628],
+    "bottom_left": [267, 1612]
+  }, {
+    "image_name": "data/images/training/img_347.jpg",
+    "mask_name": "data/masks/training/mask_img_347.jpg",
+    "top_left": [248, 256],
+    "top_right": [834, 252],
+    "bottom_right": [970, 1435],
+    "bottom_left": [233, 1454]
+  }, {
+    "image_name": "data/images/training/img_348.jpg",
+    "mask_name": "data/masks/training/mask_img_348.jpg",
+    "top_left": [543, 128],
+    "top_right": [864, 154],
+    "bottom_right": [914, 1621],
+    "bottom_left": [471, 1628]
+  }, {
+    "image_name": "data/images/training/img_349.jpg",
+    "mask_name": "data/masks/training/mask_img_349.jpg",
+    "top_left": [597, 7],
+    "top_right": [1087, 8],
+    "bottom_right": [1185, 1624],
+    "bottom_left": [620, 1629]
+  }, {
+    "image_name": "data/images/training/img_350.jpg",
+    "mask_name": "data/masks/training/mask_img_350.jpg",
+    "top_left": [347, 50],
+    "top_right": [889, 76],
+    "bottom_right": [947, 1582],
+    "bottom_left": [260, 1584]
+  }, {
+    "image_name": "data/images/training/img_351.jpg",
+    "mask_name": "data/masks/training/mask_img_351.jpg",
+    "top_left": [163, 15],
+    "top_right": [997, 15],
+    "bottom_right": [1072, 1598],
+    "bottom_left": [129, 1616]
+  }, {
+    "image_name": "data/images/training/img_352.jpg",
+    "mask_name": "data/masks/training/mask_img_352.jpg",
+    "top_left": [189, 89],
+    "top_right": [961, 58],
+    "bottom_right": [1010, 1598],
+    "bottom_left": [125, 1608]
+  }, {
+    "image_name": "data/images/training/img_353.jpg",
+    "mask_name": "data/masks/training/mask_img_353.jpg",
+    "top_left": [212, 13],
+    "top_right": [863, 33],
+    "bottom_right": [928, 1576],
+    "bottom_left": [165, 1565]
+  }, {
+    "image_name": "data/images/training/img_354.jpg",
+    "mask_name": "data/masks/training/mask_img_354.jpg",
+    "top_left": [149, 38],
+    "top_right": [1025, 25],
+    "bottom_right": [999, 1558],
+    "bottom_left": [98, 1554]
+  }, {
+    "image_name": "data/images/training/img_355.jpg",
+    "mask_name": "data/masks/training/mask_img_355.jpg",
+    "top_left": [261, 185],
+    "top_right": [921, 180],
+    "bottom_right": [959, 1549],
+    "bottom_left": [248, 1574]
+  }, {
+    "image_name": "data/images/training/img_356.jpg",
+    "mask_name": "data/masks/training/mask_img_356.jpg",
+    "top_left": [361, 58],
+    "top_right": [765, 45],
+    "bottom_right": [821, 1628],
+    "bottom_left": [339, 1627]
+  }, {
+    "image_name": "data/images/training/img_357.jpg",
+    "mask_name": "data/masks/training/mask_img_357.jpg",
+    "top_left": [190, 13],
+    "top_right": [890, 34],
+    "bottom_right": [896, 1554],
+    "bottom_left": [223, 1558]
+  }, {
+    "image_name": "data/images/training/img_358.jpg",
+    "mask_name": "data/masks/training/mask_img_358.jpg",
+    "top_left": [393, 20],
+    "top_right": [834, 11],
+    "bottom_right": [908, 1628],
+    "bottom_left": [384, 1630]
+  }, {
+    "image_name": "data/images/training/img_359.jpg",
+    "mask_name": "data/masks/training/mask_img_359.jpg",
+    "top_left": [261, 15],
+    "top_right": [847, 9],
+    "bottom_right": [887, 1536],
+    "bottom_left": [236, 1520]
+  }, {
+    "image_name": "data/images/training/img_360.jpg",
+    "mask_name": "data/masks/training/mask_img_360.jpg",
+    "top_left": [145, 131],
+    "top_right": [992, 76],
+    "bottom_right": [1086, 1558],
+    "bottom_left": [261, 1572]
+  }, {
+    "image_name": "data/images/training/img_361.jpg",
+    "mask_name": "data/masks/training/mask_img_361.jpg",
+    "top_left": [212, 120],
+    "top_right": [841, 205],
+    "bottom_right": [841, 1572],
+    "bottom_left": [165, 1565]
+  }, {
+    "image_name": "data/images/training/img_362.jpg",
+    "mask_name": "data/masks/training/mask_img_362.jpg",
+    "top_left": [274, 18],
+    "top_right": [834, 7],
+    "bottom_right": [885, 1623],
+    "bottom_left": [239, 1628]
+  }, {
+    "image_name": "data/images/training/img_363.jpg",
+    "mask_name": "data/masks/training/mask_img_363.jpg",
+    "top_left": [183, 7],
+    "top_right": [970, 7],
+    "bottom_right": [983, 1628],
+    "bottom_left": [178, 1559]
+  }, {
+    "image_name": "data/images/training/img_364.jpg",
+    "mask_name": "data/masks/training/mask_img_364.jpg",
+    "top_left": [372, 15],
+    "top_right": [854, 13],
+    "bottom_right": [928, 1619],
+    "bottom_left": [303, 1623]
+  }, {
+    "image_name": "data/images/training/img_365.jpg",
+    "mask_name": "data/masks/training/mask_img_365.jpg",
+    "top_left": [272, 20],
+    "top_right": [921, 47],
+    "bottom_right": [963, 1599],
+    "bottom_left": [254, 1583]
+  }, {
+    "image_name": "data/images/training/img_366.jpg",
+    "mask_name": "data/masks/training/mask_img_366.jpg",
+    "top_left": [111, 9],
+    "top_right": [923, 9],
+    "bottom_right": [1077, 1617],
+    "bottom_left": [94, 1623]
+  }, {
+    "image_name": "data/images/training/img_367.jpg",
+    "mask_name": "data/masks/training/mask_img_367.jpg",
+    "top_left": [241, 9],
+    "top_right": [928, 7],
+    "bottom_right": [890, 1619],
+    "bottom_left": [279, 1617]
+  }, {
+    "image_name": "data/images/training/img_368.jpg",
+    "mask_name": "data/masks/training/mask_img_368.jpg",
+    "top_left": [29, 100],
+    "top_right": [1021, 74],
+    "bottom_right": [1128, 1329],
+    "bottom_left": [58, 1407]
+  }, {
+    "image_name": "data/images/training/img_369.jpg",
+    "mask_name": "data/masks/training/mask_img_369.jpg",
+    "top_left": [316, 7],
+    "top_right": [885, 5],
+    "bottom_right": [948, 1630],
+    "bottom_left": [301, 1623]
+  }, {
+    "image_name": "data/images/training/img_370.jpg",
+    "mask_name": "data/masks/training/mask_img_370.jpg",
+    "top_left": [272, 9],
+    "top_right": [849, 0],
+    "bottom_right": [939, 1621],
+    "bottom_left": [239, 1628]
+  }, {
+    "image_name": "data/images/training/img_371.jpg",
+    "mask_name": "data/masks/training/mask_img_371.jpg",
+    "top_left": [277, 7],
+    "top_right": [889, 5],
+    "bottom_right": [977, 1596],
+    "bottom_left": [261, 1621]
+  }, {
+    "image_name": "data/images/training/img_372.jpg",
+    "mask_name": "data/masks/training/mask_img_372.jpg",
+    "top_left": [198, 47],
+    "top_right": [863, 36],
+    "bottom_right": [954, 1623],
+    "bottom_left": [134, 1625]
+  }, {
+    "image_name": "data/images/training/img_373.jpg",
+    "mask_name": "data/masks/training/mask_img_373.jpg",
+    "top_left": [82, 7],
+    "top_right": [1055, 7],
+    "bottom_right": [1072, 1627],
+    "bottom_left": [98, 1625]
+  }, {
+    "image_name": "data/images/training/img_374.jpg",
+    "mask_name": "data/masks/training/mask_img_374.jpg",
+    "top_left": [292, 5],
+    "top_right": [823, 5],
+    "bottom_right": [903, 1623],
+    "bottom_left": [319, 1625]
+  }, {
+    "image_name": "data/images/training/img_375.jpg",
+    "mask_name": "data/masks/training/mask_img_375.jpg",
+    "top_left": [366, 7],
+    "top_right": [811, 4],
+    "bottom_right": [894, 1623],
+    "bottom_left": [306, 1625]
+  }, {
+    "image_name": "data/images/training/img_376.jpg",
+    "mask_name": "data/masks/training/mask_img_376.jpg",
+    "top_left": [656, 7],
+    "top_right": [1209, 7],
+    "bottom_right": [1219, 1619],
+    "bottom_left": [657, 1623]
+  }, {
+    "image_name": "data/images/training/img_377.jpg",
+    "mask_name": "data/masks/training/mask_img_377.jpg",
+    "top_left": [309, 98],
+    "top_right": [829, 112],
+    "bottom_right": [870, 1623],
+    "bottom_left": [287, 1623]
+  }, {
+    "image_name": "data/images/training/img_378.jpg",
+    "mask_name": "data/masks/training/mask_img_378.jpg",
+    "top_left": [314, 15],
+    "top_right": [827, 4],
+    "bottom_right": [850, 1625],
+    "bottom_left": [354, 1625]
+  }, {
+    "image_name": "data/images/training/img_379.jpg",
+    "mask_name": "data/masks/training/mask_img_379.jpg",
+    "top_left": [335, 11],
+    "top_right": [878, 7],
+    "bottom_right": [936, 1587],
+    "bottom_left": [345, 1605]
+  }, {
+    "image_name": "data/images/training/img_380.jpg",
+    "mask_name": "data/masks/training/mask_img_380.jpg",
+    "top_left": [131, 22],
+    "top_right": [943, 13],
+    "bottom_right": [986, 1623],
+    "bottom_left": [127, 1621]
+  }, {
+    "image_name": "data/images/training/img_381.jpg",
+    "mask_name": "data/masks/training/mask_img_381.jpg",
+    "top_left": [361, 31],
+    "top_right": [807, 9],
+    "bottom_right": [861, 1570],
+    "bottom_left": [383, 1590]
+  }, {
+    "image_name": "data/images/training/img_382.jpg",
+    "mask_name": "data/masks/training/mask_img_382.jpg",
+    "top_left": [305, 4],
+    "top_right": [919, 4],
+    "bottom_right": [952, 1619],
+    "bottom_left": [267, 1623]
+  }, {
+    "image_name": "data/images/training/img_383.jpg",
+    "mask_name": "data/masks/training/mask_img_383.jpg",
+    "top_left": [316, 7],
+    "top_right": [836, 5],
+    "bottom_right": [921, 1623],
+    "bottom_left": [299, 1627]
+  }, {
+    "image_name": "data/images/training/img_384.jpg",
+    "mask_name": "data/masks/training/mask_img_384.jpg",
+    "top_left": [520, 359],
+    "top_right": [943, 435],
+    "bottom_right": [923, 1335],
+    "bottom_left": [459, 1307]
+  }, {
+    "image_name": "data/images/training/img_385.jpg",
+    "mask_name": "data/masks/training/mask_img_385.jpg",
+    "top_left": [377, 45],
+    "top_right": [836, 44],
+    "bottom_right": [849, 1607],
+    "bottom_left": [361, 1587]
+  }, {
+    "image_name": "data/images/training/img_386.jpg",
+    "mask_name": "data/masks/training/mask_img_386.jpg",
+    "top_left": [337, 4],
+    "top_right": [965, 29],
+    "bottom_right": [950, 1543],
+    "bottom_left": [259, 1536]
+  }, {
+    "image_name": "data/images/training/img_387.jpg",
+    "mask_name": "data/masks/training/mask_img_387.jpg",
+    "top_left": [473, 149],
+    "top_right": [753, 141],
+    "bottom_right": [749, 1536],
+    "bottom_left": [395, 1507]
+  }, {
+    "image_name": "data/images/training/img_388.jpg",
+    "mask_name": "data/masks/training/mask_img_388.jpg",
+    "top_left": [118, 138],
+    "top_right": [1028, 116],
+    "bottom_right": [986, 1511],
+    "bottom_left": [109, 1530]
+  }, {
+    "image_name": "data/images/training/img_389.jpg",
+    "mask_name": "data/masks/training/mask_img_389.jpg",
+    "top_left": [167, 5],
+    "top_right": [919, 5],
+    "bottom_right": [967, 1570],
+    "bottom_left": [105, 1559]
+  }, {
+    "image_name": "data/images/training/img_390.jpg",
+    "mask_name": "data/masks/training/mask_img_390.jpg",
+    "top_left": [306, 149],
+    "top_right": [843, 156],
+    "bottom_right": [932, 1623],
+    "bottom_left": [212, 1603]
+  }, {
+    "image_name": "data/images/training/img_391.jpg",
+    "mask_name": "data/masks/training/mask_img_391.jpg",
+    "top_left": [228, 11],
+    "top_right": [965, 7],
+    "bottom_right": [1128, 1623],
+    "bottom_left": [161, 1623]
+  }, {
+    "image_name": "data/images/training/img_392.jpg",
+    "mask_name": "data/masks/training/mask_img_392.jpg",
+    "top_left": [303, 7],
+    "top_right": [820, 9],
+    "bottom_right": [856, 1625],
+    "bottom_left": [274, 1627]
+  }, {
+    "image_name": "data/images/training/img_393.jpg",
+    "mask_name": "data/masks/training/mask_img_393.jpg",
+    "top_left": [230, 5],
+    "top_right": [1005, 7],
+    "bottom_right": [1050, 1623],
+    "bottom_left": [223, 1623]
+  }, {
+    "image_name": "data/images/training/img_394.jpg",
+    "mask_name": "data/masks/training/mask_img_394.jpg",
+    "top_left": [145, 49],
+    "top_right": [1028, 53],
+    "bottom_right": [1088, 1498],
+    "bottom_left": [114, 1511]
+  }, {
+    "image_name": "data/images/training/img_395.jpg",
+    "mask_name": "data/masks/training/mask_img_395.jpg",
+    "top_left": [419, 40],
+    "top_right": [791, 33],
+    "bottom_right": [800, 1599],
+    "bottom_left": [426, 1628]
+  }, {
+    "image_name": "data/images/training/img_396.jpg",
+    "mask_name": "data/masks/training/mask_img_396.jpg",
+    "top_left": [180, 7],
+    "top_right": [988, 4],
+    "bottom_right": [1119, 1621],
+    "bottom_left": [125, 1627]
+  }, {
+    "image_name": "data/images/training/img_397.jpg",
+    "mask_name": "data/masks/training/mask_img_397.jpg",
+    "top_left": [248, 4],
+    "top_right": [905, 5],
+    "bottom_right": [950, 1619],
+    "bottom_left": [263, 1617]
+  }, {
+    "image_name": "data/images/training/img_398.jpg",
+    "mask_name": "data/masks/training/mask_img_398.jpg",
+    "top_left": [352, 539],
+    "top_right": [734, 484],
+    "bottom_right": [787, 1365],
+    "bottom_left": [386, 1367]
+  }, {
+    "image_name": "data/images/training/img_399.jpg",
+    "mask_name": "data/masks/training/mask_img_399.jpg",
+    "top_left": [468, 479],
+    "top_right": [709, 481],
+    "bottom_right": [707, 1246],
+    "bottom_left": [461, 1257]
+  }, {
+    "image_name": "data/images/training/img_400.jpg",
+    "mask_name": "data/masks/training/mask_img_400.jpg",
+    "top_left": [352, 178],
+    "top_right": [801, 192],
+    "bottom_right": [705, 1465],
+    "bottom_left": [245, 1414]
+  }, {
+    "image_name": "data/images/validation/img_401.jpg",
+    "mask_name": "data/masks/validation/mask_img_401.jpg",
+    "top_left": [145, 15],
+    "top_right": [1121, 9],
+    "bottom_right": [1150, 1621],
+    "bottom_left": [143, 1621]
+  }, {
+    "image_name": "data/images/validation/img_402.jpg",
+    "mask_name": "data/masks/validation/mask_img_402.jpg",
+    "top_left": [176, 16],
+    "top_right": [1101, 53],
+    "bottom_right": [1135, 1570],
+    "bottom_left": [170, 1581]
+  }, {
+    "image_name": "data/images/validation/img_403.jpg",
+    "mask_name": "data/masks/validation/mask_img_403.jpg",
+    "top_left": [393, 18],
+    "top_right": [809, 9],
+    "bottom_right": [838, 1608],
+    "bottom_left": [393, 1614]
+  }, {
+    "image_name": "data/images/validation/img_404.jpg",
+    "mask_name": "data/masks/validation/mask_img_404.jpg",
+    "top_left": [247, 20],
+    "top_right": [887, 11],
+    "bottom_right": [936, 1621],
+    "bottom_left": [257, 1619]
+  }, {
+    "image_name": "data/images/validation/img_405.jpg",
+    "mask_name": "data/masks/validation/mask_img_405.jpg",
+    "top_left": [283, 9],
+    "top_right": [840, 4],
+    "bottom_right": [1063, 1621],
+    "bottom_left": [265, 1621]
+  }, {
+    "image_name": "data/images/validation/img_406.jpg",
+    "mask_name": "data/masks/validation/mask_img_406.jpg",
+    "top_left": [236, 7],
+    "top_right": [889, 16],
+    "bottom_right": [937, 1621],
+    "bottom_left": [210, 1623]
+  }, {
+    "image_name": "data/images/validation/img_407.jpg",
+    "mask_name": "data/masks/validation/mask_img_407.jpg",
+    "top_left": [49, 2],
+    "top_right": [1151, 7],
+    "bottom_right": [1135, 1610],
+    "bottom_left": [74, 1617]
+  }, {
+    "image_name": "data/images/validation/img_408.jpg",
+    "mask_name": "data/masks/validation/mask_img_408.jpg",
+    "top_left": [261, 4],
+    "top_right": [889, 7],
+    "bottom_right": [974, 1588],
+    "bottom_left": [223, 1603]
+  }, {
+    "image_name": "data/images/validation/img_409.jpg",
+    "mask_name": "data/masks/validation/mask_img_409.jpg",
+    "top_left": [364, 11],
+    "top_right": [863, 7],
+    "bottom_right": [896, 1617],
+    "bottom_left": [334, 1628]
+  }, {
+    "image_name": "data/images/validation/img_410.jpg",
+    "mask_name": "data/masks/validation/mask_img_410.jpg",
+    "top_left": [359, 24],
+    "top_right": [865, 13],
+    "bottom_right": [867, 1616],
+    "bottom_left": [350, 1608]
+  }, {
+    "image_name": "data/images/validation/img_411.jpg",
+    "mask_name": "data/masks/validation/mask_img_411.jpg",
+    "top_left": [294, 18],
+    "top_right": [959, 49],
+    "bottom_right": [959, 1625],
+    "bottom_left": [192, 1625]
+  }, {
+    "image_name": "data/images/validation/img_412.jpg",
+    "mask_name": "data/masks/validation/mask_img_412.jpg",
+    "top_left": [214, 7],
+    "top_right": [986, 7],
+    "bottom_right": [959, 1623],
+    "bottom_left": [201, 1621]
+  }, {
+    "image_name": "data/images/validation/img_413.jpg",
+    "mask_name": "data/masks/validation/mask_img_413.jpg",
+    "top_left": [450, 163],
+    "top_right": [845, 140],
+    "bottom_right": [916, 1520],
+    "bottom_left": [432, 1518]
+  }, {
+    "image_name": "data/images/validation/img_414.jpg",
+    "mask_name": "data/masks/validation/mask_img_414.jpg",
+    "top_left": [261, 4],
+    "top_right": [1050, 5],
+    "bottom_right": [1099, 1616],
+    "bottom_left": [221, 1625]
+  }, {
+    "image_name": "data/images/validation/img_415.jpg",
+    "mask_name": "data/masks/validation/mask_img_415.jpg",
+    "top_left": [370, 346],
+    "top_right": [704, 346],
+    "bottom_right": [720, 1512],
+    "bottom_left": [350, 1511]
+  }, {
+    "image_name": "data/images/validation/img_416.jpg",
+    "mask_name": "data/masks/validation/mask_img_416.jpg",
+    "top_left": [466, 161],
+    "top_right": [725, 152],
+    "bottom_right": [720, 1474],
+    "bottom_left": [397, 1458]
+  }, {
+    "image_name": "data/images/validation/img_417.jpg",
+    "mask_name": "data/masks/validation/mask_img_417.jpg",
+    "top_left": [410, 548],
+    "top_right": [684, 539],
+    "bottom_right": [722, 1318],
+    "bottom_left": [419, 1355]
+  }, {
+    "image_name": "data/images/validation/img_418.jpg",
+    "mask_name": "data/masks/validation/mask_img_418.jpg",
+    "top_left": [201, 268],
+    "top_right": [957, 225],
+    "bottom_right": [1025, 1458],
+    "bottom_left": [221, 1507]
+  }, {
+    "image_name": "data/images/validation/img_419.jpg",
+    "mask_name": "data/masks/validation/mask_img_419.jpg",
+    "top_left": [296, 25],
+    "top_right": [912, 31],
+    "bottom_right": [1017, 1619],
+    "bottom_left": [281, 1621]
+  }, {
+    "image_name": "data/images/validation/img_420.jpg",
+    "mask_name": "data/masks/validation/mask_img_420.jpg",
+    "top_left": [140, 7],
+    "top_right": [912, 11],
+    "bottom_right": [997, 1538],
+    "bottom_left": [169, 1540]
+  }, {
+    "image_name": "data/images/validation/img_421.jpg",
+    "mask_name": "data/masks/validation/mask_img_421.jpg",
+    "top_left": [428, 441],
+    "top_right": [803, 446],
+    "bottom_right": [823, 1375],
+    "bottom_left": [430, 1371]
+  }, {
+    "image_name": "data/images/validation/img_422.jpg",
+    "mask_name": "data/masks/validation/mask_img_422.jpg",
+    "top_left": [265, 138],
+    "top_right": [738, 109],
+    "bottom_right": [816, 1616],
+    "bottom_left": [236, 1627]
+  }, {
+    "image_name": "data/images/validation/img_423.jpg",
+    "mask_name": "data/masks/validation/mask_img_423.jpg",
+    "top_left": [268, 11],
+    "top_right": [896, 5],
+    "bottom_right": [934, 1623],
+    "bottom_left": [287, 1630]
+  }, {
+    "image_name": "data/images/validation/img_424.jpg",
+    "mask_name": "data/masks/validation/mask_img_424.jpg",
+    "top_left": [321, 9],
+    "top_right": [847, 7],
+    "bottom_right": [865, 1601],
+    "bottom_left": [287, 1607]
+  }, {
+    "image_name": "data/images/validation/img_425.jpg",
+    "mask_name": "data/masks/validation/mask_img_425.jpg",
+    "top_left": [287, 54],
+    "top_right": [916, 67],
+    "bottom_right": [932, 1616],
+    "bottom_left": [330, 1628]
+  }, {
+    "image_name": "data/images/validation/img_426.jpg",
+    "mask_name": "data/masks/validation/mask_img_426.jpg",
+    "top_left": [305, 249],
+    "top_right": [771, 227],
+    "bottom_right": [849, 1489],
+    "bottom_left": [312, 1485]
+  }, {
+    "image_name": "data/images/validation/img_427.jpg",
+    "mask_name": "data/masks/validation/mask_img_427.jpg",
+    "top_left": [73, 34],
+    "top_right": [1079, 98],
+    "bottom_right": [1113, 1579],
+    "bottom_left": [98, 1574]
+  }, {
+    "image_name": "data/images/validation/img_428.jpg",
+    "mask_name": "data/masks/validation/mask_img_428.jpg",
+    "top_left": [345, 5],
+    "top_right": [758, 2],
+    "bottom_right": [856, 1627],
+    "bottom_left": [345, 1630]
+  }, {
+    "image_name": "data/images/validation/img_429.jpg",
+    "mask_name": "data/masks/validation/mask_img_429.jpg",
+    "top_left": [274, 6],
+    "top_right": [861, 9],
+    "bottom_right": [901, 1538],
+    "bottom_left": [247, 1563]
+  }, {
+    "image_name": "data/images/validation/img_430.jpg",
+    "mask_name": "data/masks/validation/mask_img_430.jpg",
+    "top_left": [515, 257],
+    "top_right": [861, 306],
+    "bottom_right": [769, 1432],
+    "bottom_left": [395, 1417]
+  }, {
+    "image_name": "data/images/validation/img_431.jpg",
+    "mask_name": "data/masks/validation/mask_img_431.jpg",
+    "top_left": [297, 7],
+    "top_right": [928, 7],
+    "bottom_right": [923, 1619],
+    "bottom_left": [256, 1627]
+  }, {
+    "image_name": "data/images/validation/img_432.jpg",
+    "mask_name": "data/masks/validation/mask_img_432.jpg",
+    "top_left": [546, 606],
+    "top_right": [903, 590],
+    "bottom_right": [905, 1434],
+    "bottom_left": [510, 1391]
+  }, {
+    "image_name": "data/images/validation/img_433.jpg",
+    "mask_name": "data/masks/validation/mask_img_433.jpg",
+    "top_left": [462, 332],
+    "top_right": [776, 345],
+    "bottom_right": [722, 1503],
+    "bottom_left": [334, 1458]
+  }, {
+    "image_name": "data/images/validation/img_434.jpg",
+    "mask_name": "data/masks/validation/mask_img_434.jpg",
+    "top_left": [325, 73],
+    "top_right": [869, 76],
+    "bottom_right": [881, 1565],
+    "bottom_left": [341, 1587]
+  }, {
+    "image_name": "data/images/validation/img_435.jpg",
+    "mask_name": "data/masks/validation/mask_img_435.jpg",
+    "top_left": [364, 533],
+    "top_right": [696, 488],
+    "bottom_right": [789, 1454],
+    "bottom_left": [408, 1480]
+  }, {
+    "image_name": "data/images/validation/img_436.jpg",
+    "mask_name": "data/masks/validation/mask_img_436.jpg",
+    "top_left": [214, 24],
+    "top_right": [908, 20],
+    "bottom_right": [970, 1540],
+    "bottom_left": [216, 1576]
+  }, {
+    "image_name": "data/images/validation/img_437.jpg",
+    "mask_name": "data/masks/validation/mask_img_437.jpg",
+    "top_left": [207, 4],
+    "top_right": [901, 5],
+    "bottom_right": [903, 1610],
+    "bottom_left": [281, 1625]
+  }, {
+    "image_name": "data/images/validation/img_438.jpg",
+    "mask_name": "data/masks/validation/mask_img_438.jpg",
+    "top_left": [199, 49],
+    "top_right": [898, 69],
+    "bottom_right": [923, 1565],
+    "bottom_left": [247, 1576]
+  }, {
+    "image_name": "data/images/validation/img_439.jpg",
+    "mask_name": "data/masks/validation/mask_img_439.jpg",
+    "top_left": [364, 11],
+    "top_right": [765, 9],
+    "bottom_right": [796, 1598],
+    "bottom_left": [343, 1608]
+  }, {
+    "image_name": "data/images/validation/img_440.jpg",
+    "mask_name": "data/masks/validation/mask_img_440.jpg",
+    "top_left": [310, 161],
+    "top_right": [849, 140],
+    "bottom_right": [908, 1188],
+    "bottom_left": [306, 1196]
+  }, {
+    "image_name": "data/images/validation/img_441.jpg",
+    "mask_name": "data/masks/validation/mask_img_441.jpg",
+    "top_left": [292, 4],
+    "top_right": [887, 0],
+    "bottom_right": [919, 1625],
+    "bottom_left": [287, 1630]
+  }, {
+    "image_name": "data/images/validation/img_442.jpg",
+    "mask_name": "data/masks/validation/mask_img_442.jpg",
+    "top_left": [96, 16],
+    "top_right": [1101, 5],
+    "bottom_right": [1135, 1621],
+    "bottom_left": [69, 1612]
+  }, {
+    "image_name": "data/images/validation/img_443.jpg",
+    "mask_name": "data/masks/validation/mask_img_443.jpg",
+    "top_left": [214, 15],
+    "top_right": [936, 7],
+    "bottom_right": [1014, 1621],
+    "bottom_left": [189, 1625]
+  }, {
+    "image_name": "data/images/validation/img_444.jpg",
+    "mask_name": "data/masks/validation/mask_img_444.jpg",
+    "top_left": [374, 13],
+    "top_right": [758, 4],
+    "bottom_right": [753, 1628],
+    "bottom_left": [361, 1627]
+  }, {
+    "image_name": "data/images/validation/img_445.jpg",
+    "mask_name": "data/masks/validation/mask_img_445.jpg",
+    "top_left": [335, 58],
+    "top_right": [854, 33],
+    "bottom_right": [918, 1621],
+    "bottom_left": [317, 1621]
+  }, {
+    "image_name": "data/images/validation/img_446.jpg",
+    "mask_name": "data/masks/validation/mask_img_446.jpg",
+    "top_left": [241, 125],
+    "top_right": [916, 105],
+    "bottom_right": [961, 1572],
+    "bottom_left": [180, 1556]
+  }, {
+    "image_name": "data/images/validation/img_447.jpg",
+    "mask_name": "data/masks/validation/mask_img_447.jpg",
+    "top_left": [167, 176],
+    "top_right": [1032, 165],
+    "bottom_right": [1144, 1554],
+    "bottom_left": [172, 1565]
+  }, {
+    "image_name": "data/images/validation/img_448.jpg",
+    "mask_name": "data/masks/validation/mask_img_448.jpg",
+    "top_left": [306, 5],
+    "top_right": [876, 31],
+    "bottom_right": [959, 1621],
+    "bottom_left": [214, 1628]
+  }, {
+    "image_name": "data/images/validation/img_449.jpg",
+    "mask_name": "data/masks/validation/mask_img_449.jpg",
+    "top_left": [252, 7],
+    "top_right": [865, 2],
+    "bottom_right": [930, 1616],
+    "bottom_left": [239, 1610]
+  }, {
+    "image_name": "data/images/validation/img_450.jpg",
+    "mask_name": "data/masks/validation/mask_img_450.jpg",
+    "top_left": [397, 406],
+    "top_right": [664, 403],
+    "bottom_right": [693, 1338],
+    "bottom_left": [377, 1347]
+  }, {
+    "image_name": "data/images/validation/img_451.jpg",
+    "mask_name": "data/masks/validation/mask_img_451.jpg",
+    "top_left": [228, 5],
+    "top_right": [930, 7],
+    "bottom_right": [985, 1570],
+    "bottom_left": [189, 1581]
+  }, {
+    "image_name": "data/images/validation/img_452.jpg",
+    "mask_name": "data/masks/validation/mask_img_452.jpg",
+    "top_left": [292, 24],
+    "top_right": [872, 2],
+    "bottom_right": [1072, 1616],
+    "bottom_left": [265, 1627]
+  }, {
+    "image_name": "data/images/validation/img_453.jpg",
+    "mask_name": "data/masks/validation/mask_img_453.jpg",
+    "top_left": [287, 2],
+    "top_right": [925, 9],
+    "bottom_right": [954, 1590],
+    "bottom_left": [285, 1567]
+  }, {
+    "image_name": "data/images/validation/img_454.jpg",
+    "mask_name": "data/masks/validation/mask_img_454.jpg",
+    "top_left": [403, 334],
+    "top_right": [823, 321],
+    "bottom_right": [856, 1411],
+    "bottom_left": [389, 1393]
+  }, {
+    "image_name": "data/images/validation/img_455.jpg",
+    "mask_name": "data/masks/validation/mask_img_455.jpg",
+    "top_left": [448, 357],
+    "top_right": [754, 361],
+    "bottom_right": [740, 1398],
+    "bottom_left": [383, 1389]
+  }, {
+    "image_name": "data/images/validation/img_456.jpg",
+    "mask_name": "data/masks/validation/mask_img_456.jpg",
+    "top_left": [305, 4],
+    "top_right": [901, 11],
+    "bottom_right": [927, 1617],
+    "bottom_left": [316, 1628]
+  }, {
+    "image_name": "data/images/validation/img_457.jpg",
+    "mask_name": "data/masks/validation/mask_img_457.jpg",
+    "top_left": [305, 18],
+    "top_right": [912, 22],
+    "bottom_right": [970, 1608],
+    "bottom_left": [196, 1594]
+  }, {
+    "image_name": "data/images/validation/img_458.jpg",
+    "mask_name": "data/masks/validation/mask_img_458.jpg",
+    "top_left": [341, 15],
+    "top_right": [881, 9],
+    "bottom_right": [927, 1621],
+    "bottom_left": [238, 1621]
+  }, {
+    "image_name": "data/images/validation/img_459.jpg",
+    "mask_name": "data/masks/validation/mask_img_459.jpg",
+    "top_left": [323, 11],
+    "top_right": [863, 7],
+    "bottom_right": [825, 1556],
+    "bottom_left": [343, 1572]
+  }, {
+    "image_name": "data/images/validation/img_460.jpg",
+    "mask_name": "data/masks/validation/mask_img_460.jpg",
+    "top_left": [357, 5],
+    "top_right": [834, 2],
+    "bottom_right": [865, 1625],
+    "bottom_left": [368, 1627]
+  }, {
+    "image_name": "data/images/validation/img_461.jpg",
+    "mask_name": "data/masks/validation/mask_img_461.jpg",
+    "top_left": [207, 11],
+    "top_right": [976, 13],
+    "bottom_right": [1055, 1627],
+    "bottom_left": [65, 1588]
+  }, {
+    "image_name": "data/images/validation/img_462.jpg",
+    "mask_name": "data/masks/validation/mask_img_462.jpg",
+    "top_left": [190, 2],
+    "top_right": [852, 7],
+    "bottom_right": [827, 1621],
+    "bottom_left": [232, 1623]
+  }, {
+    "image_name": "data/images/validation/img_463.jpg",
+    "mask_name": "data/masks/validation/mask_img_463.jpg",
+    "top_left": [203, 123],
+    "top_right": [899, 145],
+    "bottom_right": [988, 1530],
+    "bottom_left": [183, 1549]
+  }, {
+    "image_name": "data/images/validation/img_464.jpg",
+    "mask_name": "data/masks/validation/mask_img_464.jpg",
+    "top_left": [383, 11],
+    "top_right": [673, 9],
+    "bottom_right": [758, 1581],
+    "bottom_left": [397, 1610]
+  }, {
+    "image_name": "data/images/validation/img_465.jpg",
+    "mask_name": "data/masks/validation/mask_img_465.jpg",
+    "top_left": [127, 22],
+    "top_right": [1006, 45],
+    "bottom_right": [1144, 1623],
+    "bottom_left": [94, 1623]
+  }, {
+    "image_name": "data/images/validation/img_466.jpg",
+    "mask_name": "data/masks/validation/mask_img_466.jpg",
+    "top_left": [131, 83],
+    "top_right": [1046, 114],
+    "bottom_right": [1066, 1565],
+    "bottom_left": [89, 1576]
+  }, {
+    "image_name": "data/images/validation/img_467.jpg",
+    "mask_name": "data/masks/validation/mask_img_467.jpg",
+    "top_left": [341, 236],
+    "top_right": [751, 228],
+    "bottom_right": [742, 1545],
+    "bottom_left": [314, 1534]
+  }, {
+    "image_name": "data/images/validation/img_468.jpg",
+    "mask_name": "data/masks/validation/mask_img_468.jpg",
+    "top_left": [384, 125],
+    "top_right": [658, 91],
+    "bottom_right": [693, 1511],
+    "bottom_left": [393, 1505]
+  }, {
+    "image_name": "data/images/validation/img_469.jpg",
+    "mask_name": "data/masks/validation/mask_img_469.jpg",
+    "top_left": [341, 5],
+    "top_right": [756, 2],
+    "bottom_right": [823, 1625],
+    "bottom_left": [366, 1623]
+  }, {
+    "image_name": "data/images/validation/img_470.jpg",
+    "mask_name": "data/masks/validation/mask_img_470.jpg",
+    "top_left": [161, 9],
+    "top_right": [965, 4],
+    "bottom_right": [997, 1627],
+    "bottom_left": [163, 1628]
+  }, {
+    "image_name": "data/images/validation/img_471.jpg",
+    "mask_name": "data/masks/validation/mask_img_471.jpg",
+    "top_left": [339, 27],
+    "top_right": [796, 74],
+    "bottom_right": [912, 1616],
+    "bottom_left": [323, 1621]
+  }, {
+    "image_name": "data/images/validation/img_472.jpg",
+    "mask_name": "data/masks/validation/mask_img_472.jpg",
+    "top_left": [486, 412],
+    "top_right": [887, 441],
+    "bottom_right": [889, 1307],
+    "bottom_left": [432, 1273]
+  }, {
+    "image_name": "data/images/validation/img_473.jpg",
+    "mask_name": "data/masks/validation/mask_img_473.jpg",
+    "top_left": [430, 305],
+    "top_right": [745, 305],
+    "bottom_right": [740, 1302],
+    "bottom_left": [406, 1308]
+  }, {
+    "image_name": "data/images/validation/img_474.jpg",
+    "mask_name": "data/masks/validation/mask_img_474.jpg",
+    "top_left": [277, 259],
+    "top_right": [658, 319],
+    "bottom_right": [481, 1592],
+    "bottom_left": [49, 1536]
+  }, {
+    "image_name": "data/images/validation/img_475.jpg",
+    "mask_name": "data/masks/validation/mask_img_475.jpg",
+    "top_left": [125, 4],
+    "top_right": [932, 5],
+    "bottom_right": [963, 1621],
+    "bottom_left": [107, 1617]
+  }, {
+    "image_name": "data/images/validation/img_476.jpg",
+    "mask_name": "data/masks/validation/mask_img_476.jpg",
+    "top_left": [294, 29],
+    "top_right": [852, 5],
+    "bottom_right": [894, 1625],
+    "bottom_left": [287, 1625]
+  }, {
+    "image_name": "data/images/validation/img_477.jpg",
+    "mask_name": "data/masks/validation/mask_img_477.jpg",
+    "top_left": [296, 36],
+    "top_right": [787, 47],
+    "bottom_right": [861, 1627],
+    "bottom_left": [292, 1628]
+  }, {
+    "image_name": "data/images/validation/img_478.jpg",
+    "mask_name": "data/masks/validation/mask_img_478.jpg",
+    "top_left": [310, 60],
+    "top_right": [753, 40],
+    "bottom_right": [783, 1623],
+    "bottom_left": [303, 1627]
+  }, {
+    "image_name": "data/images/validation/img_479.jpg",
+    "mask_name": "data/masks/validation/mask_img_479.jpg",
+    "top_left": [381, 44],
+    "top_right": [747, 47],
+    "bottom_right": [783, 1578],
+    "bottom_left": [417, 1592]
+  }, {
+    "image_name": "data/images/validation/img_480.jpg",
+    "mask_name": "data/masks/validation/mask_img_480.jpg",
+    "top_left": [326, 111],
+    "top_right": [791, 112],
+    "bottom_right": [818, 1610],
+    "bottom_left": [372, 1625]
+  }, {
+    "image_name": "data/images/validation/img_481.jpg",
+    "mask_name": "data/masks/validation/mask_img_481.jpg",
+    "top_left": [279, 7],
+    "top_right": [885, 4],
+    "bottom_right": [950, 1552],
+    "bottom_left": [252, 1578]
+  }, {
+    "image_name": "data/images/validation/img_482.jpg",
+    "mask_name": "data/masks/validation/mask_img_482.jpg",
+    "top_left": [417, 18],
+    "top_right": [756, 15],
+    "bottom_right": [841, 1590],
+    "bottom_left": [386, 1616]
+  }, {
+    "image_name": "data/images/validation/img_483.jpg",
+    "mask_name": "data/masks/validation/mask_img_483.jpg",
+    "top_left": [435, 256],
+    "top_right": [805, 285],
+    "bottom_right": [818, 1345],
+    "bottom_left": [364, 1365]
+  }, {
+    "image_name": "data/images/validation/img_484.jpg",
+    "mask_name": "data/masks/validation/mask_img_484.jpg",
+    "top_left": [459, 252],
+    "top_right": [796, 218],
+    "bottom_right": [934, 1344],
+    "bottom_left": [529, 1384]
+  }, {
+    "image_name": "data/images/validation/img_485.jpg",
+    "mask_name": "data/masks/validation/mask_img_485.jpg",
+    "top_left": [417, 18],
+    "top_right": [787, 18],
+    "bottom_right": [823, 1598],
+    "bottom_left": [410, 1592]
+  }, {
+    "image_name": "data/images/validation/img_486.jpg",
+    "mask_name": "data/masks/validation/mask_img_486.jpg",
+    "top_left": [383, 7],
+    "top_right": [883, 22],
+    "bottom_right": [825, 1590],
+    "bottom_left": [321, 1614]
+  }, {
+    "image_name": "data/images/validation/img_487.jpg",
+    "mask_name": "data/masks/validation/mask_img_487.jpg",
+    "top_left": [308, 20],
+    "top_right": [874, 33],
+    "bottom_right": [948, 1627],
+    "bottom_left": [268, 1627]
+  }, {
+    "image_name": "data/images/validation/img_488.jpg",
+    "mask_name": "data/masks/validation/mask_img_488.jpg",
+    "top_left": [172, 9],
+    "top_right": [899, 5],
+    "bottom_right": [967, 1625],
+    "bottom_left": [24, 1627]
+  }, {
+    "image_name": "data/images/validation/img_489.jpg",
+    "mask_name": "data/masks/validation/mask_img_489.jpg",
+    "top_left": [288, 125],
+    "top_right": [850, 161],
+    "bottom_right": [881, 1520],
+    "bottom_left": [248, 1587]
+  }, {
+    "image_name": "data/images/validation/img_490.jpg",
+    "mask_name": "data/masks/validation/mask_img_490.jpg",
+    "top_left": [301, 47],
+    "top_right": [843, 51],
+    "bottom_right": [996, 1563],
+    "bottom_left": [187, 1576]
+  }, {
+    "image_name": "data/images/validation/img_491.jpg",
+    "mask_name": "data/masks/validation/mask_img_491.jpg",
+    "top_left": [189, 201],
+    "top_right": [812, 214],
+    "bottom_right": [856, 1385],
+    "bottom_left": [192, 1360]
+  }, {
+    "image_name": "data/images/validation/img_492.jpg",
+    "mask_name": "data/masks/validation/mask_img_492.jpg",
+    "top_left": [287, 7],
+    "top_right": [937, 9],
+    "bottom_right": [923, 1619],
+    "bottom_left": [238, 1617]
+  }, {
+    "image_name": "data/images/validation/img_493.jpg",
+    "mask_name": "data/masks/validation/mask_img_493.jpg",
+    "top_left": [290, 92],
+    "top_right": [816, 54],
+    "bottom_right": [896, 1607],
+    "bottom_left": [238, 1594]
+  }, {
+    "image_name": "data/images/validation/img_494.jpg",
+    "mask_name": "data/masks/validation/mask_img_494.jpg",
+    "top_left": [430, 475],
+    "top_right": [704, 457],
+    "bottom_right": [769, 1340],
+    "bottom_left": [461, 1355]
+  }, {
+    "image_name": "data/images/validation/img_495.jpg",
+    "mask_name": "data/masks/validation/mask_img_495.jpg",
+    "top_left": [415, 439],
+    "top_right": [704, 484],
+    "bottom_right": [618, 1313],
+    "bottom_left": [279, 1298]
+  }, {
+    "image_name": "data/images/validation/img_496.jpg",
+    "mask_name": "data/masks/validation/mask_img_496.jpg",
+    "top_left": [359, 22],
+    "top_right": [791, 36],
+    "bottom_right": [780, 1619],
+    "bottom_left": [312, 1619]
+  }, {
+    "image_name": "data/images/validation/img_497.jpg",
+    "mask_name": "data/masks/validation/mask_img_497.jpg",
+    "top_left": [145, 20],
+    "top_right": [927, 11],
+    "bottom_right": [977, 1619],
+    "bottom_left": [160, 1621]
+  }, {
+    "image_name": "data/images/validation/img_498.jpg",
+    "mask_name": "data/masks/validation/mask_img_498.jpg",
+    "top_left": [335, 11],
+    "top_right": [778, 7],
+    "bottom_right": [814, 1616],
+    "bottom_left": [363, 1616]
+  }, {
+    "image_name": "data/images/validation/img_499.jpg",
+    "mask_name": "data/masks/validation/mask_img_499.jpg",
+    "top_left": [267, 4],
+    "top_right": [961, 5],
+    "bottom_right": [1005, 1619],
+    "bottom_left": [290, 1623]
+  }, {
+    "image_name": "data/images/validation/img_500.jpg",
+    "mask_name": "data/masks/validation/mask_img_500.jpg",
+    "top_left": [218, 11],
+    "top_right": [930, 5],
+    "bottom_right": [1021, 1621],
+    "bottom_left": [210, 1625]
+  }],
+  "num_images": 500
+}
