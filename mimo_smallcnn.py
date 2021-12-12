@@ -228,7 +228,7 @@ class mimo_smallcnn(nn.Module):
             torch.save(self, "models/smallcnn.pt") 
 
             
-    def eval(self, testloader):
+    def evaluate(self, testloader):
         """ 
             Evaluate network
         """
@@ -242,7 +242,7 @@ class mimo_smallcnn(nn.Module):
         member_losses = [0 for i in range(self.ensemble_size)]
         # store probabilities for each test sample
         all_probs = []
-        # again no gradients needed
+        self.eval()
         with torch.no_grad():
             for x_test, y_test in testloader:
 

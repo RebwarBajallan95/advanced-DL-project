@@ -233,7 +233,7 @@ class mimo_wide_resnet28(nn.Module):
             torch.save(self, "models/mimo_resnet28_10.pt") 
 
             
-    def eval(self, testloader):
+    def evaluate(self, testloader):
         """ 
             Evaluate network
         """
@@ -249,7 +249,7 @@ class mimo_wide_resnet28(nn.Module):
         running_loss = 0
         member_accuracies = [0 for i in range(self.ensemble_size)]
         member_losses = [0 for i in range(self.ensemble_size)]
-        # again no gradients needed
+        self.eval()
         with torch.no_grad():
             for x_test, y_test in testloader:
 

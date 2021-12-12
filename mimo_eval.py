@@ -7,7 +7,7 @@ import itertools
 
 
 
-def eval(model, testloader):
+def evaluate(model, testloader):
         """ 
             Evaluate network
         """
@@ -35,7 +35,7 @@ def eval(model, testloader):
                             "min": [],
                             "mean": []
                         }
-        # again no gradients needed
+        model.eval()
         with torch.no_grad():
             for x_test, y_test in testloader:
 

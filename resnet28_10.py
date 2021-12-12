@@ -61,7 +61,7 @@ class ResidualBlock(nn.Module):
         return out
         
        
-class wide_resnet18(nn.Module):
+class wide_resnet28(nn.Module):
     """
         Wide resnet28-k
     """    
@@ -202,7 +202,7 @@ class wide_resnet18(nn.Module):
             torch.save(self, "models/resnet18_10_deter.pt") 
 
             
-    def eval(self, testloader):
+    def evaluate(self, testloader):
         """ 
             Evaluate network
         """
@@ -216,7 +216,7 @@ class wide_resnet18(nn.Module):
         total = 0
         running_ece = 0
         running_loss = 0
-        # again no gradients needed
+        self.eval()
         with torch.no_grad():
             for x_test, y_test in testloader:
 
