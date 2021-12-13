@@ -2,6 +2,7 @@ import torch
 import torch.nn as nn
 import torch.nn.functional as F
 import uncertainty_metrics as um
+from scipy.stats import entropy
 import numpy as np
 import itertools
 
@@ -137,7 +138,7 @@ def batch_diversity(probs):
 def kl_diveristy(p, q):
     """
     """
-    return torch.sum(p * torch.log(p / q), dim=-1)
+    return entropy(pk=p.cpu(), qk=q.cpu())
 
 def disagreement(probs1, probs2):
     """ 
