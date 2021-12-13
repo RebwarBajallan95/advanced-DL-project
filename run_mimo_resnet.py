@@ -23,16 +23,20 @@ def main():
     cifar10_std = (0.2470, 0.2435, 0.2616)
 
     # Image preprocessing modules
-    transform = transforms.Compose([
+    train_transform = transforms.Compose([
         transforms.RandomCrop(32, padding=4),
         transforms.RandomHorizontalFlip(),
+        transforms.ToTensor(),
+        transforms.Normalize(cifar10_mean, cifar10_std)])
+
+    test_transform = transforms.Compose([
         transforms.ToTensor(),
         transforms.Normalize(cifar10_mean, cifar10_std)])
 
     batch_size = 100
 
     trainset = torchvision.datasets.CIFAR10(root='./data', train=True,
-                                            download=True, transform=transform)
+                                            download=True, transform=train_transform)
 
     trainloader = torch.utils.data.DataLoader(
                                             trainset, 
@@ -44,7 +48,7 @@ def main():
                                         )
 
     testset = torchvision.datasets.CIFAR10(root='./data', train=False,
-                                        download=True, transform=transform)
+                                        download=True, transform=test_transform)
                                         
     testloader = torch.utils.data.DataLoader(
                                         testset, 
