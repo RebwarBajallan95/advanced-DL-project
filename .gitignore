@@ -1,3 +1,8 @@
+# Due to confidential info in dataset
+Unet/data/images
+Unet/data/prediction_images
+Unet/data/trained_nets/*
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
